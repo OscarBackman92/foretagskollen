@@ -62,7 +62,7 @@ export default function LandingPage() {
   const faqs = [
     {
       q: "Kostar det verkligen ingenting?",
-      a: "Ja! Företagskollen är 100% gratis att använda. Vi finansieras genom annonser, så du betalar aldrig ett öre.",
+      a: "Ja! Textverket är 100% gratis att använda. Vi finansieras genom annonser, så du betalar aldrig ett öre.",
     },
     {
       q: "Hur bra är texterna?",
@@ -106,8 +106,8 @@ export default function LandingPage() {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ fontSize: 24 }}>🏢</span>
-            <span style={{ fontWeight: 700, fontSize: 18 }}>Företagskollen</span>
+            <span style={{ fontSize: 24 }}>✍️</span>
+            <span style={{ fontWeight: 700, fontSize: 18 }}>Textverket</span>
           </div>
           <a
             href="/verktyg"
@@ -189,8 +189,7 @@ export default function LandingPage() {
               lineHeight: 1.6,
             }}
           >
-            Skriv offertmejl, produkttexter och kundmeddelanden med AI.
-            Skräddarsytt för svenska småföretag.
+            Proffsiga AI-texter för svenska företag.
           </p>
         </FadeIn>
 
@@ -553,7 +552,7 @@ export default function LandingPage() {
               boxShadow: "0 4px 24px rgba(0,0,0,0.3)",
             }}
           >
-            Öppna Företagskollen – det är gratis
+            Öppna Textverket – det är gratis
           </a>
         </FadeIn>
       </div>
@@ -568,7 +567,7 @@ export default function LandingPage() {
           background: "#0A0A0A",
         }}
       >
-        © 2026 Företagskollen · Gratis AI-verktyg för svenska småföretag
+        © 2026 Textverket · Gratis AI-verktyg för svenska småföretag
       </div>
     </div>
   );

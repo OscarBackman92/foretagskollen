@@ -119,7 +119,7 @@ function TypewriterText({ text }) {
   return <>{displayed}</>;
 }
 
-export default function Foretagskollen() {
+export default function Textverket() {
   const [selected, setSelected] = useState(null);
   const [input, setInput] = useState("");
   const [result, setResult] = useState("");
@@ -210,7 +210,7 @@ export default function Foretagskollen() {
             pointerEvents: "none",
           }}
         />
-        <div style={{ fontSize: 36, marginBottom: 8 }}>🏢</div>
+        <div style={{ fontSize: 36, marginBottom: 8 }}>✍️</div>
         <h1
           style={{
             fontFamily: "'Playfair Display', serif",
@@ -223,7 +223,7 @@ export default function Foretagskollen() {
             letterSpacing: -0.5,
           }}
         >
-          Företagskollen
+          Textverket
         </h1>
         <p
           style={{
@@ -233,7 +233,7 @@ export default function Foretagskollen() {
             fontWeight: 400,
           }}
         >
-          Gratis AI-texter för svenska småföretag
+          Proffsiga AI-texter för svenska företag
         </p>
       </div>
 
@@ -529,7 +529,7 @@ export default function Foretagskollen() {
           fontSize: 12,
         }}
       >
-        Företagskollen – Gratis AI-verktyg för svenska småföretag
+        © 2026 Textverket · Proffsiga AI-texter för svenska företag
         <br />
         <span style={{ fontSize: 11 }}>Drivs av Claude AI • Annonsfinansierat</span>
       </div>
