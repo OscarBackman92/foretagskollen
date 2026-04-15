@@ -109,20 +109,33 @@ export default function LandingPage() {
             <span style={{ fontSize: 24 }}>✍️</span>
             <span style={{ fontWeight: 700, fontSize: 18 }}>Textverket</span>
           </div>
-          <a
-            href="/verktyg"
-            style={{
-              background: "#1A1A1A",
-              color: "#fff",
-              padding: "10px 22px",
-              borderRadius: 100,
-              fontSize: 14,
-              fontWeight: 600,
-              textDecoration: "none",
-            }}
-          >
-            Testa gratis →
-          </a>
+          <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+            <a
+              href="/blogg"
+              style={{
+                fontSize: 14,
+                fontWeight: 500,
+                color: "#555",
+                textDecoration: "none",
+              }}
+            >
+              Blogg
+            </a>
+            <a
+              href="/verktyg"
+              style={{
+                background: "#1A1A1A",
+                color: "#fff",
+                padding: "10px 22px",
+                borderRadius: 100,
+                fontSize: 14,
+                fontWeight: 600,
+                textDecoration: "none",
+              }}
+            >
+              Testa gratis →
+            </a>
+          </div>
         </nav>
       </FadeIn>
 
