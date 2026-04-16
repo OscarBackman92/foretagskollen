@@ -24,6 +24,42 @@ const ARTICLES = [
     date: "April 2026",
     readTime: "8 min",
   },
+  {
+    slug: "kundmejl-mallar",
+    category: "Mallar",
+    title: "5 mallar för kundmejl som faktiskt fungerar (+ gratis generator)",
+    excerpt:
+      "Färdiga mallar för uppföljningsmejl, reklamationssvar, tackmejl, betalningspåminnelser och återaktivering av vilande kunder.",
+    date: "April 2026",
+    readTime: "7 min",
+  },
+  {
+    slug: "produktbeskrivningar-guide",
+    category: "Guide",
+    title: "Hur skriver man bra produktbeskrivningar? Komplett guide med exempel",
+    excerpt:
+      "7-stegsguide till produkttexter som konverterar — med före/efter-exempel och SEO-tips för svenska e-handlare och småföretag.",
+    date: "April 2026",
+    readTime: "8 min",
+  },
+  {
+    slug: "betalningspaminnelse-mall",
+    category: "Mallar",
+    title: "Betalningspåminnelse — mall och tips för småföretag (2026)",
+    excerpt:
+      "Färdiga mallar för betalningspåminnelser i tre steg: vänlig, bestämd och sista varning. Plus regler och tips för att förebygga sena betalningar.",
+    date: "April 2026",
+    readTime: "6 min",
+  },
+  {
+    slug: "gratis-ai-verktyg",
+    category: "Guide",
+    title: "Gratis AI-verktyg för småföretag i Sverige — 10 bästa valen (2026)",
+    excerpt:
+      "De bästa gratis AI-verktygen för svenska småföretag. Spara tid på textskrivning, design, kundservice och mer — utan kostnad.",
+    date: "April 2026",
+    readTime: "9 min",
+  },
 ];
 
 export default function BloggPage() {

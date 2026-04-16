@@ -24,5 +24,29 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: "https://textverket.se/blogg/kundmejl-mallar",
+      lastModified: new Date("2026-04-16"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://textverket.se/blogg/produktbeskrivningar-guide",
+      lastModified: new Date("2026-04-16"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://textverket.se/blogg/betalningspaminnelse-mall",
+      lastModified: new Date("2026-04-16"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://textverket.se/blogg/gratis-ai-verktyg",
+      lastModified: new Date("2026-04-16"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 }
