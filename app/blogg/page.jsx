@@ -60,6 +60,42 @@ const ARTICLES = [
     date: "April 2026",
     readTime: "9 min",
   },
+  {
+    slug: "professionella-mejl",
+    category: "Guide",
+    title: "Professionella mejl — 7 regler som gör ditt företag trovärdigt",
+    excerpt:
+      "7 konkreta regler för affärsmejl som öppnas, läses och besvaras. Från ämnesrad till tajming — gör varje mejl till ett visitkort.",
+    date: "April 2026",
+    readTime: "7 min",
+  },
+  {
+    slug: "sociala-medier-foretag",
+    category: "Guide",
+    title: "Så skriver du inlägg för sociala medier som företagare — guide med exempel",
+    excerpt:
+      "De fyra innehållstyperna, hook-kropp-CTA-formeln och 10 idéer du kan använda idag. Sluta stirra på en tom skärm.",
+    date: "April 2026",
+    readTime: "8 min",
+  },
+  {
+    slug: "starta-eget-vid-sidan-av-jobbet",
+    category: "Guide",
+    title: "Starta eget vid sidan av jobbet — komplett guide för dig i Sverige (2026)",
+    excerpt:
+      "Steg-för-steg: juridik, registrering, validering, första kunder och tidhantering. Behåll tryggheten medan du testar din idé.",
+    date: "April 2026",
+    readTime: "9 min",
+  },
+  {
+    slug: "gratis-verktyg-egenforetagare",
+    category: "Guide",
+    title: "Gratis verktyg för dig som driver eget — 15 som sparar tid och pengar (2026)",
+    excerpt:
+      "De bästa gratisverktygen för svenska egenföretagare: bokföring, design, webbplats, projekthantering och mer.",
+    date: "April 2026",
+    readTime: "8 min",
+  },
 ];
 
 export default function BloggPage() {

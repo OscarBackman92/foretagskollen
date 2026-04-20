@@ -48,5 +48,29 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: "https://textverket.se/blogg/professionella-mejl",
+      lastModified: new Date("2026-04-20"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://textverket.se/blogg/sociala-medier-foretag",
+      lastModified: new Date("2026-04-20"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://textverket.se/blogg/starta-eget-vid-sidan-av-jobbet",
+      lastModified: new Date("2026-04-20"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://textverket.se/blogg/gratis-verktyg-egenforetagare",
+      lastModified: new Date("2026-04-20"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
 }
