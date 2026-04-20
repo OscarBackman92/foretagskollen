@@ -57,13 +57,20 @@ const AD_TEXTS = [
   {
     title: "Din annons här",
     desc: "Nå tusentals svenska småföretagare",
-    color: "#E8F5E9",
+    bg: "#F0FDF4",
+    border: "#BBF7D0",
   },
-  { title: "Annonsplats", desc: "Kontakta oss för priser", color: "#FFF3E0" },
+  {
+    title: "Annonsplats",
+    desc: "Kontakta oss för priser",
+    bg: "#FFFBEB",
+    border: "#FDE68A",
+  },
   {
     title: "Sponsrad plats",
     desc: "Visa din tjänst för företagare",
-    color: "#E3F2FD",
+    bg: "#EFF6FF",
+    border: "#BFDBFE",
   },
 ];
 
@@ -72,10 +79,10 @@ function AdBanner({ index = 0 }) {
   return (
     <div
       style={{
-        background: ad.color,
-        border: "1px dashed #bbb",
+        background: ad.bg,
+        border: `1px dashed ${ad.border}`,
         borderRadius: 10,
-        padding: "14px 18px",
+        padding: "12px 18px",
         textAlign: "center",
         margin: "16px 0",
         fontFamily: "'DM Sans', sans-serif",
@@ -83,19 +90,20 @@ function AdBanner({ index = 0 }) {
     >
       <div
         style={{
-          fontSize: 11,
-          color: "#999",
-          letterSpacing: 1,
+          fontSize: 10,
+          color: "#9CA3AF",
+          letterSpacing: 1.2,
           textTransform: "uppercase",
-          marginBottom: 4,
+          marginBottom: 3,
+          fontWeight: 600,
         }}
       >
         Annons
       </div>
-      <div style={{ fontWeight: 700, fontSize: 15, color: "#333" }}>
+      <div style={{ fontWeight: 700, fontSize: 14, color: "#374151" }}>
         {ad.title}
       </div>
-      <div style={{ fontSize: 13, color: "#666" }}>{ad.desc}</div>
+      <div style={{ fontSize: 13, color: "#6B7280" }}>{ad.desc}</div>
     </div>
   );
 }
@@ -177,362 +185,386 @@ export default function Textverket() {
     <div
       style={{
         minHeight: "100vh",
-        background:
-          "linear-gradient(168deg, #0D1117 0%, #161B22 40%, #1C2333 100%)",
+        background: "#FAFAF9",
         fontFamily: "'DM Sans', sans-serif",
-        color: "#E6EDF3",
+        color: "#1A1A1A",
       }}
     >
-      <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap"
-        rel="stylesheet"
-      />
-
-      {/* Header */}
-      <div
-        style={{
-          padding: "40px 24px 32px",
-          textAlign: "center",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div
+      {/* Navbar */}
+      <div style={{ borderBottom: "1px solid #EDEDED" }}>
+        <nav
           style={{
-            position: "absolute",
-            top: -80,
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: 400,
-            height: 400,
-            background:
-              "radial-gradient(circle, rgba(99,179,237,0.08) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
-        <div style={{ fontSize: 36, marginBottom: 8 }}>✍️</div>
-        <h1
-          style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: 32,
-            fontWeight: 800,
-            margin: 0,
-            background: "linear-gradient(135deg, #E6EDF3 0%, #63B3ED 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            letterSpacing: -0.5,
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "18px 24px",
+            maxWidth: 640,
+            margin: "0 auto",
           }}
         >
-          Textverket
+          <a
+            href="/"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              textDecoration: "none",
+              color: "#1A1A1A",
+            }}
+          >
+            <span style={{ fontSize: 22 }}>✍️</span>
+            <span style={{ fontWeight: 700, fontSize: 18 }}>Textverket</span>
+          </a>
+          <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+            <a
+              href="/blogg"
+              style={{
+                fontSize: 14,
+                fontWeight: 500,
+                color: "#555",
+                textDecoration: "none",
+              }}
+            >
+              Blogg
+            </a>
+            <a
+              href="/"
+              style={{
+                fontSize: 14,
+                fontWeight: 600,
+                color: "#1A1A1A",
+                textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+                gap: 4,
+              }}
+            >
+              ← Startsidan
+            </a>
+          </div>
+        </nav>
+      </div>
+
+      {/* Hero */}
+      <div
+        style={{
+          maxWidth: 640,
+          margin: "0 auto",
+          padding: "40px 24px 28px",
+          textAlign: "center",
+        }}
+      >
+        <h1
+          style={{
+            fontFamily: "'Instrument Serif', serif",
+            fontSize: "clamp(28px, 5vw, 38px)",
+            fontWeight: 400,
+            margin: "0 0 10px",
+            color: "#111",
+            lineHeight: 1.2,
+          }}
+        >
+          Professionella AI-texter
+          <br />
+          för svenska företag
         </h1>
         <p
           style={{
-            color: "#8B949E",
             fontSize: 15,
-            marginTop: 8,
-            fontWeight: 400,
+            color: "#6B7280",
+            margin: 0,
+            lineHeight: 1.6,
           }}
         >
-          Proffsiga AI-texter för svenska företag
+          Välj kategori, beskriv vad du behöver — klart på sekunder.
         </p>
       </div>
 
-      {/* Ad banner top */}
-      <div style={{ padding: "0 20px" }}>
+      <div style={{ maxWidth: 640, margin: "0 auto", padding: "0 24px 48px" }}>
+
+        {/* Ad banner top */}
         <AdBanner index={0} />
-      </div>
 
-      {/* Category selector */}
-      <div style={{ padding: "8px 20px 0" }}>
-        <div
-          style={{
-            fontSize: 12,
-            color: "#8B949E",
-            textTransform: "uppercase",
-            letterSpacing: 1.5,
-            marginBottom: 12,
-            fontWeight: 500,
-          }}
-        >
-          Välj typ av text
-        </div>
-        <div
-          style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}
-        >
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => {
-                setSelected(cat.id);
-                setResult("");
-                setError("");
-                setCopied(false);
-                setTimeout(() => textareaRef.current?.focus(), 100);
-              }}
-              style={{
-                background:
-                  selected === cat.id
-                    ? "linear-gradient(135deg, #1A3A5C 0%, #1E4976 100%)"
-                    : "rgba(255,255,255,0.04)",
-                border:
-                  selected === cat.id
-                    ? "1.5px solid #63B3ED"
-                    : "1.5px solid rgba(255,255,255,0.08)",
-                borderRadius: 12,
-                padding: "14px 8px",
-                cursor: "pointer",
-                textAlign: "center",
-                transition: "all 0.2s ease",
-                transform: selected === cat.id ? "scale(1.03)" : "scale(1)",
-              }}
-            >
-              <div style={{ fontSize: 22, marginBottom: 4 }}>{cat.icon}</div>
-              <div
-                style={{
-                  fontSize: 12,
-                  fontWeight: selected === cat.id ? 700 : 500,
-                  color: selected === cat.id ? "#63B3ED" : "#8B949E",
-                }}
-              >
-                {cat.label}
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Input area */}
-      {selected && (
-        <div
-          style={{ padding: "20px 20px 0", animation: "fadeIn 0.3s ease" }}
-        >
-          <textarea
-            ref={textareaRef}
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder={CATEGORIES.find((c) => c.id === selected)?.placeholder}
-            rows={4}
-            style={{
-              width: "100%",
-              boxSizing: "border-box",
-              background: "rgba(255,255,255,0.04)",
-              border: "1.5px solid rgba(255,255,255,0.1)",
-              borderRadius: 12,
-              padding: 16,
-              color: "#E6EDF3",
-              fontSize: 15,
-              fontFamily: "'DM Sans', sans-serif",
-              resize: "vertical",
-              outline: "none",
-              transition: "border-color 0.2s",
-            }}
-            onFocus={(e) => (e.target.style.borderColor = "#63B3ED")}
-            onBlur={(e) =>
-              (e.target.style.borderColor = "rgba(255,255,255,0.1)")
-            }
-          />
-
-          <button
-            onClick={handleGenerate}
-            disabled={loading || !input.trim()}
-            style={{
-              width: "100%",
-              marginTop: 12,
-              padding: "14px 24px",
-              background:
-                loading || !input.trim()
-                  ? "rgba(99,179,237,0.2)"
-                  : "linear-gradient(135deg, #2563EB 0%, #3B82F6 100%)",
-              color: loading || !input.trim() ? "#63B3ED" : "#fff",
-              border: "none",
-              borderRadius: 12,
-              fontSize: 15,
-              fontWeight: 700,
-              cursor: loading || !input.trim() ? "not-allowed" : "pointer",
-              fontFamily: "'DM Sans', sans-serif",
-              letterSpacing: 0.3,
-              transition: "all 0.2s",
-            }}
-          >
-            {loading ? "⏳ Genererar..." : "Skapa text →"}
-          </button>
-        </div>
-      )}
-
-      {/* Error */}
-      {error && (
-        <div
-          style={{
-            margin: "16px 20px",
-            padding: 14,
-            background: "rgba(239,68,68,0.1)",
-            border: "1px solid rgba(239,68,68,0.3)",
-            borderRadius: 10,
-            color: "#FCA5A5",
-            fontSize: 14,
-          }}
-        >
-          {error}
-        </div>
-      )}
-
-      {/* Result */}
-      {result && (
-        <div style={{ padding: "20px 20px 0", animation: "fadeIn 0.4s ease" }}>
-          <div
-            style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1.5px solid rgba(99,179,237,0.2)",
-              borderRadius: 14,
-              padding: 20,
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                marginBottom: 12,
-              }}
-            >
-              <span
-                style={{
-                  fontSize: 12,
-                  color: "#63B3ED",
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: 1,
-                }}
-              >
-                Resultat
-              </span>
-              <button
-                onClick={handleCopy}
-                style={{
-                  background: copied
-                    ? "rgba(34,197,94,0.2)"
-                    : "rgba(255,255,255,0.08)",
-                  border:
-                    "1px solid " +
-                    (copied
-                      ? "rgba(34,197,94,0.4)"
-                      : "rgba(255,255,255,0.15)"),
-                  borderRadius: 8,
-                  padding: "6px 14px",
-                  color: copied ? "#4ADE80" : "#8B949E",
-                  fontSize: 12,
-                  fontWeight: 600,
-                  cursor: "pointer",
-                  fontFamily: "'DM Sans', sans-serif",
-                  transition: "all 0.2s",
-                }}
-              >
-                {copied ? "✓ Kopierat!" : "📋 Kopiera"}
-              </button>
-            </div>
-            <div
-              style={{
-                fontSize: 15,
-                lineHeight: 1.7,
-                color: "#C9D1D9",
-                whiteSpace: "pre-wrap",
-              }}
-            >
-              <TypewriterText text={result} />
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Ad banner mid */}
-      <div style={{ padding: "0 20px" }}>
-        <AdBanner index={1} />
-      </div>
-
-      {/* History */}
-      {history.length > 0 && (
-        <div style={{ padding: "8px 20px 0" }}>
+        {/* Category selector */}
+        <div style={{ marginBottom: 20 }}>
           <div
             style={{
               fontSize: 12,
-              color: "#8B949E",
+              color: "#9CA3AF",
               textTransform: "uppercase",
-              letterSpacing: 1.5,
-              marginBottom: 10,
-              fontWeight: 500,
+              letterSpacing: 1.2,
+              marginBottom: 12,
+              fontWeight: 600,
             }}
           >
-            Senaste texter
+            Välj typ av text
           </div>
-          {history.slice(0, 3).map((item, i) => (
-            <div
-              key={i}
-              onClick={() => {
-                setResult(item.result);
-                setCopied(false);
-              }}
-              style={{
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.06)",
-                borderRadius: 10,
-                padding: "12px 14px",
-                marginBottom: 8,
-                cursor: "pointer",
-                transition: "background 0.2s",
-              }}
-            >
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <span
+          <div
+            style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}
+          >
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => {
+                  setSelected(cat.id);
+                  setResult("");
+                  setError("");
+                  setCopied(false);
+                  setTimeout(() => textareaRef.current?.focus(), 100);
+                }}
+                style={{
+                  background: selected === cat.id ? "#EFF6FF" : "#fff",
+                  border:
+                    selected === cat.id
+                      ? "1.5px solid #2563EB"
+                      : "1.5px solid #EDEDED",
+                  borderRadius: 12,
+                  padding: "14px 8px",
+                  cursor: "pointer",
+                  textAlign: "center",
+                  transition: "all 0.15s ease",
+                  transform: selected === cat.id ? "scale(1.03)" : "scale(1)",
+                  boxShadow: selected === cat.id
+                    ? "0 0 0 3px rgba(37,99,235,0.08)"
+                    : "none",
+                }}
+              >
+                <div style={{ fontSize: 22, marginBottom: 4 }}>{cat.icon}</div>
+                <div
                   style={{
-                    fontSize: 13,
-                    fontWeight: 600,
-                    color: "#C9D1D9",
+                    fontSize: 12,
+                    fontWeight: selected === cat.id ? 700 : 500,
+                    color: selected === cat.id ? "#2563EB" : "#6B7280",
                   }}
                 >
-                  {item.category}
+                  {cat.label}
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Input area */}
+        {selected && (
+          <div style={{ animation: "fadeIn 0.3s ease" }}>
+            <textarea
+              ref={textareaRef}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder={CATEGORIES.find((c) => c.id === selected)?.placeholder}
+              rows={4}
+              style={{
+                width: "100%",
+                boxSizing: "border-box",
+                background: "#fff",
+                border: "1.5px solid #EDEDED",
+                borderRadius: 12,
+                padding: 16,
+                color: "#1A1A1A",
+                fontSize: 15,
+                fontFamily: "'DM Sans', sans-serif",
+                resize: "vertical",
+                outline: "none",
+                transition: "border-color 0.2s",
+              }}
+              onFocus={(e) => (e.target.style.borderColor = "#2563EB")}
+              onBlur={(e) => (e.target.style.borderColor = "#EDEDED")}
+            />
+
+            <button
+              onClick={handleGenerate}
+              disabled={loading || !input.trim()}
+              style={{
+                width: "100%",
+                marginTop: 12,
+                padding: "14px 24px",
+                background:
+                  loading || !input.trim()
+                    ? "#F3F4F6"
+                    : "linear-gradient(135deg, #2563EB 0%, #059669 100%)",
+                color: loading || !input.trim() ? "#9CA3AF" : "#fff",
+                border: "none",
+                borderRadius: 12,
+                fontSize: 15,
+                fontWeight: 700,
+                cursor: loading || !input.trim() ? "not-allowed" : "pointer",
+                fontFamily: "'DM Sans', sans-serif",
+                letterSpacing: 0.3,
+                transition: "all 0.2s",
+              }}
+            >
+              {loading ? "⏳ Genererar..." : "Skapa text →"}
+            </button>
+          </div>
+        )}
+
+        {/* Error */}
+        {error && (
+          <div
+            style={{
+              marginTop: 16,
+              padding: 14,
+              background: "#FFF5F5",
+              border: "1px solid #FED7D7",
+              borderRadius: 10,
+              color: "#C53030",
+              fontSize: 14,
+            }}
+          >
+            {error}
+          </div>
+        )}
+
+        {/* Result */}
+        {result && (
+          <div style={{ marginTop: 20, animation: "fadeIn 0.4s ease" }}>
+            <div
+              style={{
+                background: "#fff",
+                border: "1.5px solid #BFDBFE",
+                borderRadius: 14,
+                padding: 20,
+                boxShadow: "0 2px 12px rgba(37,99,235,0.06)",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 14,
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: 11,
+                    color: "#2563EB",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: 1,
+                  }}
+                >
+                  Resultat
                 </span>
-                <span style={{ fontSize: 11, color: "#484F58" }}>
-                  {item.time.toLocaleTimeString("sv-SE", {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
-                </span>
+                <button
+                  onClick={handleCopy}
+                  style={{
+                    background: copied ? "#F0FDF4" : "#F9FAFB",
+                    border: `1px solid ${copied ? "#BBF7D0" : "#E5E7EB"}`,
+                    borderRadius: 8,
+                    padding: "5px 14px",
+                    color: copied ? "#15803D" : "#6B7280",
+                    fontSize: 12,
+                    fontWeight: 600,
+                    cursor: "pointer",
+                    fontFamily: "'DM Sans', sans-serif",
+                    transition: "all 0.2s",
+                  }}
+                >
+                  {copied ? "✓ Kopierat!" : "📋 Kopiera"}
+                </button>
               </div>
               <div
                 style={{
-                  fontSize: 12,
-                  color: "#6E7681",
-                  marginTop: 4,
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                  whiteSpace: "nowrap",
+                  fontSize: 15,
+                  lineHeight: 1.75,
+                  color: "#374151",
+                  whiteSpace: "pre-wrap",
                 }}
               >
-                {item.input}
+                <TypewriterText text={result} />
               </div>
             </div>
-          ))}
-        </div>
-      )}
+          </div>
+        )}
 
-      {/* Bottom ad */}
-      <div style={{ padding: "0 20px" }}>
+        {/* Ad banner mid */}
+        <AdBanner index={1} />
+
+        {/* History */}
+        {history.length > 0 && (
+          <div style={{ marginBottom: 8 }}>
+            <div
+              style={{
+                fontSize: 12,
+                color: "#9CA3AF",
+                textTransform: "uppercase",
+                letterSpacing: 1.2,
+                marginBottom: 10,
+                fontWeight: 600,
+              }}
+            >
+              Senaste texter
+            </div>
+            {history.slice(0, 3).map((item, i) => (
+              <div
+                key={i}
+                onClick={() => {
+                  setResult(item.result);
+                  setCopied(false);
+                }}
+                style={{
+                  background: "#fff",
+                  border: "1px solid #EDEDED",
+                  borderRadius: 10,
+                  padding: "12px 14px",
+                  marginBottom: 8,
+                  cursor: "pointer",
+                  transition: "border-color 0.15s, box-shadow 0.15s",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "#BFDBFE";
+                  e.currentTarget.style.boxShadow = "0 1px 6px rgba(37,99,235,0.08)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "#EDEDED";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: "#1A1A1A" }}>
+                    {item.category}
+                  </span>
+                  <span style={{ fontSize: 11, color: "#9CA3AF" }}>
+                    {item.time.toLocaleTimeString("sv-SE", {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </span>
+                </div>
+                <div
+                  style={{
+                    fontSize: 12,
+                    color: "#6B7280",
+                    marginTop: 4,
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {item.input}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Bottom ad */}
         <AdBanner index={2} />
       </div>
 
       {/* Footer */}
-      <div
+      <footer
         style={{
           textAlign: "center",
-          padding: "24px 20px 40px",
-          color: "#484F58",
-          fontSize: 12,
+          padding: "28px",
+          color: "#9CA3AF",
+          fontSize: 13,
+          borderTop: "1px solid #EDEDED",
         }}
       >
-        © 2026 Textverket · Proffsiga AI-texter för svenska företag
-        <br />
-        <span style={{ fontSize: 11 }}>Drivs av Claude AI • Annonsfinansierat</span>
-      </div>
+        © 2026 Textverket · Gratis AI-verktyg för svenska företag
+      </footer>
 
       <style>{`
         @keyframes fadeIn {
