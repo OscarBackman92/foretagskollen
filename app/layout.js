@@ -1,5 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
+import CookieBanner from "./components/CookieBanner";
 
 export const metadata = {
   title: "Textverket — Proffsiga AI-texter för svenska företag",
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
+        <CookieBanner />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-14P78WLMDX"
           strategy="afterInteractive"
