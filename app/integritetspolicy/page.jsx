@@ -234,10 +234,10 @@ export default function IntegritetspolicyPage() {
             Har du frågor om denna policy eller vill utöva dina rättigheter?
             Kontakta oss på{" "}
             <a
-              href="mailto:oscar@textverket.se"
+              href="mailto:textverketswe@gmail.com"
               style={{ color: "#2563EB" }}
             >
-              oscar@textverket.se
+              textverketswe@gmail.com
             </a>
           </p>
         </Section>
