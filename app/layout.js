@@ -33,15 +33,15 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&display=swap"
           rel="stylesheet"
         />
-      </head>
-      <body>
-        {children}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9223370591083087"
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+      </head>
+      <body>
+        {children}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-14P78WLMDX"
           strategy="afterInteractive"
