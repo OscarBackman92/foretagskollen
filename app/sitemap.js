@@ -103,6 +103,42 @@ export default function sitemap() {
       priority: 0.7,
     },
     {
+      url: "https://textverket.se/verktyg/offertmejl",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://textverket.se/verktyg/produkttext",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://textverket.se/verktyg/kundmejl",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://textverket.se/verktyg/sociala-medier",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://textverket.se/verktyg/fakturatext",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://textverket.se/verktyg/fritext",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://textverket.se/integritetspolicy",
       lastModified: new Date("2026-04-21"),
       changeFrequency: "yearly",

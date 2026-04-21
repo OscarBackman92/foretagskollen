@@ -3,12 +3,12 @@
 import { useState, useEffect } from "react";
 
 const FEATURES = [
-  { icon: "📨", title: "Offertmejl", desc: "Proffsiga offerter som vinner affärer" },
-  { icon: "🏷️", title: "Produkttexter", desc: "Säljande beskrivningar för webben" },
-  { icon: "💬", title: "Kundmejl", desc: "Uppföljningar, tack och reklamationer" },
-  { icon: "📱", title: "Sociala medier", desc: "Engagerande inlägg som syns" },
-  { icon: "🧾", title: "Fakturatexter", desc: "Tydliga betalningspåminnelser" },
-  { icon: "✨", title: "Fritext", desc: "Vad som helst ditt företag behöver" },
+  { icon: "📨", title: "Offertmejl", desc: "Proffsiga offerter som vinner affärer", href: "/verktyg/offertmejl" },
+  { icon: "🏷️", title: "Produkttexter", desc: "Säljande beskrivningar för webben", href: "/verktyg/produkttext" },
+  { icon: "💬", title: "Kundmejl", desc: "Uppföljningar, tack och reklamationer", href: "/verktyg/kundmejl" },
+  { icon: "📱", title: "Sociala medier", desc: "Engagerande inlägg som syns", href: "/verktyg/sociala-medier" },
+  { icon: "🧾", title: "Fakturatexter", desc: "Tydliga betalningspåminnelser", href: "/verktyg/fakturatext" },
+  { icon: "✨", title: "Fritext", desc: "Vad som helst ditt företag behöver", href: "/verktyg/fritext" },
 ];
 
 const TESTIMONIALS = [
@@ -299,22 +299,25 @@ export default function LandingPage() {
         >
           {FEATURES.map((f, i) => (
             <FadeIn key={i} delay={150 + i * 80}>
-              <div
-                style={{
-                  background: "#fff",
-                  border: "1px solid #EDEDED",
-                  borderRadius: 14,
-                  padding: "24px 22px",
-                }}
-              >
-                <div style={{ fontSize: 30, marginBottom: 12 }}>{f.icon}</div>
-                <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>
-                  {f.title}
+              <a href={f.href} style={{ textDecoration: "none", color: "inherit", display: "block" }}>
+                <div
+                  style={{
+                    background: "#fff",
+                    border: "1px solid #EDEDED",
+                    borderRadius: 14,
+                    padding: "24px 22px",
+                    cursor: "pointer",
+                  }}
+                >
+                  <div style={{ fontSize: 30, marginBottom: 12 }}>{f.icon}</div>
+                  <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>
+                    {f.title}
+                  </div>
+                  <div style={{ fontSize: 14, color: "#777", lineHeight: 1.5 }}>
+                    {f.desc}
+                  </div>
                 </div>
-                <div style={{ fontSize: 14, color: "#777", lineHeight: 1.5 }}>
-                  {f.desc}
-                </div>
-              </div>
+              </a>
             </FadeIn>
           ))}
         </div>
