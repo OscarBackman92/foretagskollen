@@ -49,6 +49,36 @@ export default function sitemap() {
       priority: 0.7,
     },
     {
+      url: "https://textverket.se/blogg/personligt-brev-cv",
+      lastModified: new Date("2026-04-21"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://textverket.se/blogg/linkedin-profil",
+      lastModified: new Date("2026-04-21"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://textverket.se/blogg/pressmeddelande-mall",
+      lastModified: new Date("2026-04-21"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://textverket.se/blogg/nyhetsbrev-guide",
+      lastModified: new Date("2026-04-21"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://textverket.se/blogg/seo-smaforetag",
+      lastModified: new Date("2026-04-21"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: "https://textverket.se/blogg/professionella-mejl",
       lastModified: new Date("2026-04-20"),
       changeFrequency: "monthly",

@@ -15,6 +15,51 @@ export const metadata = {
 
 const ARTICLES = [
   {
+    slug: "seo-smaforetag",
+    category: "Guide",
+    title: "SEO för småföretag — enkel guide som faktiskt fungerar (2026)",
+    excerpt:
+      "5-stegsguide till SEO utan byrå och utan dyra verktyg. Hitta sökord, skriv innehåll som rankar, teknisk SEO och länkbygge.",
+    date: "April 2026",
+    readTime: "9 min",
+  },
+  {
+    slug: "nyhetsbrev-guide",
+    category: "Guide",
+    title: "Nyhetsbrev som folk faktiskt vill läsa — guide med mallar",
+    excerpt:
+      "Den gyllene regeln, strukturen som fungerar, vad du ska skriva om och hur ofta. Sluta skicka nyhetsbrev ingen öppnar.",
+    date: "April 2026",
+    readTime: "7 min",
+  },
+  {
+    slug: "pressmeddelande-mall",
+    category: "Mallar",
+    title: "Pressmeddelande — mall och guide med exempel (2026)",
+    excerpt:
+      "Färdig mall med komplett exempel. Pyramidstrukturen, vad som är en nyhet, och 10 tips som gör att journalister faktiskt läser.",
+    date: "April 2026",
+    readTime: "7 min",
+  },
+  {
+    slug: "linkedin-profil",
+    category: "Guide",
+    title: "LinkedIn-profil som ger resultat — komplett guide (2026)",
+    excerpt:
+      "Rubrik, profilbild, sammanfattning, erfarenhet och aktivitet — gör om din LinkedIn från digitalt CV till magnet för affärer.",
+    date: "April 2026",
+    readTime: "7 min",
+  },
+  {
+    slug: "personligt-brev-cv",
+    category: "Mallar",
+    title: "Personligt brev och CV — kompletta mallar och tips (2026)",
+    excerpt:
+      "Strukturen som fungerar, komplett brevexempel och CV-tipset som gör all skillnad: fokusera på resultat, inte uppgifter.",
+    date: "April 2026",
+    readTime: "8 min",
+  },
+  {
     slug: "offertmejl-guide",
     category: "Guide",
     title:
