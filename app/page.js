@@ -580,7 +580,13 @@ export default function LandingPage() {
           background: "#0A0A0A",
         }}
       >
-        © 2026 Textverket · Gratis AI-verktyg för svenska småföretag
+        © 2026 Textverket · Gratis AI-verktyg för svenska småföretag ·{" "}
+        <a
+          href="/integritetspolicy"
+          style={{ color: "#BBB", textDecoration: "underline" }}
+        >
+          Integritetspolicy
+        </a>
       </div>
     </div>
   );

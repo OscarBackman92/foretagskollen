@@ -563,7 +563,13 @@ export default function Textverket() {
           borderTop: "1px solid #EDEDED",
         }}
       >
-        © 2026 Textverket · Gratis AI-verktyg för svenska företag
+        © 2026 Textverket · Gratis AI-verktyg för svenska företag ·{" "}
+        <a
+          href="/integritetspolicy"
+          style={{ color: "#9CA3AF", textDecoration: "underline" }}
+        >
+          Integritetspolicy
+        </a>
       </footer>
 
       <style>{`

@@ -102,5 +102,11 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: "https://textverket.se/integritetspolicy",
+      lastModified: new Date("2026-04-21"),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 }
