@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import NavBar from "../components/NavBar";
 
 const CATEGORIES = [
   {
@@ -204,36 +205,7 @@ export default function ToolClient({ initialCategory = null }) {
         color: "#1A1A1A",
       }}
     >
-      {/* Navbar */}
-      <div style={{ borderBottom: "1px solid #EDEDED" }}>
-        <nav style={{
-          display: "flex", justifyContent: "space-between", alignItems: "center",
-          padding: "18px 24px", maxWidth: 960, margin: "0 auto",
-          fontFamily: "'DM Sans', sans-serif",
-        }}>
-          <a href="/" style={{ display: "flex", alignItems: "center", gap: 8, textDecoration: "none", color: "#1A1A1A" }}>
-            <span style={{ fontSize: 22 }}>✍️</span>
-            <span style={{ fontWeight: 700, fontSize: 18 }}>Textverket</span>
-          </a>
-          <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-            {[
-              { href: "/blogg", label: "Blogg" },
-              { href: "/guide", label: "Guide" },
-              { href: "/om-oss", label: "Om oss" },
-              { href: "/kontakt", label: "Kontakt" },
-            ].map(l => (
-              <a key={l.href} href={l.href} style={{ fontSize: 14, fontWeight: 500, color: "#555", textDecoration: "none" }}>
-                {l.label}
-              </a>
-            ))}
-          </div>
-        </nav>
-        <style>{`
-          @media (max-width: 640px) {
-            .tool-nav-links { display: none !important; }
-          }
-        `}</style>
-      </div>
+      <NavBar />
 
       {/* Hero */}
       <div
