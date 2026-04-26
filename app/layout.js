@@ -5,7 +5,7 @@ import CookieBanner from "./components/CookieBanner";
 export const metadata = {
   title: "Textverket — Proffsiga AI-texter för svenska företag",
   description:
-    "Skriv professionella offertmejl, produkttexter och kundmejl gratis med AI. Skräddarsytt för svenska småföretag.",
+    "Gratis AI-verktyg som hjälper svenska småföretag skriva professionella offertmejl, produkttexter, kundmejl och mer på sekunder.",
   keywords:
     "AI texter småföretag, offertmejl generator, gratis AI verktyg, textverket, svenska företag",
   metadataBase: new URL("https://textverket.se"),

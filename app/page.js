@@ -61,20 +61,36 @@ export default function LandingPage() {
 
   const faqs = [
     {
-      q: "Kostar det verkligen ingenting?",
-      a: "Ja! Textverket är 100% gratis att använda. Vi finansieras genom annonser, så du betalar aldrig ett öre.",
+      q: "Är det verkligen gratis?",
+      a: "Ja, helt gratis. Textverket finansieras via annonsintäkter, precis som en gratistidning. Du betalar ingenting, nu eller i framtiden, och behöver inget konto.",
     },
     {
-      q: "Hur bra är texterna?",
-      a: "Vi använder den senaste AI-teknologin (Claude av Anthropic) som skriver naturlig, professionell svenska. Du kan alltid redigera och anpassa resultatet.",
-    },
-    {
-      q: "Sparas mina texter?",
-      a: "Nej, vi sparar ingenting. Dina texter genereras i realtid och försvinner när du stänger sidan. Din data är din.",
+      q: "Hur fungerar AI-tekniken bakom?",
+      a: "Textverket använder Claude, en avancerad AI-modell från Anthropic. Claude är känd för sin förmåga att producera naturlig, sammanhängande text på svenska och förstå nyanserade instruktioner.",
     },
     {
       q: "Kan jag använda texterna kommersiellt?",
-      a: "Absolut. Alla texter som genereras är dina att använda fritt – i mejl, på hemsidan, i sociala medier, var som helst.",
+      a: "Absolut. Alla texter som genereras tillhör dig och kan användas fritt — i mejl, på hemsidan, i sociala medier eller i tryck. Det finns inga begränsningar.",
+    },
+    {
+      q: "Sparas mina texter någonstans?",
+      a: "Nej. Vi lagrar varken de texter du skriver in eller de texter som genereras. Allt sker i realtid och försvinner när du stänger webbläsaren. Din data stannar hos dig.",
+    },
+    {
+      q: "Vilken AI används?",
+      a: "Vi använder Claude från Anthropic — samma AI-teknik som används av stora företag världen över, nu tillgänglig gratis för svenska småföretag via Textverket.",
+    },
+    {
+      q: "Hur skiljer sig Textverket från ChatGPT?",
+      a: "ChatGPT är ett generellt verktyg på engelska. Textverket är specialbyggt för svenska affärstexter — varje verktyg har en optimerad prompt för sin texttyp, och allt är anpassat för hur svenska företag kommunicerar.",
+    },
+    {
+      q: "Fungerar verktyget bara på svenska?",
+      a: "Verktyget är optimerat för svenska och ger bäst resultat på svenska. Du kan dock skriva din beskrivning på engelska om du vill ha texten på engelska — AI:n förstår och anpassar sig.",
+    },
+    {
+      q: "Hur kan ni erbjuda detta gratis?",
+      a: "Vi finansieras via annonsintäkter från Google AdSense. Du ser annonser på sidan, vilket ger oss intäkter som täcker kostnaden för AI-tjänsten och drift. Ingen prenumeration, inga dolda avgifter.",
     },
   ];
 
@@ -109,18 +125,17 @@ export default function LandingPage() {
             <span style={{ fontSize: 24 }}>✍️</span>
             <span style={{ fontWeight: 700, fontSize: 18 }}>Textverket</span>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-            <a
-              href="/blogg"
-              style={{
-                fontSize: 14,
-                fontWeight: 500,
-                color: "#555",
-                textDecoration: "none",
-              }}
-            >
-              Blogg
-            </a>
+          <div className="home-nav-links" style={{ display: "flex", alignItems: "center", gap: 24 }}>
+            {[
+              { href: "/blogg", label: "Blogg" },
+              { href: "/guide", label: "Guide" },
+              { href: "/om-oss", label: "Om oss" },
+              { href: "/kontakt", label: "Kontakt" },
+            ].map(l => (
+              <a key={l.href} href={l.href} style={{ fontSize: 14, fontWeight: 500, color: "#555", textDecoration: "none" }}>
+                {l.label}
+              </a>
+            ))}
             <a
               href="/verktyg"
               style={{
@@ -136,6 +151,9 @@ export default function LandingPage() {
               Testa gratis →
             </a>
           </div>
+          <style>{`
+            @media (max-width: 640px) { .home-nav-links { display: none !important; } }
+          `}</style>
         </nav>
       </FadeIn>
 
@@ -574,22 +592,20 @@ export default function LandingPage() {
       </div>
 
       {/* Footer */}
-      <div
-        style={{
-          textAlign: "center",
-          padding: "32px 28px",
-          color: "#BBB",
-          fontSize: 13,
-          background: "#0A0A0A",
-        }}
-      >
+      <div style={{ textAlign: "center", padding: "32px 28px", color: "#BBB", fontSize: 13, background: "#0A0A0A" }}>
         © 2026 Textverket · Gratis AI-verktyg för svenska småföretag ·{" "}
-        <a
-          href="/integritetspolicy"
-          style={{ color: "#BBB", textDecoration: "underline" }}
-        >
-          Integritetspolicy
-        </a>
+        {[
+          { href: "/om-oss", label: "Om oss" },
+          { href: "/kontakt", label: "Kontakt" },
+          { href: "/guide", label: "Guide" },
+          { href: "/integritetspolicy", label: "Integritetspolicy" },
+          { href: "/blogg", label: "Blogg" },
+        ].map((l, i, arr) => (
+          <span key={l.href}>
+            <a href={l.href} style={{ color: "#BBB", textDecoration: "underline" }}>{l.label}</a>
+            {i < arr.length - 1 && " · "}
+          </span>
+        ))}
       </div>
     </div>
   );

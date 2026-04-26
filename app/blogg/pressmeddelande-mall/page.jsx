@@ -1,3 +1,6 @@
+import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
+
 export const metadata = {
   title: "Pressmeddelande — mall och guide med exempel (2026) — Textverket",
   description:
@@ -66,18 +69,7 @@ const TIPS = [
 export default function PressmeddelandeMallPage() {
   return (
     <div style={S.page}>
-      <div style={S.navWrap}>
-        <nav style={S.nav}>
-          <a href="/" style={S.logo}>
-            <span style={{ fontSize: 22 }}>✍️</span>
-            <span style={{ fontWeight: 700, fontSize: 18 }}>Textverket</span>
-          </a>
-          <div style={S.navLinks}>
-            <a href="/blogg" style={S.navLink}>Blogg</a>
-            <a href="/verktyg" style={S.navCta}>Testa gratis →</a>
-          </div>
-        </nav>
-      </div>
+      <NavBar />
 
       <article style={S.article}>
         <div style={S.breadcrumb}>
@@ -248,7 +240,7 @@ export default function PressmeddelandeMallPage() {
         </p>
       </article>
 
-      <footer style={S.footer}>© 2026 Textverket · Gratis AI-verktyg för svenska företag</footer>
+      <Footer />
     </div>
   );
 }

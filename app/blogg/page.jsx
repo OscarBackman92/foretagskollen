@@ -143,6 +143,9 @@ const ARTICLES = [
   },
 ];
 
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+
 export default function BloggPage() {
   return (
     <div
@@ -153,60 +156,7 @@ export default function BloggPage() {
         color: "#1A1A1A",
       }}
     >
-      {/* Nav */}
-      <div style={{ borderBottom: "1px solid #EDEDED" }}>
-        <nav
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "18px 28px",
-            maxWidth: 960,
-            margin: "0 auto",
-          }}
-        >
-          <a
-            href="/"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-              textDecoration: "none",
-              color: "#1A1A1A",
-            }}
-          >
-            <span style={{ fontSize: 22 }}>✍️</span>
-            <span style={{ fontWeight: 700, fontSize: 18 }}>Textverket</span>
-          </a>
-          <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-            <a
-              href="/blogg"
-              style={{
-                fontSize: 14,
-                fontWeight: 600,
-                color: "#1A1A1A",
-                textDecoration: "none",
-              }}
-            >
-              Blogg
-            </a>
-            <a
-              href="/verktyg"
-              style={{
-                background: "#1A1A1A",
-                color: "#fff",
-                padding: "9px 20px",
-                borderRadius: 100,
-                fontSize: 14,
-                fontWeight: 600,
-                textDecoration: "none",
-              }}
-            >
-              Testa gratis →
-            </a>
-          </div>
-        </nav>
-      </div>
+      <NavBar />
 
       {/* Hero */}
       <div
@@ -423,24 +373,7 @@ export default function BloggPage() {
         </a>
       </div>
 
-      {/* Footer */}
-      <footer
-        style={{
-          textAlign: "center",
-          padding: "28px",
-          color: "#9CA3AF",
-          fontSize: 13,
-          borderTop: "1px solid #EDEDED",
-        }}
-      >
-        © 2026 Textverket · Gratis AI-verktyg för svenska företag ·{" "}
-        <a
-          href="/integritetspolicy"
-          style={{ color: "#9CA3AF", textDecoration: "underline" }}
-        >
-          Integritetspolicy
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -139,6 +139,24 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
+      url: "https://textverket.se/om-oss",
+      lastModified: new Date("2026-04-26"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://textverket.se/kontakt",
+      lastModified: new Date("2026-04-26"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://textverket.se/guide",
+      lastModified: new Date("2026-04-26"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://textverket.se/integritetspolicy",
       lastModified: new Date("2026-04-21"),
       changeFrequency: "yearly",
