@@ -6,6 +6,9 @@ export const metadata = {
     "Skriv tydliga fakturatexter och betalningspåminnelser med AI. Gratis verktyg för svenska småföretag.",
   keywords:
     "fakturatext generator, betalningspåminnelse AI, fakturatext mall, påminnelse faktura",
+  alternates: {
+    canonical: "/verktyg/fakturatext",
+  },
   openGraph: {
     title: "Fakturatext-generator — betalningspåminnelser med AI | Textverket",
     description:

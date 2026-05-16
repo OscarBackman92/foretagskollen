@@ -6,6 +6,9 @@ export const metadata = {
     "Skriv säljande produktbeskrivningar med AI. Gratis verktyg för svenska e-handlare och företag som vill konvertera mer.",
   keywords:
     "produkttext generator, produktbeskrivning AI, säljande produkttexter, e-handel texter",
+  alternates: {
+    canonical: "/verktyg/produkttext",
+  },
   openGraph: {
     title: "Produkttext-generator — säljande beskrivningar med AI | Textverket",
     description:

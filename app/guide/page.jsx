@@ -4,6 +4,10 @@ import Footer from "../components/Footer";
 export const metadata = {
   title: "Användarguide — Så får du bäst resultat med Textverket",
   description: "Steg-för-steg-guide som visar hur du väljer rätt verktyg, beskriver ditt behov och anpassar AI-genererade texter för bästa resultat.",
+  keywords: "guide textverket, använda AI textgenerator, tips bästa resultat AI, hur fungerar textverket",
+  alternates: {
+    canonical: "/guide",
+  },
   openGraph: {
     title: "Användarguide — Textverket",
     description: "Steg-för-steg-guide för bästa resultat med Textverkets AI-verktyg.",

@@ -4,6 +4,10 @@ import Footer from "../components/Footer";
 export const metadata = {
   title: "Om oss — Textverket",
   description: "Lär känna Textverket — varför vi byggde det, vad som gör det unikt och hur vi finansierar gratis AI-verktyg för svenska småföretag.",
+  keywords: "om textverket, gratis AI verktyg, svenska småföretag, AI textgenerator, vem driver textverket",
+  alternates: {
+    canonical: "/om-oss",
+  },
   openGraph: {
     title: "Om oss — Textverket",
     description: "Lär känna Textverket — varför vi byggde det och hur vi hjälper svenska småföretag skriva professionella texter.",

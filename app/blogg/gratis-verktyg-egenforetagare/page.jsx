@@ -5,6 +5,10 @@ export const metadata = {
   title: "Gratis verktyg för dig som driver eget — 15 som sparar tid och pengar (2026) — Textverket",
   description:
     "15 gratis verktyg för svenska egenföretagare: bokföring, fakturering, design, webbplats, projekthantering, sociala medier och analys.",
+  keywords: "gratis verktyg egenföretagare, bokföring gratis, fakturering gratis, verktyg frilansare Sverige, egenföretagare verktyg",
+  alternates: {
+    canonical: "/blogg/gratis-verktyg-egenforetagare",
+  },
   openGraph: {
     title: "Gratis verktyg för dig som driver eget — 15 som sparar tid och pengar (2026)",
     description:

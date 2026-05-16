@@ -2,6 +2,10 @@ export const metadata = {
   title: "Blogg — Textverket",
   description:
     "Guider och tips för svenska småföretag. Lär dig skriva bättre offertmejl, produkttexter och kundkommunikation.",
+  keywords: "blogg affärskommunikation, tips småföretag, guider svenska företagare, AI verktyg guide, textverktyg",
+  alternates: {
+    canonical: "/blogg",
+  },
   openGraph: {
     title: "Blogg — Textverket",
     description:

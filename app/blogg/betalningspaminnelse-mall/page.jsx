@@ -5,6 +5,10 @@ export const metadata = {
   title: "Betalningspåminnelse — mall och tips för småföretag (2026) — Textverket",
   description:
     "Färdiga mallar för betalningspåminnelser i tre steg: vänlig, bestämd och sista varning. Plus regler och tips för att förebygga sena betalningar.",
+  keywords: "betalningspåminnelse mall, påminnelse faktura, betalningspåminnelse text, faktura påminnelse mall",
+  alternates: {
+    canonical: "/blogg/betalningspaminnelse-mall",
+  },
   openGraph: {
     title: "Betalningspåminnelse — mall och tips för småföretag (2026)",
     description:

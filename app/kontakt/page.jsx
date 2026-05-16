@@ -4,6 +4,10 @@ import Footer from "../components/Footer";
 export const metadata = {
   title: "Kontakt — Textverket",
   description: "Kontakta Textverket med frågor, feedback eller samarbetsförslag. Vi svarar inom 1–2 vardagar.",
+  keywords: "kontakta textverket, feedback AI verktyg, mejl textverket, samarbete textverket",
+  alternates: {
+    canonical: "/kontakt",
+  },
   openGraph: {
     title: "Kontakt — Textverket",
     description: "Kontakta oss med frågor, feedback eller samarbetsförslag.",

@@ -5,6 +5,10 @@ export const metadata = {
   title: "Pressmeddelande — mall och guide med exempel (2026) — Textverket",
   description:
     "Färdig mall för pressmeddelande med komplett exempel. Lär dig pyramidstrukturen, vad som är en nyhet, och 10 tips som gör skillnad.",
+  keywords: "pressmeddelande mall, pressmeddelande exempel, skriva pressrelease, PR guide Sverige, nyhetstext mall",
+  alternates: {
+    canonical: "/blogg/pressmeddelande-mall",
+  },
   openGraph: {
     title: "Pressmeddelande — mall och guide med exempel (2026)",
     description:

@@ -6,6 +6,9 @@ export const metadata = {
     "Generera professionella offertmejl på sekunder. Gratis AI-verktyg för svenska småföretag som vinner fler affärer.",
   keywords:
     "offertmejl generator, skriva offert, AI offert, offertmall svenska, offertmejl exempel",
+  alternates: {
+    canonical: "/verktyg/offertmejl",
+  },
   openGraph: {
     title: "Offertmejl-generator — skriv professionella offerter med AI | Textverket",
     description:

@@ -6,6 +6,9 @@ export const metadata = {
     "Skapa engagerande inlägg för Instagram, LinkedIn och Facebook med AI. Gratis verktyg för svenska företag.",
   keywords:
     "sociala medier generator, AI inlägg företag, LinkedIn text AI, Instagram text, Facebook inlägg",
+  alternates: {
+    canonical: "/verktyg/sociala-medier",
+  },
   openGraph: {
     title: "Sociala medier-generator — AI-inlägg för företag | Textverket",
     description:

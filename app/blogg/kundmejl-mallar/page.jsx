@@ -5,6 +5,10 @@ export const metadata = {
   title: "5 mallar för kundmejl som faktiskt fungerar (2026) — Textverket",
   description:
     "Färdiga mallar för uppföljningsmejl, reklamationssvar, tackmejl, betalningspåminnelser och återaktivering av vilande kunder.",
+  keywords: "kundmejl mallar, uppföljningsmejl mall, reklamationssvar mall, tackmejl mall, kundkommunikation",
+  alternates: {
+    canonical: "/blogg/kundmejl-mallar",
+  },
   openGraph: {
     title: "5 mallar för kundmejl som faktiskt fungerar (2026)",
     description:

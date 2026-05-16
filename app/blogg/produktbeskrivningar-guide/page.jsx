@@ -5,6 +5,10 @@ export const metadata = {
   title: "Hur skriver man bra produktbeskrivningar? Komplett guide (2026) — Textverket",
   description:
     "Lär dig skriva produktbeskrivningar som säljer. 7-stegsguide med före/efter-exempel och SEO-tips för svenska e-handlare och småföretag.",
+  keywords: "produktbeskrivningar guide, säljande produkttexter, produkttext e-handel, SEO produkttexter, e-handel Sverige",
+  alternates: {
+    canonical: "/blogg/produktbeskrivningar-guide",
+  },
   openGraph: {
     title: "Hur skriver man bra produktbeskrivningar? Komplett guide (2026)",
     description:

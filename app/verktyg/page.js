@@ -6,6 +6,9 @@ export const metadata = {
     "Gratis AI-verktyg för svenska småföretag. Skriv offertmejl, produkttexter, kundmejl och mer på sekunder.",
   keywords:
     "AI textverktyg, gratis AI texter, svenska företag, offertmejl generator, produkttexter",
+  alternates: {
+    canonical: "/verktyg",
+  },
   openGraph: {
     title: "AI-textverktyg för svenska företag — Textverket",
     description:

@@ -5,6 +5,10 @@ export const metadata = {
   title: "Integritetspolicy — Textverket",
   description:
     "Läs om hur Textverket hanterar dina uppgifter, vilka cookies vi använder och dina rättigheter enligt GDPR.",
+  keywords: "integritetspolicy textverket, cookies GDPR, dataskydd, Google AdSense cookies, personuppgifter",
+  alternates: {
+    canonical: "/integritetspolicy",
+  },
   openGraph: {
     title: "Integritetspolicy — Textverket",
     description: "Information om cookies, GDPR och dataskydd på Textverket.",

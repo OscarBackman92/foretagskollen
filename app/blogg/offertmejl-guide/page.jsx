@@ -5,6 +5,10 @@ export const metadata = {
   title: "Så skriver du ett professionellt offertmejl (2026) — Textverket",
   description:
     "Komplett guide till professionella offertmejl med konkreta exempel, 6-stegs struktur och de 5 vanligaste misstagen att undvika.",
+  keywords: "skriva offertmejl, offertmejl guide, offertmejl exempel, professionell offert, vinna affärer",
+  alternates: {
+    canonical: "/blogg/offertmejl-guide",
+  },
   openGraph: {
     title: "Så skriver du ett professionellt offertmejl — komplett guide (2026)",
     description:

@@ -5,6 +5,10 @@ export const metadata = {
   title: "Starta eget vid sidan av jobbet — komplett guide för Sverige (2026) — Textverket",
   description:
     "Steg-för-steg-guide: hobbyverksamhet eller enskild firma, hitta din idé, validera, hitta första kunder och hantera tid. För dig som vill testa utan att säga upp dig.",
+  keywords: "starta eget vid sidan av jobbet, sidoprojekt Sverige, enskild firma, hobbyverksamhet Sverige",
+  alternates: {
+    canonical: "/blogg/starta-eget-vid-sidan-av-jobbet",
+  },
   openGraph: {
     title: "Starta eget vid sidan av jobbet — komplett guide för dig i Sverige (2026)",
     description:

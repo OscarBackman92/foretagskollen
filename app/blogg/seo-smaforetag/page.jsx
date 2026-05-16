@@ -5,6 +5,10 @@ export const metadata = {
   title: "SEO för småföretag — enkel guide som faktiskt fungerar (2026) — Textverket",
   description:
     "5-stegsguide till SEO för småföretag. Hitta rätt sökord, skriv innehåll som rankar, teknisk SEO och länkbygge — utan byrå och utan dyra verktyg.",
+  keywords: "SEO småföretag, lokal SEO Sverige, sökmotoroptimering guide, Google sökning optimering, SEO guide gratis",
+  alternates: {
+    canonical: "/blogg/seo-smaforetag",
+  },
   openGraph: {
     title: "SEO för småföretag — enkel guide som faktiskt fungerar (2026)",
     description:

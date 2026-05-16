@@ -5,6 +5,10 @@ export const metadata = {
   title: "Personligt brev och CV — kompletta mallar och tips (2026) — Textverket",
   description:
     "Konkreta mallar och tips för personligt brev och CV som sticker ut. Strukturen som fungerar, vanliga misstag och exempel du kan använda direkt.",
+  keywords: "personligt brev mall, CV tips Sverige, personligt brev exempel, jobbansökan Sverige, CV mall",
+  alternates: {
+    canonical: "/blogg/personligt-brev-cv",
+  },
   openGraph: {
     title: "Personligt brev och CV — kompletta mallar och tips (2026)",
     description:

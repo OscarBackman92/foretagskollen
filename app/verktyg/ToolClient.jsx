@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 const CATEGORIES = [
   {
@@ -60,61 +61,6 @@ const CATEGORIES = [
     placeholder: "Skriv vad du behöver hjälp med...",
   },
 ];
-
-const AD_TEXTS = [
-  {
-    title: "Din annons här",
-    desc: "Nå tusentals svenska småföretagare",
-    bg: "#F0FDF4",
-    border: "#BBF7D0",
-  },
-  {
-    title: "Annonsplats",
-    desc: "Kontakta oss för priser",
-    bg: "#FFFBEB",
-    border: "#FDE68A",
-  },
-  {
-    title: "Sponsrad plats",
-    desc: "Visa din tjänst för företagare",
-    bg: "#EFF6FF",
-    border: "#BFDBFE",
-  },
-];
-
-function AdBanner({ index = 0 }) {
-  const ad = AD_TEXTS[index % AD_TEXTS.length];
-  return (
-    <div
-      style={{
-        background: ad.bg,
-        border: `1px dashed ${ad.border}`,
-        borderRadius: 10,
-        padding: "12px 18px",
-        textAlign: "center",
-        margin: "16px 0",
-        fontFamily: "'DM Sans', sans-serif",
-      }}
-    >
-      <div
-        style={{
-          fontSize: 10,
-          color: "#9CA3AF",
-          letterSpacing: 1.2,
-          textTransform: "uppercase",
-          marginBottom: 3,
-          fontWeight: 600,
-        }}
-      >
-        Annons
-      </div>
-      <div style={{ fontWeight: 700, fontSize: 14, color: "#374151" }}>
-        {ad.title}
-      </div>
-      <div style={{ fontSize: 13, color: "#6B7280" }}>{ad.desc}</div>
-    </div>
-  );
-}
 
 function TypewriterText({ text }) {
   const [displayed, setDisplayed] = useState("");
@@ -243,9 +189,6 @@ export default function ToolClient({ initialCategory = null }) {
       </div>
 
       <div style={{ maxWidth: 640, margin: "0 auto", padding: "0 24px 48px" }}>
-        {/* Ad banner top */}
-        <AdBanner index={0} />
-
         {/* Category selector */}
         <div style={{ marginBottom: 20 }}>
           <div
@@ -434,9 +377,6 @@ export default function ToolClient({ initialCategory = null }) {
           </div>
         )}
 
-        {/* Ad banner mid */}
-        <AdBanner index={1} />
-
         {/* History */}
         {history.length > 0 && (
           <div style={{ marginBottom: 8 }}>
@@ -508,28 +448,9 @@ export default function ToolClient({ initialCategory = null }) {
           </div>
         )}
 
-        {/* Bottom ad */}
-        <AdBanner index={2} />
       </div>
 
-      {/* Footer */}
-      <footer
-        style={{
-          textAlign: "center",
-          padding: "28px",
-          color: "#9CA3AF",
-          fontSize: 13,
-          borderTop: "1px solid #EDEDED",
-        }}
-      >
-        © 2026 Textverket · Gratis AI-verktyg för svenska företag ·{" "}
-        <a
-          href="/integritetspolicy"
-          style={{ color: "#9CA3AF", textDecoration: "underline" }}
-        >
-          Integritetspolicy
-        </a>
-      </footer>
+      <Footer />
 
       <style>{`
         @keyframes fadeIn {

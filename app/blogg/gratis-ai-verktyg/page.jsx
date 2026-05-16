@@ -5,6 +5,10 @@ export const metadata = {
   title: "10 gratis AI-verktyg för småföretag i Sverige (2026) — Textverket",
   description:
     "De bästa gratis AI-verktygen för svenska småföretag 2026. Spara tid på textskrivning, design, kundservice och mer — utan kostnad.",
+  keywords: "gratis AI verktyg, AI verktyg Sverige, AI småföretag, ChatGPT alternativ, Canva AI gratis",
+  alternates: {
+    canonical: "/blogg/gratis-ai-verktyg",
+  },
   openGraph: {
     title: "10 gratis AI-verktyg för småföretag i Sverige (2026)",
     description:

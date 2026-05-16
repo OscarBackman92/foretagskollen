@@ -5,6 +5,10 @@ export const metadata = {
   title: "Så skriver du inlägg för sociala medier som företagare (2026) — Textverket",
   description:
     "Guide med exempel för småföretagare: de fyra innehållstyperna, hook-kropp-CTA-formeln, plattformsguide och 10 idéer du kan använda idag.",
+  keywords: "sociala medier guide företag, LinkedIn inlägg, Instagram företag, inlägg sociala medier, content marketing",
+  alternates: {
+    canonical: "/blogg/sociala-medier-foretag",
+  },
   openGraph: {
     title: "Så skriver du inlägg för sociala medier som företagare — guide med exempel",
     description:

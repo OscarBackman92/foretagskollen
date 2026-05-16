@@ -6,6 +6,9 @@ export const metadata = {
     "Generera valfria affärstexter med AI. Gratis och anpassat för svenska småföretag som behöver hjälp med skrivandet.",
   keywords:
     "fritext AI, text generator, AI skrivhjälp, affärstexter AI, gratis textgenerator",
+  alternates: {
+    canonical: "/verktyg/fritext",
+  },
   openGraph: {
     title: "Fritext-generator — skriv vad som helst med AI | Textverket",
     description:

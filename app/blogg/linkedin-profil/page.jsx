@@ -5,6 +5,10 @@ export const metadata = {
   title: "LinkedIn-profil som ger resultat — komplett guide (2026) — Textverket",
   description:
     "Komplett guide till en LinkedIn-profil som öppnar dörrar. Rubrik, profilbild, sammanfattning, erfarenhet och aktivitet — steg för steg.",
+  keywords: "LinkedIn profil guide, LinkedIn tips Sverige, LinkedIn sammanfattning, LinkedIn för företagare, LinkedIn optimera",
+  alternates: {
+    canonical: "/blogg/linkedin-profil",
+  },
   openGraph: {
     title: "LinkedIn-profil som ger resultat — komplett guide (2026)",
     description:

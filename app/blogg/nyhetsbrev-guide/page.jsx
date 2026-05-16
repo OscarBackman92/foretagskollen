@@ -5,6 +5,10 @@ export const metadata = {
   title: "Nyhetsbrev som folk faktiskt vill läsa — guide med mallar — Textverket",
   description:
     "Lär dig skriva nyhetsbrev som öppnas och läses. Den gyllene regeln, strukturen som fungerar, vad du ska skriva om och hur ofta du ska skicka.",
+  keywords: "nyhetsbrev guide, skriva nyhetsbrev, email marketing Sverige, nyhetsbrev mall, öka öppningsfrekvens",
+  alternates: {
+    canonical: "/blogg/nyhetsbrev-guide",
+  },
   openGraph: {
     title: "Nyhetsbrev som folk faktiskt vill läsa — guide med mallar",
     description:

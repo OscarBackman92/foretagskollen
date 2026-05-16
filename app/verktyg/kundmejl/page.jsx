@@ -6,6 +6,9 @@ export const metadata = {
     "Skriv uppföljningsmejl, reklamationssvar och tackmejl på sekunder. Gratis AI-verktyg för svenska småföretag.",
   keywords:
     "kundmejl generator, skriva kundmejl, AI kundservice mejl, uppföljningsmejl, reklamationssvar",
+  alternates: {
+    canonical: "/verktyg/kundmejl",
+  },
   openGraph: {
     title: "Kundmejl-generator — professionella kundmejl med AI | Textverket",
     description:

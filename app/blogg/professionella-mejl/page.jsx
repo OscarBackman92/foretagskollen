@@ -5,6 +5,10 @@ export const metadata = {
   title: "Professionella mejl — 7 regler som gör ditt företag trovärdigt (2026)",
   description:
     "7 konkreta regler för professionella affärsmejl. Lär dig skriva ämnesrader som öppnas, hålla mejl korta och avsluta med rätt call to action.",
+  keywords: "professionella mejl, affärsmejl tips, skriva mejl företag, mejletik Sverige, e-postkommunikation",
+  alternates: {
+    canonical: "/blogg/professionella-mejl",
+  },
   openGraph: {
     title: "Professionella mejl — 7 regler som gör ditt företag trovärdigt",
     description:
