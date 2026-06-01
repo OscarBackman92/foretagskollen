@@ -13,7 +13,7 @@ export const metadata = {
     title: "Betalningspåminnelse — mall och tips för småföretag (2026)",
     description:
       "3 färdiga mallar för betalningspåminnelser. Testa gratis på textverket.se.",
-    url: "https://textverket.se/blogg/betalningspaminnelse-mall",
+    url: "https://www.textverket.se/blogg/betalningspaminnelse-mall",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",
@@ -238,11 +238,12 @@ export default function BetalningspaminnelseMallPage() {
           <p style={S.ctaDesc}>
             Beskriv situationen i Textverket, så skapar AI:n rätt ton och innehåll — anpassat efter om det är steg ett, två eller tre. Helt gratis.
           </p>
-          <a href="/verktyg" style={S.ctaBtn}>Testa gratis →</a>
+          <a href="/verktyg/fakturatext" style={S.ctaBtn}>Öppna Fakturatext-generatorn →</a>
         </div>
 
         <p style={S.footerNote}>
-          Textverket hjälper svenska småföretag att skriva professionella texter med AI. Testa gratis på textverket.se.
+          Textverket hjälper svenska småföretag att skriva professionella texter med AI.{" "}
+          <a href="/verktyg/fakturatext" style={{ color: "#6B7280" }}>Testa Fakturatext-generatorn gratis.</a>
         </p>
       </article>
 

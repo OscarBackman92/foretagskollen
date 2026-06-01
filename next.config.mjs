@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "textverket.se" }],
+        destination: "https://www.textverket.se/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: "Användarguide — Textverket",
     description: "Steg-för-steg-guide för bästa resultat med Textverkets AI-verktyg.",
-    url: "https://textverket.se/guide",
+    url: "https://www.textverket.se/guide",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",

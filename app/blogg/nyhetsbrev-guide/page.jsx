@@ -13,7 +13,7 @@ export const metadata = {
     title: "Nyhetsbrev som folk faktiskt vill läsa — guide med mallar",
     description:
       "Guide till nyhetsbrev för småföretag. Gratis AI-verktyg på textverket.se.",
-    url: "https://textverket.se/blogg/nyhetsbrev-guide",
+    url: "https://www.textverket.se/blogg/nyhetsbrev-guide",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",

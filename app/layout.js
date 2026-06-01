@@ -8,7 +8,7 @@ export const metadata = {
     "Gratis AI-verktyg som hjälper svenska småföretag skriva professionella offertmejl, produkttexter, kundmejl och mer på sekunder.",
   keywords:
     "AI texter småföretag, offertmejl generator, gratis AI verktyg, textverket, svenska företag",
-  metadataBase: new URL("https://textverket.se"),
+  metadataBase: new URL("https://www.textverket.se"),
   alternates: {
     canonical: "/",
   },
@@ -16,7 +16,7 @@ export const metadata = {
     title: "Textverket — Proffsiga AI-texter för svenska företag",
     description:
       "Skriv professionella offertmejl, produkttexter och kundmejl gratis med AI. Skräddarsytt för svenska småföretag.",
-    url: "https://textverket.se",
+    url: "https://www.textverket.se",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "website",

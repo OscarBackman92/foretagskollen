@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: "Kontakt — Textverket",
     description: "Kontakta oss med frågor, feedback eller samarbetsförslag.",
-    url: "https://textverket.se/kontakt",
+    url: "https://www.textverket.se/kontakt",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "website",

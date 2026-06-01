@@ -13,7 +13,7 @@ export const metadata = {
     title: "AI-textverktyg för svenska företag — Textverket",
     description:
       "Gratis AI-verktyg för svenska småföretag. Skriv professionella texter på sekunder.",
-    url: "https://textverket.se/verktyg",
+    url: "https://www.textverket.se/verktyg",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "website",

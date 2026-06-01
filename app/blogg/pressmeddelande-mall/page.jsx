@@ -13,7 +13,7 @@ export const metadata = {
     title: "Pressmeddelande — mall och guide med exempel (2026)",
     description:
       "Färdig mall och komplett exempel för pressmeddelande. Gratis AI-verktyg på textverket.se.",
-    url: "https://textverket.se/blogg/pressmeddelande-mall",
+    url: "https://www.textverket.se/blogg/pressmeddelande-mall",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",

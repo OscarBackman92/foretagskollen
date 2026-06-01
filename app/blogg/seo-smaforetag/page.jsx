@@ -13,7 +13,7 @@ export const metadata = {
     title: "SEO för småföretag — enkel guide som faktiskt fungerar (2026)",
     description:
       "Lär dig SEO utan byrå och utan dyra verktyg. Gratis AI-verktyg på textverket.se.",
-    url: "https://textverket.se/blogg/seo-smaforetag",
+    url: "https://www.textverket.se/blogg/seo-smaforetag",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",

@@ -13,7 +13,7 @@ export const metadata = {
     title: "Personligt brev och CV — kompletta mallar och tips (2026)",
     description:
       "Mallar och tips för personligt brev och CV. Gratis AI-verktyg på textverket.se.",
-    url: "https://textverket.se/blogg/personligt-brev-cv",
+    url: "https://www.textverket.se/blogg/personligt-brev-cv",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",

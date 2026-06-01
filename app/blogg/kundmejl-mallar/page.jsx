@@ -13,7 +13,7 @@ export const metadata = {
     title: "5 mallar för kundmejl som faktiskt fungerar (2026)",
     description:
       "Färdiga kundmejl-mallar för svenska småföretag. Testa gratis på textverket.se.",
-    url: "https://textverket.se/blogg/kundmejl-mallar",
+    url: "https://www.textverket.se/blogg/kundmejl-mallar",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",
@@ -282,11 +282,12 @@ export default function KundmejlMallarPage() {
           <p style={S.ctaDesc}>
             Textverket genererar professionella mejl på svenska — anpassade för din situation och ton. Helt gratis, inga konton.
           </p>
-          <a href="/verktyg" style={S.ctaBtn}>Testa gratis →</a>
+          <a href="/verktyg/kundmejl" style={S.ctaBtn}>Öppna Kundmejl-generatorn →</a>
         </div>
 
         <p style={S.footerNote}>
-          Textverket hjälper svenska småföretag att skriva professionella texter med AI. Testa gratis på textverket.se.
+          Textverket hjälper svenska småföretag att skriva professionella texter med AI.{" "}
+          <a href="/verktyg/kundmejl" style={{ color: "#6B7280" }}>Testa Kundmejl-generatorn gratis.</a>
         </p>
       </article>
 

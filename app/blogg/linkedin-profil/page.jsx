@@ -13,7 +13,7 @@ export const metadata = {
     title: "LinkedIn-profil som ger resultat — komplett guide (2026)",
     description:
       "Gör om din LinkedIn-profil från CV till magnet. Gratis AI-verktyg på textverket.se.",
-    url: "https://textverket.se/blogg/linkedin-profil",
+    url: "https://www.textverket.se/blogg/linkedin-profil",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",

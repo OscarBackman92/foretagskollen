@@ -10,7 +10,7 @@ export const metadata = {
     title: "Blogg — Textverket",
     description:
       "Guider och tips för svenska småföretag om affärskommunikation och AI-verktyg.",
-    url: "https://textverket.se/blogg",
+    url: "https://www.textverket.se/blogg",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "website",

@@ -13,7 +13,7 @@ export const metadata = {
     title: "Så skriver du inlägg för sociala medier som företagare — guide med exempel",
     description:
       "Enkel metod för att aldrig mer fastna framför en tom skärm. Gratis AI-verktyg på textverket.se.",
-    url: "https://textverket.se/blogg/sociala-medier-foretag",
+    url: "https://www.textverket.se/blogg/sociala-medier-foretag",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",
@@ -429,15 +429,15 @@ export default function SocialaMedierForetagPage() {
             Beskriv vad du vill kommunicera — AI:n levererar ett engagerande inlägg
             anpassat för din plattform. Gratis, inga konton.
           </p>
-          <a href="/verktyg" style={S.ctaBtn}>
-            Testa gratis på Textverket →
+          <a href="/verktyg/sociala-medier" style={S.ctaBtn}>
+            Öppna Sociala medier-generatorn →
           </a>
         </div>
 
         <p style={S.footerNote}>
           Textverket hjälper svenska småföretag att skriva professionella texter med AI.{" "}
-          <a href="/verktyg" style={{ color: "#6B7280" }}>
-            Testa gratis på textverket.se.
+          <a href="/verktyg/sociala-medier" style={{ color: "#6B7280" }}>
+            Testa Sociala medier-generatorn gratis.
           </a>
         </p>
       </article>

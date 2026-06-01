@@ -13,7 +13,7 @@ export const metadata = {
     title: "Professionella mejl — 7 regler som gör ditt företag trovärdigt",
     description:
       "7 regler för bättre affärsmejl. Gratis AI-verktyg på textverket.se.",
-    url: "https://textverket.se/blogg/professionella-mejl",
+    url: "https://www.textverket.se/blogg/professionella-mejl",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",
@@ -311,15 +311,15 @@ export default function ProfessionellaMejlPage() {
             Beskriv situationen så genererar AI:n ett färdigt mejl anpassat efter din
             ton och mottagare. Gratis, inga konton.
           </p>
-          <a href="/verktyg" style={S.ctaBtn}>
-            Testa gratis på Textverket →
+          <a href="/verktyg/fritext" style={S.ctaBtn}>
+            Öppna Fritext-generatorn →
           </a>
         </div>
 
         <p style={S.footerNote}>
           Textverket hjälper svenska småföretag att skriva professionella texter med AI.{" "}
-          <a href="/verktyg" style={{ color: "#6B7280" }}>
-            Testa gratis på textverket.se.
+          <a href="/verktyg/fritext" style={{ color: "#6B7280" }}>
+            Testa Fritext-generatorn gratis.
           </a>
         </p>
       </article>

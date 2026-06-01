@@ -13,7 +13,7 @@ export const metadata = {
     title: "Starta eget vid sidan av jobbet — komplett guide för dig i Sverige (2026)",
     description:
       "Komplett guide: juridik, registrering, validering och tidhantering. Gratis AI-verktyg på textverket.se.",
-    url: "https://textverket.se/blogg/starta-eget-vid-sidan-av-jobbet",
+    url: "https://www.textverket.se/blogg/starta-eget-vid-sidan-av-jobbet",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",

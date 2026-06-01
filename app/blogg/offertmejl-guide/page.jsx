@@ -13,7 +13,7 @@ export const metadata = {
     title: "Så skriver du ett professionellt offertmejl — komplett guide (2026)",
     description:
       "Komplett guide med exempel, struktur och tips. Gratis AI-verktyg på textverket.se.",
-    url: "https://textverket.se/blogg/offertmejl-guide",
+    url: "https://www.textverket.se/blogg/offertmejl-guide",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",
@@ -633,8 +633,8 @@ export default function OffertmejlGuide() {
             Beskriv kort vad offerten gäller — AI:n levererar ett komplett,
             professionellt mejl direkt. Gratis, inga konton.
           </p>
-          <a href="/verktyg" style={S.ctaBtn}>
-            Testa gratis på Textverket →
+          <a href="/verktyg/offertmejl" style={S.ctaBtn}>
+            Öppna Offertmejl-generatorn →
           </a>
         </div>
 
@@ -652,8 +652,8 @@ export default function OffertmejlGuide() {
         <p style={S.footerNote}>
           Textverket hjälper svenska småföretag att skriva professionella texter
           med AI.{" "}
-          <a href="/verktyg" style={{ color: "#6B7280" }}>
-            Testa gratis på textverket.se.
+          <a href="/verktyg/offertmejl" style={{ color: "#6B7280" }}>
+            Testa Offertmejl-generatorn gratis.
           </a>
         </p>
       </article>

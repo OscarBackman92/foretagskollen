@@ -13,7 +13,7 @@ export const metadata = {
     title: "Gratis verktyg för dig som driver eget — 15 som sparar tid och pengar (2026)",
     description:
       "De bästa gratis verktygen för svenska egenföretagare. Gratis AI-verktyg på textverket.se.",
-    url: "https://textverket.se/blogg/gratis-verktyg-egenforetagare",
+    url: "https://www.textverket.se/blogg/gratis-verktyg-egenforetagare",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",

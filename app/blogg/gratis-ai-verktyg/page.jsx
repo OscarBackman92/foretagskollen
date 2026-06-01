@@ -13,7 +13,7 @@ export const metadata = {
     title: "10 gratis AI-verktyg för småföretag i Sverige (2026)",
     description:
       "De bästa gratis AI-verktygen för svenska småföretag. Testa på textverket.se.",
-    url: "https://textverket.se/blogg/gratis-ai-verktyg",
+    url: "https://www.textverket.se/blogg/gratis-ai-verktyg",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",

@@ -11,21 +11,24 @@ const FEATURES = [
   { icon: "✨", title: "Fritext", desc: "Vad som helst ditt företag behöver", href: "/verktyg/fritext" },
 ];
 
-const TESTIMONIALS = [
+const USECASES = [
   {
-    name: "Anna L.",
-    role: "Enskild firma, Stockholm",
-    text: "Sparar mig minst 2 timmar i veckan. Offertmejlen ser ut som om jag anlitat en copywriter.",
+    icon: "📨",
+    title: "Offertmejl på 30 sekunder",
+    desc: "Beskriv uppdraget kort — verktyget formulerar ett professionellt offertmejl med ämnesrad, erbjudande och tydlig avslutning.",
+    href: "/verktyg/offertmejl",
   },
   {
-    name: "Marcus K.",
-    role: "IT-konsult, Göteborg",
-    text: "Äntligen ett AI-verktyg som förstår svenska affärsspråk. Helt gratis dessutom!",
+    icon: "🏷️",
+    title: "Produkttexter som säljer",
+    desc: "Ange produkt, målgrupp och ton — du får en säljande beskrivning redo att klistra in i din webbutik.",
+    href: "/verktyg/produkttext",
   },
   {
-    name: "Sofia R.",
-    role: "E-handlare, Malmö",
-    text: "Produktbeskrivningarna konverterar mycket bättre nu. Kunde inte vara enklare att använda.",
+    icon: "🧾",
+    title: "Betalningspåminnelser utan obehag",
+    desc: "Ange fakturanummer och antal försenade dagar — verktyget skriver en tydlig påminnelse med rätt ton för situationen.",
+    href: "/verktyg/fakturatext",
   },
 ];
 
@@ -416,7 +419,7 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/* Testimonials */}
+      {/* Use cases */}
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "60px 28px" }}>
         <FadeIn>
           <h2
@@ -425,11 +428,14 @@ export default function LandingPage() {
               fontSize: 36,
               fontWeight: 400,
               textAlign: "center",
-              marginBottom: 40,
+              marginBottom: 12,
             }}
           >
-            Företagare älskar det
+            Vad kan du skapa?
           </h2>
+          <p style={{ textAlign: "center", color: "#888", fontSize: 16, marginBottom: 40 }}>
+            Tre exempel på hur svenska företagare använder Textverket varje dag.
+          </p>
         </FadeIn>
 
         <div
@@ -439,30 +445,28 @@ export default function LandingPage() {
             gap: 16,
           }}
         >
-          {TESTIMONIALS.map((t, i) => (
+          {USECASES.map((u, i) => (
             <FadeIn key={i} delay={i * 100}>
-              <div
-                style={{
-                  background: "#fff",
-                  border: "1px solid #EDEDED",
-                  borderRadius: 14,
-                  padding: "24px 22px",
-                }}
-              >
+              <a href={u.href} style={{ textDecoration: "none", color: "inherit", display: "block" }}>
                 <div
                   style={{
-                    fontSize: 14,
-                    color: "#555",
-                    lineHeight: 1.7,
-                    marginBottom: 16,
-                    fontStyle: "italic",
+                    background: "#fff",
+                    border: "1px solid #EDEDED",
+                    borderRadius: 14,
+                    padding: "24px 22px",
+                    height: "100%",
+                    boxSizing: "border-box",
                   }}
                 >
-                  &ldquo;{t.text}&rdquo;
+                  <div style={{ fontSize: 28, marginBottom: 12 }}>{u.icon}</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: "#111", marginBottom: 8 }}>
+                    {u.title}
+                  </div>
+                  <div style={{ fontSize: 14, color: "#666", lineHeight: 1.6 }}>
+                    {u.desc}
+                  </div>
                 </div>
-                <div style={{ fontSize: 14, fontWeight: 700 }}>{t.name}</div>
-                <div style={{ fontSize: 12, color: "#999" }}>{t.role}</div>
-              </div>
+              </a>
             </FadeIn>
           ))}
         </div>

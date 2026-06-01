@@ -13,7 +13,7 @@ export const metadata = {
     title: "Hur skriver man bra produktbeskrivningar? Komplett guide (2026)",
     description:
       "7-stegsguide med exempel som konverterar. Testa gratis på textverket.se.",
-    url: "https://textverket.se/blogg/produktbeskrivningar-guide",
+    url: "https://www.textverket.se/blogg/produktbeskrivningar-guide",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",
@@ -247,11 +247,12 @@ export default function ProduktbeskrivningarGuidePage() {
           <p style={S.ctaDesc}>
             Textverket genererar säljande produktbeskrivningar på svenska. Beskriv produkten och målgruppen, så skapar AI:n en text du kan använda direkt.
           </p>
-          <a href="/verktyg" style={S.ctaBtn}>Testa gratis →</a>
+          <a href="/verktyg/produkttext" style={S.ctaBtn}>Öppna Produkttext-generatorn →</a>
         </div>
 
         <p style={S.footerNote}>
-          Textverket hjälper svenska småföretag att skriva professionella texter med AI. Testa gratis på textverket.se.
+          Textverket hjälper svenska småföretag att skriva professionella texter med AI.{" "}
+          <a href="/verktyg/produkttext" style={{ color: "#6B7280" }}>Testa Produkttext-generatorn gratis.</a>
         </p>
       </article>
 

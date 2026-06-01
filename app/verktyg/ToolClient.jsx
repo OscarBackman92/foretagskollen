@@ -81,7 +81,7 @@ function TypewriterText({ text }) {
   return <>{displayed}</>;
 }
 
-export default function ToolClient({ initialCategory = null }) {
+export default function ToolClient({ initialCategory = null, pageTitle, pageSubtitle, beforeContent, afterContent }) {
   const router = useRouter();
   const [selected] = useState(initialCategory);
   const [input, setInput] = useState("");
@@ -172,9 +172,9 @@ export default function ToolClient({ initialCategory = null }) {
             lineHeight: 1.2,
           }}
         >
-          Professionella AI-texter
-          <br />
-          för svenska företag
+          {pageTitle || (
+            <>Professionella AI-texter<br />för svenska företag</>
+          )}
         </h1>
         <p
           style={{
@@ -184,7 +184,7 @@ export default function ToolClient({ initialCategory = null }) {
             lineHeight: 1.6,
           }}
         >
-          Välj kategori, beskriv vad du behöver — klart på sekunder.
+          {pageSubtitle || "Välj kategori, beskriv vad du behöver — klart på sekunder."}
         </p>
       </div>
 
@@ -242,6 +242,9 @@ export default function ToolClient({ initialCategory = null }) {
             ))}
           </div>
         </div>
+
+        {/* Per-page static content above form */}
+        {beforeContent}
 
         {/* Input area */}
         {selected && (
@@ -447,6 +450,9 @@ export default function ToolClient({ initialCategory = null }) {
             ))}
           </div>
         )}
+
+        {/* Per-page static content below form */}
+        {afterContent}
 
       </div>
 

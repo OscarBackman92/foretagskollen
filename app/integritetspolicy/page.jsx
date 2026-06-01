@@ -12,7 +12,7 @@ export const metadata = {
   openGraph: {
     title: "Integritetspolicy — Textverket",
     description: "Information om cookies, GDPR och dataskydd på Textverket.",
-    url: "https://textverket.se/integritetspolicy",
+    url: "https://www.textverket.se/integritetspolicy",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "website",
