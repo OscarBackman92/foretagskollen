@@ -4,6 +4,10 @@ import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import AdUnit from "../components/AdUnit";
+
+const ADSENSE_SLOT_TOOLS = process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOLS;
+const MAX_INPUT_LENGTH = 2000;
 
 const CATEGORIES = [
   {
@@ -11,8 +15,6 @@ const CATEGORIES = [
     icon: "📨",
     label: "Offertmejl",
     slug: "/verktyg/offertmejl",
-    prompt:
-      "Skriv ett professionellt offertmejl på svenska för ett svenskt småföretag. Baserat på denna info:",
     placeholder: "Beskriv vad offerten gäller, pris, mottagare...",
   },
   {
@@ -20,8 +22,6 @@ const CATEGORIES = [
     icon: "🏷️",
     label: "Produkttext",
     slug: "/verktyg/produkttext",
-    prompt:
-      "Skriv en säljande produktbeskrivning på svenska för e-handel eller hemsida. Baserat på:",
     placeholder: "Beskriv produkten, målgrupp, ton...",
   },
   {
@@ -29,8 +29,6 @@ const CATEGORIES = [
     icon: "💬",
     label: "Kundmejl",
     slug: "/verktyg/kundmejl",
-    prompt:
-      "Skriv ett professionellt kundmejl på svenska för ett småföretag. Baserat på:",
     placeholder: "Beskriv situationen (uppföljning, reklamation, tack...)",
   },
   {
@@ -38,8 +36,6 @@ const CATEGORIES = [
     icon: "📱",
     label: "Sociala medier",
     slug: "/verktyg/sociala-medier",
-    prompt:
-      "Skriv ett engagerande inlägg för sociala medier på svenska för ett småföretag. Baserat på:",
     placeholder: "Beskriv vad inlägget ska handla om, plattform...",
   },
   {
@@ -47,8 +43,6 @@ const CATEGORIES = [
     icon: "🧾",
     label: "Fakturatext",
     slug: "/verktyg/fakturatext",
-    prompt:
-      "Skriv en tydlig och professionell fakturatext/betalningspåminnelse på svenska. Baserat på:",
     placeholder: "Beskriv vad fakturan gäller, belopp, villkor...",
   },
   {
@@ -56,8 +50,6 @@ const CATEGORIES = [
     icon: "✨",
     label: "Fritext",
     slug: "/verktyg/fritext",
-    prompt:
-      "Du är en hjälpsam assistent för svenska småföretag. Hjälp användaren med följande:",
     placeholder: "Skriv vad du behöver hjälp med...",
   },
 ];
@@ -111,14 +103,12 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
       const response = await fetch("/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          prompt: `${cat.prompt}\n\n${input}\n\nSvara kortfattat och professionellt. Max 200 ord.`,
-        }),
+        body: JSON.stringify({ tool: selected, input }),
       });
 
       const data = await response.json();
 
-      if (data.text) {
+      if (response.ok && data.text) {
         setResult(data.text);
         setHistory((prev) =>
           [
@@ -255,6 +245,7 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
               onChange={(e) => setInput(e.target.value)}
               placeholder={CATEGORIES.find((c) => c.id === selected)?.placeholder}
               rows={4}
+              maxLength={MAX_INPUT_LENGTH}
               style={{
                 width: "100%",
                 boxSizing: "border-box",
@@ -379,6 +370,9 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
             </div>
           </div>
         )}
+
+        {/* Annons under resultatet */}
+        <AdUnit slot={ADSENSE_SLOT_TOOLS} />
 
         {/* History */}
         {history.length > 0 && (

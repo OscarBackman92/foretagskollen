@@ -14,6 +14,15 @@ export default function CookieBanner() {
 
   function accept(value) {
     localStorage.setItem('cookie-consent', value);
+    const state = value === 'all' ? 'granted' : 'denied';
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        ad_storage: state,
+        ad_user_data: state,
+        ad_personalization: state,
+        analytics_storage: state,
+      });
+    }
     setVisible(false);
   }
 

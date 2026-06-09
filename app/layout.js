@@ -22,7 +22,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: `/og?title=${encodeURIComponent("Proffsiga AI-texter för svenska företag")}`,
         width: 1200,
         height: 630,
         alt: "Textverket — Gratis AI-textverktyg för svenska företag",
@@ -36,6 +36,32 @@ export default function RootLayout({ children }) {
     <html lang="sv">
       <head>
         <meta name="google-adsense-account" content="ca-pub-9223370591083087" />
+        {/* Consent Mode v2 — måste köras innan gtag/AdSense laddas */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('consent', 'default', {
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                analytics_storage: 'denied',
+                wait_for_update: 500
+              });
+              try {
+                if (localStorage.getItem('cookie-consent') === 'all') {
+                  gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                  });
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -61,8 +87,6 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-14P78WLMDX');
             `,
