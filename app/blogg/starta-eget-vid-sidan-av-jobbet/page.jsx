@@ -1,5 +1,7 @@
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
+import JsonLd from "../../components/JsonLd";
+import { blogPostJsonLd } from "../../lib/structured-data";
 
 export const metadata = {
   title: "Starta eget vid sidan av jobbet — komplett guide för Sverige (2026) — Textverket",
@@ -17,6 +19,13 @@ export const metadata = {
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent("Starta eget vid sidan av jobbet")}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 
@@ -415,6 +424,7 @@ const MISTAKES = [
 export default function StartaEgetPage() {
   return (
     <div style={S.page}>
+      <JsonLd data={blogPostJsonLd(metadata, "2026-04-20")} />
       <NavBar />
 
       <article style={S.article}>

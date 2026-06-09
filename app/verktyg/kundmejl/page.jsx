@@ -1,5 +1,7 @@
 import ToolClient from "../ToolClient";
 import Link from "next/link";
+import JsonLd from "../../components/JsonLd";
+import { toolPageJsonLd } from "../../lib/structured-data";
 
 export const metadata = {
   title: "Kundmejl-generator — professionell kundkommunikation med AI | Textverket",
@@ -18,8 +20,30 @@ export const metadata = {
     siteName: "Textverket",
     locale: "sv_SE",
     type: "website",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent("Kundmejl-generator")}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
+
+const FAQ = [
+  {
+    q: "Vilka typer av kundmejl täcks?",
+    a: "Uppföljningar, tackmejl, reklamationssvar, betalningspåminnelser och återaktivering av vilande kunder, bland annat.",
+  },
+  {
+    q: "Hur undviker jag att låta som en mall?",
+    a: "Beskriv något specifikt om kunden eller ärendet — ett tidigare samtal, ett namn, en detalj. Det gör mejlet personligt.",
+  },
+  {
+    q: "Kan tonen vara strikt formell?",
+    a: "Ja, du styr tonen. Allt från avslappnat till mer formellt fungerar beroende på vad du anger.",
+  },
+];
 
 const S = {
   section: {
@@ -196,12 +220,21 @@ function AfterContent() {
 
 export default function KundmejlPage() {
   return (
-    <ToolClient
-      initialCategory="kundmejl"
-      pageTitle="Kundmejl-generator"
-      pageSubtitle="Beskriv situationen — AI:n skriver rätt kundmejl för varje tillfälle."
-      beforeContent={<BeforeContent />}
-      afterContent={<AfterContent />}
-    />
+    <>
+      <JsonLd
+        data={toolPageJsonLd({
+          name: "Kundmejl-generator",
+          path: "/verktyg/kundmejl",
+          faqs: FAQ,
+        })}
+      />
+      <ToolClient
+        initialCategory="kundmejl"
+        pageTitle="Kundmejl-generator"
+        pageSubtitle="Beskriv situationen — AI:n skriver rätt kundmejl för varje tillfälle."
+        beforeContent={<BeforeContent />}
+        afterContent={<AfterContent />}
+      />
+    </>
   );
 }

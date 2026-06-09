@@ -15,6 +15,13 @@ export const metadata = {
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent("Användarguide — så får du bäst resultat")}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

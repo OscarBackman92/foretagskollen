@@ -1,5 +1,7 @@
 import ToolClient from "../ToolClient";
 import Link from "next/link";
+import JsonLd from "../../components/JsonLd";
+import { toolPageJsonLd } from "../../lib/structured-data";
 
 export const metadata = {
   title: "Fakturatext-generator — betalningspåminnelser med AI | Textverket",
@@ -18,8 +20,30 @@ export const metadata = {
     siteName: "Textverket",
     locale: "sv_SE",
     type: "website",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent("Fakturatext-generator")}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
+
+const FAQ = [
+  {
+    q: "Täcker verktyget alla tre påminnelsenivåerna?",
+    a: "Ja — från vänlig första påminnelse till bestämd sista varning innan inkasso.",
+  },
+  {
+    q: "Får jag med juridiskt korrekta formuleringar?",
+    a: "Verktyget ger en professionell grundtext. Vid inkasso och dröjsmålsränta, kontrollera alltid gällande regler eller stäm av med din bokförare.",
+  },
+  {
+    q: "Kan jag återanvända texterna?",
+    a: "Ja. Många sparar de tre nivåerna som egna mallar och byter bara ut belopp och datum.",
+  },
+];
 
 const S = {
   section: {
@@ -196,12 +220,21 @@ function AfterContent() {
 
 export default function FakturatextPage() {
   return (
-    <ToolClient
-      initialCategory="faktura"
-      pageTitle="Fakturatext-generator"
-      pageSubtitle="Beskriv läget — AI:n skriver rätt betalningspåminnelse för varje steg."
-      beforeContent={<BeforeContent />}
-      afterContent={<AfterContent />}
-    />
+    <>
+      <JsonLd
+        data={toolPageJsonLd({
+          name: "Fakturatext-generator",
+          path: "/verktyg/fakturatext",
+          faqs: FAQ,
+        })}
+      />
+      <ToolClient
+        initialCategory="faktura"
+        pageTitle="Fakturatext-generator"
+        pageSubtitle="Beskriv läget — AI:n skriver rätt betalningspåminnelse för varje steg."
+        beforeContent={<BeforeContent />}
+        afterContent={<AfterContent />}
+      />
+    </>
   );
 }

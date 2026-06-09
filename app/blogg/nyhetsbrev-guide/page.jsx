@@ -1,5 +1,7 @@
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
+import JsonLd from "../../components/JsonLd";
+import { blogPostJsonLd } from "../../lib/structured-data";
 
 export const metadata = {
   title: "Nyhetsbrev som folk faktiskt vill läsa — guide med mallar — Textverket",
@@ -17,6 +19,13 @@ export const metadata = {
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent("Nyhetsbrev som folk faktiskt vill läsa")}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 
@@ -74,6 +83,7 @@ const TOOLS = [
 export default function NyhetsbrevGuidePage() {
   return (
     <div style={S.page}>
+      <JsonLd data={blogPostJsonLd(metadata, "2026-04-21")} />
       <NavBar />
 
       <article style={S.article}>

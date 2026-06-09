@@ -1,5 +1,7 @@
 import ToolClient from "../ToolClient";
 import Link from "next/link";
+import JsonLd from "../../components/JsonLd";
+import { toolPageJsonLd } from "../../lib/structured-data";
 
 export const metadata = {
   title: "Offertmejl-generator — skriv professionella offerter med AI | Textverket",
@@ -18,8 +20,30 @@ export const metadata = {
     siteName: "Textverket",
     locale: "sv_SE",
     type: "website",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent("Offertmejl-generator")}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
+
+const FAQ = [
+  {
+    q: "Kan jag skicka mejlet rakt av?",
+    a: "Ja, men läs alltid igenom och lägg till detaljer som bara du vet — exakt pris, namn och eventuella tillval.",
+  },
+  {
+    q: "Funkar det för både tjänster och produkter?",
+    a: "Ja. Verktyget anpassar sig efter vad du beskriver, oavsett om du säljer ett hantverksuppdrag, en konsulttjänst eller en leverans.",
+  },
+  {
+    q: "Vad ska jag skriva för bästa resultat?",
+    a: "Ta med vad som ska levereras, till vem, pris, tidsram och gärna något du vet om kunden sedan tidigare. Det sista gör mejlet personligt.",
+  },
+];
 
 const S = {
   section: {
@@ -214,12 +238,21 @@ function AfterContent() {
 
 export default function OffertmejlPage() {
   return (
-    <ToolClient
-      initialCategory="offert"
-      pageTitle="Offertmejl-generator"
-      pageSubtitle="Beskriv uppdraget — AI:n skriver ett professionellt offertmejl på sekunder."
-      beforeContent={<BeforeContent />}
-      afterContent={<AfterContent />}
-    />
+    <>
+      <JsonLd
+        data={toolPageJsonLd({
+          name: "Offertmejl-generator",
+          path: "/verktyg/offertmejl",
+          faqs: FAQ,
+        })}
+      />
+      <ToolClient
+        initialCategory="offert"
+        pageTitle="Offertmejl-generator"
+        pageSubtitle="Beskriv uppdraget — AI:n skriver ett professionellt offertmejl på sekunder."
+        beforeContent={<BeforeContent />}
+        afterContent={<AfterContent />}
+      />
+    </>
   );
 }

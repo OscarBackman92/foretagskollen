@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import JsonLd from "./components/JsonLd";
+import { websiteJsonLd, faqJsonLd } from "./lib/structured-data";
 
 const FEATURES = [
   { icon: "📨", title: "Offertmejl", desc: "Proffsiga offerter som vinner affärer", href: "/verktyg/offertmejl" },
@@ -39,6 +41,41 @@ const STATS = [
   { value: "🇸🇪", label: "svenskt" },
 ];
 
+const faqs = [
+  {
+    q: "Är det verkligen gratis?",
+    a: "Ja, helt gratis. Textverket finansieras via annonsintäkter, precis som en gratistidning. Du betalar ingenting, nu eller i framtiden, och behöver inget konto.",
+  },
+  {
+    q: "Hur fungerar AI-tekniken bakom?",
+    a: "Textverket använder Claude, en avancerad AI-modell från Anthropic. Claude är känd för sin förmåga att producera naturlig, sammanhängande text på svenska och förstå nyanserade instruktioner.",
+  },
+  {
+    q: "Kan jag använda texterna kommersiellt?",
+    a: "Absolut. Alla texter som genereras tillhör dig och kan användas fritt — i mejl, på hemsidan, i sociala medier eller i tryck. Det finns inga begränsningar.",
+  },
+  {
+    q: "Sparas mina texter någonstans?",
+    a: "Nej. Vi lagrar varken de texter du skriver in eller de texter som genereras. Allt sker i realtid och försvinner när du stänger webbläsaren. Din data stannar hos dig.",
+  },
+  {
+    q: "Vilken AI används?",
+    a: "Vi använder Claude från Anthropic — samma AI-teknik som används av stora företag världen över, nu tillgänglig gratis för svenska småföretag via Textverket.",
+  },
+  {
+    q: "Hur skiljer sig Textverket från ChatGPT?",
+    a: "ChatGPT är ett generellt verktyg på engelska. Textverket är specialbyggt för svenska affärstexter — varje verktyg har en optimerad prompt för sin texttyp, och allt är anpassat för hur svenska företag kommunicerar.",
+  },
+  {
+    q: "Fungerar verktyget bara på svenska?",
+    a: "Verktyget är optimerat för svenska och ger bäst resultat på svenska. Du kan dock skriva din beskrivning på engelska om du vill ha texten på engelska — AI:n förstår och anpassar sig.",
+  },
+  {
+    q: "Hur kan ni erbjuda detta gratis?",
+    a: "Vi finansieras via annonsintäkter från Google AdSense. Du ser annonser på sidan, vilket ger oss intäkter som täcker kostnaden för AI-tjänsten och drift. Ingen prenumeration, inga dolda avgifter.",
+  },
+];
+
 function FadeIn({ children, delay = 0, style = {} }) {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -62,41 +99,6 @@ function FadeIn({ children, delay = 0, style = {} }) {
 export default function LandingPage() {
   const [activeFaq, setActiveFaq] = useState(null);
 
-  const faqs = [
-    {
-      q: "Är det verkligen gratis?",
-      a: "Ja, helt gratis. Textverket finansieras via annonsintäkter, precis som en gratistidning. Du betalar ingenting, nu eller i framtiden, och behöver inget konto.",
-    },
-    {
-      q: "Hur fungerar AI-tekniken bakom?",
-      a: "Textverket använder Claude, en avancerad AI-modell från Anthropic. Claude är känd för sin förmåga att producera naturlig, sammanhängande text på svenska och förstå nyanserade instruktioner.",
-    },
-    {
-      q: "Kan jag använda texterna kommersiellt?",
-      a: "Absolut. Alla texter som genereras tillhör dig och kan användas fritt — i mejl, på hemsidan, i sociala medier eller i tryck. Det finns inga begränsningar.",
-    },
-    {
-      q: "Sparas mina texter någonstans?",
-      a: "Nej. Vi lagrar varken de texter du skriver in eller de texter som genereras. Allt sker i realtid och försvinner när du stänger webbläsaren. Din data stannar hos dig.",
-    },
-    {
-      q: "Vilken AI används?",
-      a: "Vi använder Claude från Anthropic — samma AI-teknik som används av stora företag världen över, nu tillgänglig gratis för svenska småföretag via Textverket.",
-    },
-    {
-      q: "Hur skiljer sig Textverket från ChatGPT?",
-      a: "ChatGPT är ett generellt verktyg på engelska. Textverket är specialbyggt för svenska affärstexter — varje verktyg har en optimerad prompt för sin texttyp, och allt är anpassat för hur svenska företag kommunicerar.",
-    },
-    {
-      q: "Fungerar verktyget bara på svenska?",
-      a: "Verktyget är optimerat för svenska och ger bäst resultat på svenska. Du kan dock skriva din beskrivning på engelska om du vill ha texten på engelska — AI:n förstår och anpassar sig.",
-    },
-    {
-      q: "Hur kan ni erbjuda detta gratis?",
-      a: "Vi finansieras via annonsintäkter från Google AdSense. Du ser annonser på sidan, vilket ger oss intäkter som täcker kostnaden för AI-tjänsten och drift. Ingen prenumeration, inga dolda avgifter.",
-    },
-  ];
-
   return (
     <div
       style={{
@@ -107,6 +109,8 @@ export default function LandingPage() {
         overflowX: "hidden",
       }}
     >
+      <JsonLd data={[...websiteJsonLd(), faqJsonLd(faqs)]} />
+
       {/* Nav */}
       <FadeIn>
         <nav

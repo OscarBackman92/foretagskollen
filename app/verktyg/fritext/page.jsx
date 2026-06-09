@@ -1,5 +1,7 @@
 import ToolClient from "../ToolClient";
 import Link from "next/link";
+import JsonLd from "../../components/JsonLd";
+import { toolPageJsonLd } from "../../lib/structured-data";
 
 export const metadata = {
   title: "Fritext-generator — skriv valfri affärstext med AI | Textverket",
@@ -18,8 +20,30 @@ export const metadata = {
     siteName: "Textverket",
     locale: "sv_SE",
     type: "website",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent("Fritext-generator")}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
+
+const FAQ = [
+  {
+    q: "Vad kan jag använda fritext till?",
+    a: "I princip vad som helst skriftligt i din verksamhet — webbtexter, svåra svar, presentationer, interna meddelanden och mer.",
+  },
+  {
+    q: "Hur får jag den bästa texten?",
+    a: "Var specifik. Syfte, mottagare, ton och längd gör störst skillnad för resultatet.",
+  },
+  {
+    q: "Vad gör jag om resultatet inte passar?",
+    a: "Beskriv vad du vill ändra och generera på nytt. Det är ofta snabbare att förfina än att börja om.",
+  },
+];
 
 const S = {
   section: {
@@ -195,12 +219,21 @@ function AfterContent() {
 
 export default function FritextPage() {
   return (
-    <ToolClient
-      initialCategory="fri"
-      pageTitle="Fritext-generator"
-      pageSubtitle="Beskriv vad du behöver — AI:n skriver valfri affärstext på sekunder."
-      beforeContent={<BeforeContent />}
-      afterContent={<AfterContent />}
-    />
+    <>
+      <JsonLd
+        data={toolPageJsonLd({
+          name: "Fritext-generator",
+          path: "/verktyg/fritext",
+          faqs: FAQ,
+        })}
+      />
+      <ToolClient
+        initialCategory="fri"
+        pageTitle="Fritext-generator"
+        pageSubtitle="Beskriv vad du behöver — AI:n skriver valfri affärstext på sekunder."
+        beforeContent={<BeforeContent />}
+        afterContent={<AfterContent />}
+      />
+    </>
   );
 }

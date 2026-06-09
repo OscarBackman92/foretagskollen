@@ -1,5 +1,7 @@
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
+import JsonLd from "../../components/JsonLd";
+import { blogPostJsonLd } from "../../lib/structured-data";
 
 export const metadata = {
   title: "Pressmeddelande — mall och guide med exempel (2026) — Textverket",
@@ -17,6 +19,13 @@ export const metadata = {
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent("Pressmeddelande — mall och guide med exempel")}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 
@@ -73,6 +82,7 @@ const TIPS = [
 export default function PressmeddelandeMallPage() {
   return (
     <div style={S.page}>
+      <JsonLd data={blogPostJsonLd(metadata, "2026-04-21")} />
       <NavBar />
 
       <article style={S.article}>

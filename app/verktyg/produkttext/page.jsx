@@ -1,5 +1,7 @@
 import ToolClient from "../ToolClient";
 import Link from "next/link";
+import JsonLd from "../../components/JsonLd";
+import { toolPageJsonLd } from "../../lib/structured-data";
 
 export const metadata = {
   title: "Produkttext-generator — säljande beskrivningar med AI | Textverket",
@@ -18,8 +20,30 @@ export const metadata = {
     siteName: "Textverket",
     locale: "sv_SE",
     type: "website",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent("Produkttext-generator")}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
+
+const FAQ = [
+  {
+    q: "Funkar det för alla typer av produkter?",
+    a: "Ja — från fysiska varor till digitala produkter och tjänstepaket. Ju mer du beskriver, desto bättre.",
+  },
+  {
+    q: "Blir texterna unika?",
+    a: "Varje text genereras utifrån just din beskrivning, så två olika produkter ger två olika texter. Duplicerade beskrivningar straffas av sökmotorer, så unikt innehåll är en fördel.",
+  },
+  {
+    q: "Kan jag använda texterna kommersiellt?",
+    a: "Ja, du äger och får använda det du genererar fritt i din verksamhet.",
+  },
+];
 
 const S = {
   section: {
@@ -198,12 +222,21 @@ function AfterContent() {
 
 export default function ProdukttextPage() {
   return (
-    <ToolClient
-      initialCategory="produkt"
-      pageTitle="Produkttext-generator"
-      pageSubtitle="Beskriv din produkt — AI:n skriver en säljande produktbeskrivning på sekunder."
-      beforeContent={<BeforeContent />}
-      afterContent={<AfterContent />}
-    />
+    <>
+      <JsonLd
+        data={toolPageJsonLd({
+          name: "Produkttext-generator",
+          path: "/verktyg/produkttext",
+          faqs: FAQ,
+        })}
+      />
+      <ToolClient
+        initialCategory="produkt"
+        pageTitle="Produkttext-generator"
+        pageSubtitle="Beskriv din produkt — AI:n skriver en säljande produktbeskrivning på sekunder."
+        beforeContent={<BeforeContent />}
+        afterContent={<AfterContent />}
+      />
+    </>
   );
 }

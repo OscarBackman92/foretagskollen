@@ -1,5 +1,7 @@
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
+import JsonLd from "../../components/JsonLd";
+import { blogPostJsonLd } from "../../lib/structured-data";
 
 export const metadata = {
   title: "Hur skriver man bra produktbeskrivningar? Komplett guide (2026) — Textverket",
@@ -17,6 +19,13 @@ export const metadata = {
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent("Hur skriver man bra produktbeskrivningar?")}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 
@@ -59,6 +68,7 @@ const S = {
 export default function ProduktbeskrivningarGuidePage() {
   return (
     <div style={S.page}>
+      <JsonLd data={blogPostJsonLd(metadata, "2026-04-16")} />
       <NavBar />
 
       <article style={S.article}>

@@ -1,5 +1,7 @@
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
+import JsonLd from "../../components/JsonLd";
+import { blogPostJsonLd } from "../../lib/structured-data";
 
 export const metadata = {
   title: "Gratis verktyg för dig som driver eget — 15 som sparar tid och pengar (2026) — Textverket",
@@ -17,6 +19,13 @@ export const metadata = {
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent("15 gratis verktyg för dig som driver eget")}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 
@@ -306,6 +315,7 @@ const CATEGORIES = [
 export default function GratisVerktygPage() {
   return (
     <div style={S.page}>
+      <JsonLd data={blogPostJsonLd(metadata, "2026-04-20")} />
       <NavBar />
 
       <article style={S.article}>

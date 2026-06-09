@@ -17,6 +17,13 @@ export const metadata = {
     siteName: "Textverket",
     locale: "sv_SE",
     type: "website",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent("AI-textverktyg för svenska företag")}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

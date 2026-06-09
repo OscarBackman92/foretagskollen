@@ -1,5 +1,7 @@
 import ToolClient from "../ToolClient";
 import Link from "next/link";
+import JsonLd from "../../components/JsonLd";
+import { toolPageJsonLd } from "../../lib/structured-data";
 
 export const metadata = {
   title: "Sociala medier-generator — engagerande AI-inlägg för företag | Textverket",
@@ -18,8 +20,30 @@ export const metadata = {
     siteName: "Textverket",
     locale: "sv_SE",
     type: "website",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent("Sociala medier-generator")}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
+
+const FAQ = [
+  {
+    q: "Vilka plattformar passar verktyget?",
+    a: "Det fungerar för LinkedIn, Instagram, Facebook och liknande — du anger var inlägget ska publiceras.",
+  },
+  {
+    q: "Får jag med hashtags?",
+    a: "Du kan be om det i din beskrivning, så föreslår verktyget relevanta taggar.",
+  },
+  {
+    q: "Hur ofta bör jag publicera?",
+    a: "Hellre regelbundet och genomtänkt än ofta och innehållslöst. Ett bra inlägg i veckan slår fem halvdana.",
+  },
+];
 
 const S = {
   section: {
@@ -196,12 +220,21 @@ function AfterContent() {
 
 export default function SocialaMedierPage() {
   return (
-    <ToolClient
-      initialCategory="social"
-      pageTitle="Sociala medier-generator"
-      pageSubtitle="Beskriv ämne och plattform — AI:n skriver ett engagerande inlägg på sekunder."
-      beforeContent={<BeforeContent />}
-      afterContent={<AfterContent />}
-    />
+    <>
+      <JsonLd
+        data={toolPageJsonLd({
+          name: "Sociala medier-generator",
+          path: "/verktyg/sociala-medier",
+          faqs: FAQ,
+        })}
+      />
+      <ToolClient
+        initialCategory="social"
+        pageTitle="Sociala medier-generator"
+        pageSubtitle="Beskriv ämne och plattform — AI:n skriver ett engagerande inlägg på sekunder."
+        beforeContent={<BeforeContent />}
+        afterContent={<AfterContent />}
+      />
+    </>
   );
 }
