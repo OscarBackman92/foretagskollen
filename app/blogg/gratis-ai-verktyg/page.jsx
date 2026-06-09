@@ -2,6 +2,7 @@ import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import JsonLd from "../../components/JsonLd";
 import { blogPostJsonLd } from "../../lib/structured-data";
+import AdUnit from "../../components/AdUnit";
 
 export const metadata = {
   title: "10 gratis AI-verktyg för småföretag i Sverige (2026) — Textverket",
@@ -206,6 +207,10 @@ export default function GratisAiVerktygPage() {
           Textverket hjälper svenska småföretag att skriva professionella texter med AI. Testa gratis på textverket.se.
         </p>
       </article>
+
+      <div style={{ maxWidth: 720, margin: "0 auto", padding: "0 28px 40px" }}>
+        <AdUnit slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BLOG} />
+      </div>
 
       <Footer />
     </div>

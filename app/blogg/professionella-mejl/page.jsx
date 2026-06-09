@@ -2,6 +2,7 @@ import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import JsonLd from "../../components/JsonLd";
 import { blogPostJsonLd } from "../../lib/structured-data";
+import AdUnit from "../../components/AdUnit";
 
 export const metadata = {
   title: "Professionella mejl — 7 regler som gör ditt företag trovärdigt (2026)",
@@ -333,6 +334,10 @@ export default function ProfessionellaMejlPage() {
           </a>
         </p>
       </article>
+
+      <div style={{ maxWidth: 720, margin: "0 auto", padding: "0 28px 40px" }}>
+        <AdUnit slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BLOG} />
+      </div>
 
       <Footer />
     </div>

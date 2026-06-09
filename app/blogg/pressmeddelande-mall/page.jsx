@@ -2,6 +2,7 @@ import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import JsonLd from "../../components/JsonLd";
 import { blogPostJsonLd } from "../../lib/structured-data";
+import AdUnit from "../../components/AdUnit";
 
 export const metadata = {
   title: "Pressmeddelande — mall och guide med exempel (2026) — Textverket",
@@ -253,6 +254,10 @@ export default function PressmeddelandeMallPage() {
           <a href="/verktyg" style={{ color: "#6B7280" }}>Testa gratis på textverket.se.</a>
         </p>
       </article>
+
+      <div style={{ maxWidth: 720, margin: "0 auto", padding: "0 28px 40px" }}>
+        <AdUnit slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BLOG} />
+      </div>
 
       <Footer />
     </div>

@@ -2,6 +2,7 @@ import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import JsonLd from "../../components/JsonLd";
 import { blogPostJsonLd } from "../../lib/structured-data";
+import AdUnit from "../../components/AdUnit";
 
 export const metadata = {
   title: "Så skriver du inlägg för sociala medier som företagare (2026) — Textverket",
@@ -451,6 +452,10 @@ export default function SocialaMedierForetagPage() {
           </a>
         </p>
       </article>
+
+      <div style={{ maxWidth: 720, margin: "0 auto", padding: "0 28px 40px" }}>
+        <AdUnit slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BLOG} />
+      </div>
 
       <Footer />
     </div>
