@@ -15,12 +15,13 @@ export async function GET(request) {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 72,
-          background: "#FAFAF9",
+          background:
+            "radial-gradient(circle at 15% 0%, #1E1B4B 0%, #05060F 55%)",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <div style={{ display: "flex", fontSize: 40 }}>✍️</div>
-          <div style={{ display: "flex", fontSize: 38, fontWeight: 700, color: "#111111" }}>
+          <div style={{ display: "flex", fontSize: 38, fontWeight: 700, color: "#F4F7FF" }}>
             Textverket
           </div>
         </div>
@@ -29,7 +30,7 @@ export async function GET(request) {
             display: "flex",
             fontSize: title.length > 50 ? 54 : 66,
             fontWeight: 700,
-            color: "#111111",
+            color: "#F4F7FF",
             lineHeight: 1.15,
             maxWidth: 1020,
           }}
@@ -43,7 +44,7 @@ export async function GET(request) {
             justifyContent: "space-between",
           }}
         >
-          <div style={{ display: "flex", fontSize: 26, color: "#6B7280" }}>
+          <div style={{ display: "flex", fontSize: 26, color: "#9AA5CC" }}>
             Gratis AI-texter för svenska företag
           </div>
           <div
@@ -52,7 +53,7 @@ export async function GET(request) {
               width: 220,
               height: 10,
               borderRadius: 5,
-              background: "linear-gradient(90deg, #2563EB, #059669)",
+              background: "linear-gradient(90deg, #22D3EE, #818CF8, #C084FC)",
             }}
           />
         </div>

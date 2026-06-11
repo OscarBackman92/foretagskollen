@@ -162,9 +162,9 @@ export default function BloggPage() {
     <div
       style={{
         minHeight: "100vh",
-        background: "#FAFAF9",
-        fontFamily: "'DM Sans', sans-serif",
-        color: "#1A1A1A",
+        background: "transparent",
+        fontFamily: "'Inter', sans-serif",
+        color: "#EAEEFF",
       }}
     >
       <NavBar />
@@ -180,8 +180,8 @@ export default function BloggPage() {
         <div
           style={{
             display: "inline-block",
-            background: "#EEF2FF",
-            color: "#4338CA",
+            background: "rgba(129, 140, 248, 0.13)",
+            color: "#A5B4FC",
             fontSize: 12,
             fontWeight: 600,
             padding: "4px 12px",
@@ -195,11 +195,11 @@ export default function BloggPage() {
         </div>
         <h1
           style={{
-            fontFamily: "'Instrument Serif', serif",
+            fontFamily: "'Space Grotesk', sans-serif",
             fontSize: "clamp(32px, 5vw, 48px)",
-            fontWeight: 400,
+            fontWeight: 700,
             margin: "0 0 16px",
-            color: "#111",
+            color: "#EAEEFF",
             lineHeight: 1.2,
           }}
         >
@@ -208,7 +208,7 @@ export default function BloggPage() {
         <p
           style={{
             fontSize: 17,
-            color: "#6B7280",
+            color: "#949EC9",
             maxWidth: 520,
             lineHeight: 1.7,
             margin: 0,
@@ -242,8 +242,8 @@ export default function BloggPage() {
             >
               <div
                 style={{
-                  background: "#fff",
-                  border: "1px solid #EDEDED",
+                  background: "rgba(13, 17, 36, 0.66)",
+                  border: "1px solid rgba(125, 140, 255, 0.16)",
                   borderRadius: 16,
                   padding: "28px 24px",
                   height: "100%",
@@ -254,8 +254,8 @@ export default function BloggPage() {
                 <div
                   style={{
                     display: "inline-block",
-                    background: "#EEF2FF",
-                    color: "#4338CA",
+                    background: "rgba(129, 140, 248, 0.13)",
+                    color: "#A5B4FC",
                     fontSize: 11,
                     fontWeight: 600,
                     padding: "3px 10px",
@@ -269,11 +269,11 @@ export default function BloggPage() {
                 </div>
                 <h2
                   style={{
-                    fontFamily: "'Instrument Serif', serif",
+                    fontFamily: "'Space Grotesk', sans-serif",
                     fontSize: 22,
-                    fontWeight: 400,
+                    fontWeight: 700,
                     margin: "0 0 12px",
-                    color: "#111",
+                    color: "#EAEEFF",
                     lineHeight: 1.35,
                   }}
                 >
@@ -282,7 +282,7 @@ export default function BloggPage() {
                 <p
                   style={{
                     fontSize: 14,
-                    color: "#6B7280",
+                    color: "#949EC9",
                     lineHeight: 1.65,
                     margin: "0 0 20px",
                   }}
@@ -295,11 +295,11 @@ export default function BloggPage() {
                     gap: 12,
                     alignItems: "center",
                     fontSize: 13,
-                    color: "#9CA3AF",
+                    color: "#7E88B5",
                   }}
                 >
                   <span>{article.date}</span>
-                  <span style={{ color: "#D1D5DB" }}>·</span>
+                  <span style={{ color: "rgba(125, 140, 255, 0.25)" }}>·</span>
                   <span>{article.readTime} läsning</span>
                 </div>
               </div>
@@ -309,8 +309,8 @@ export default function BloggPage() {
           {/* Placeholder card */}
           <div
             style={{
-              background: "#F9FAFB",
-              border: "1px dashed #D1D5DB",
+              background: "rgba(255, 255, 255, 0.04)",
+              border: "1px dashed rgba(125, 140, 255, 0.25)",
               borderRadius: 16,
               padding: "28px 24px",
               display: "flex",
@@ -326,13 +326,13 @@ export default function BloggPage() {
               style={{
                 fontSize: 15,
                 fontWeight: 600,
-                color: "#9CA3AF",
+                color: "#7E88B5",
                 margin: "0 0 6px",
               }}
             >
               Fler artiklar kommer
             </p>
-            <p style={{ fontSize: 13, color: "#D1D5DB", margin: 0 }}>
+            <p style={{ fontSize: 13, color: "rgba(125, 140, 255, 0.25)", margin: 0 }}>
               Vi publicerar nya guider regelbundet
             </p>
           </div>
@@ -342,16 +342,16 @@ export default function BloggPage() {
       {/* CTA strip */}
       <div
         style={{
-          background: "#111",
+          background: "rgba(16, 21, 44, 0.8)",
           padding: "48px 28px",
           textAlign: "center",
         }}
       >
         <p
           style={{
-            fontFamily: "'Instrument Serif', serif",
+            fontFamily: "'Space Grotesk', sans-serif",
             fontSize: 28,
-            fontWeight: 400,
+            fontWeight: 700,
             color: "#fff",
             margin: "0 0 12px",
           }}
@@ -371,13 +371,14 @@ export default function BloggPage() {
           href="/verktyg"
           style={{
             display: "inline-block",
-            background: "#fff",
-            color: "#111",
+            background: "linear-gradient(135deg, #6366F1 0%, #22D3EE 100%)",
+            color: "#fff",
             padding: "13px 32px",
             borderRadius: 100,
             fontSize: 15,
             fontWeight: 700,
             textDecoration: "none",
+            boxShadow: "0 0 24px rgba(34, 211, 238, 0.3)",
           }}
         >
           Öppna verktyget →

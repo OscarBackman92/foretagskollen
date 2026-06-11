@@ -52,17 +52,17 @@ export default function KontaktPage() {
   return (
     <div style={{
       minHeight: "100vh",
-      background: "#FAFAF9",
-      fontFamily: "'DM Sans', sans-serif",
-      color: "#1A1A1A",
+      background: "transparent",
+      fontFamily: "'Inter', sans-serif",
+      color: "#EAEEFF",
     }}>
       <NavBar />
 
       <div style={{ maxWidth: 720, margin: "0 auto", padding: "56px 28px 80px" }}>
         <div style={{
           display: "inline-block",
-          background: "#EEF2FF",
-          color: "#4338CA",
+          background: "rgba(129, 140, 248, 0.13)",
+          color: "#A5B4FC",
           fontSize: 12,
           fontWeight: 600,
           padding: "4px 12px",
@@ -75,38 +75,38 @@ export default function KontaktPage() {
         </div>
 
         <h1 style={{
-          fontFamily: "'Instrument Serif', serif",
+          fontFamily: "'Space Grotesk', sans-serif",
           fontSize: "clamp(32px, 5vw, 48px)",
-          fontWeight: 400,
+          fontWeight: 700,
           lineHeight: 1.2,
           margin: "0 0 20px",
-          color: "#111",
+          color: "#EAEEFF",
         }}>
           Kontakt
         </h1>
 
-        <p style={{ fontSize: 17, lineHeight: 1.85, color: "#374151", margin: "0 0 40px" }}>
+        <p style={{ fontSize: 17, lineHeight: 1.85, color: "#C3CCE8", margin: "0 0 40px" }}>
           Vi hör gärna från dig — oavsett om du har feedback på ett verktyg, vill rapportera ett fel, föreslå ett samarbete eller bara har en fråga.
         </p>
 
         {/* Contact card */}
         <div style={{
-          background: "#fff",
-          border: "1px solid #EDEDED",
+          background: "rgba(13, 17, 36, 0.66)",
+          border: "1px solid rgba(125, 140, 255, 0.16)",
           borderRadius: 16,
           padding: "32px 28px",
           marginBottom: 48,
         }}>
           <h2 style={{
-            fontFamily: "'Instrument Serif', serif",
+            fontFamily: "'Space Grotesk', sans-serif",
             fontSize: 24,
-            fontWeight: 400,
+            fontWeight: 700,
             margin: "0 0 8px",
-            color: "#111",
+            color: "#EAEEFF",
           }}>
             Mejla oss
           </h2>
-          <p style={{ fontSize: 15, color: "#6B7280", margin: "0 0 20px", lineHeight: 1.6 }}>
+          <p style={{ fontSize: 15, color: "#949EC9", margin: "0 0 20px", lineHeight: 1.6 }}>
             Det snabbaste sättet att nå oss. Vi svarar normalt inom 1–2 vardagar.
           </p>
           <a
@@ -115,7 +115,7 @@ export default function KontaktPage() {
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              background: "#1A1A1A",
+              background: "linear-gradient(135deg, #6366F1 0%, #22D3EE 100%)",
               color: "#fff",
               padding: "12px 24px",
               borderRadius: 100,
@@ -127,11 +127,11 @@ export default function KontaktPage() {
             ✉ textverketswe@gmail.com
           </a>
 
-          <div style={{ marginTop: 28, paddingTop: 24, borderTop: "1px solid #F0F0F0" }}>
-            <p style={{ fontSize: 14, fontWeight: 600, margin: "0 0 8px", color: "#374151" }}>
+          <div style={{ marginTop: 28, paddingTop: 24, borderTop: "1px solid rgba(125, 140, 255, 0.12)" }}>
+            <p style={{ fontSize: 14, fontWeight: 600, margin: "0 0 8px", color: "#C3CCE8" }}>
               Vad kan jag kontakta om?
             </p>
-            <ul style={{ margin: 0, paddingLeft: 20, fontSize: 14, color: "#6B7280", lineHeight: 2 }}>
+            <ul style={{ margin: 0, paddingLeft: 20, fontSize: 14, color: "#949EC9", lineHeight: 2 }}>
               <li>Feedback och förbättringsförslag</li>
               <li>Buggrapporter och tekniska problem</li>
               <li>Samarbeten och annonsförfrågningar</li>
@@ -143,8 +143,8 @@ export default function KontaktPage() {
           <p style={{
             marginTop: 20,
             fontSize: 13,
-            color: "#9CA3AF",
-            background: "#F9FAFB",
+            color: "#7E88B5",
+            background: "rgba(255, 255, 255, 0.04)",
             borderRadius: 8,
             padding: "10px 14px",
           }}>
@@ -154,11 +154,11 @@ export default function KontaktPage() {
 
         {/* FAQ */}
         <h2 style={{
-          fontFamily: "'Instrument Serif', serif",
+          fontFamily: "'Space Grotesk', sans-serif",
           fontSize: 32,
-          fontWeight: 400,
+          fontWeight: 700,
           margin: "0 0 24px",
-          color: "#111",
+          color: "#EAEEFF",
         }}>
           Vanliga frågor
         </h2>
@@ -166,15 +166,15 @@ export default function KontaktPage() {
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {FAQS.map((faq, i) => (
             <div key={i} style={{
-              background: "#fff",
-              border: "1px solid #EDEDED",
+              background: "rgba(13, 17, 36, 0.66)",
+              border: "1px solid rgba(125, 140, 255, 0.16)",
               borderRadius: 12,
               padding: "20px 24px",
             }}>
-              <p style={{ fontSize: 15, fontWeight: 600, margin: "0 0 8px", color: "#111" }}>
+              <p style={{ fontSize: 15, fontWeight: 600, margin: "0 0 8px", color: "#EAEEFF" }}>
                 {faq.q}
               </p>
-              <p style={{ fontSize: 15, color: "#6B7280", margin: 0, lineHeight: 1.7 }}>
+              <p style={{ fontSize: 15, color: "#949EC9", margin: 0, lineHeight: 1.7 }}>
                 {faq.a}
               </p>
             </div>

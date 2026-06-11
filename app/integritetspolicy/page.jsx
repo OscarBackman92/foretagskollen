@@ -24,9 +24,9 @@ export default function IntegritetspolicyPage() {
     <div
       style={{
         minHeight: "100vh",
-        background: "#FAFAF9",
-        fontFamily: "'DM Sans', sans-serif",
-        color: "#1A1A1A",
+        background: "transparent",
+        fontFamily: "'Inter', sans-serif",
+        color: "#EAEEFF",
       }}
     >
       <NavBar />
@@ -41,17 +41,17 @@ export default function IntegritetspolicyPage() {
       >
         <h1
           style={{
-            fontFamily: "'Instrument Serif', serif",
+            fontFamily: "'Space Grotesk', sans-serif",
             fontSize: "clamp(32px, 5vw, 48px)",
-            fontWeight: 400,
+            fontWeight: 700,
             margin: "0 0 12px",
-            color: "#111",
+            color: "#EAEEFF",
             lineHeight: 1.2,
           }}
         >
           Integritetspolicy
         </h1>
-        <p style={{ fontSize: 14, color: "#9CA3AF", margin: "0 0 48px" }}>
+        <p style={{ fontSize: 14, color: "#7E88B5", margin: "0 0 48px" }}>
           Senast uppdaterad: 21 april 2026
         </p>
 
@@ -115,7 +115,7 @@ export default function IntegritetspolicyPage() {
               href="https://policies.google.com/privacy"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#2563EB" }}
+              style={{ color: "#22D3EE" }}
             >
               policies.google.com/privacy
             </a>
@@ -135,7 +135,7 @@ export default function IntegritetspolicyPage() {
               href="https://adssettings.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#2563EB" }}
+              style={{ color: "#22D3EE" }}
             >
               adssettings.google.com
             </a>
@@ -151,7 +151,7 @@ export default function IntegritetspolicyPage() {
               margin: "16px 0 0",
               padding: "0 0 0 20px",
               lineHeight: 2,
-              color: "#374151",
+              color: "#C3CCE8",
             }}
           >
             <li>
@@ -189,7 +189,7 @@ export default function IntegritetspolicyPage() {
             Kontakta oss på{" "}
             <a
               href="mailto:textverketswe@gmail.com"
-              style={{ color: "#2563EB" }}
+              style={{ color: "#22D3EE" }}
             >
               textverketswe@gmail.com
             </a>
@@ -207,11 +207,11 @@ function Section({ title, children }) {
     <div style={{ marginBottom: 40 }}>
       <h2
         style={{
-          fontFamily: "'Instrument Serif', serif",
+          fontFamily: "'Space Grotesk', sans-serif",
           fontSize: 24,
-          fontWeight: 400,
+          fontWeight: 700,
           margin: "0 0 16px",
-          color: "#111",
+          color: "#EAEEFF",
         }}
       >
         {title}
@@ -220,7 +220,7 @@ function Section({ title, children }) {
         style={{
           fontSize: 15,
           lineHeight: 1.75,
-          color: "#374151",
+          color: "#C3CCE8",
         }}
       >
         {children}
@@ -235,24 +235,24 @@ function CookieTable({ rows }) {
     textAlign: "left",
     fontSize: 12,
     fontWeight: 700,
-    color: "#6B7280",
+    color: "#949EC9",
     textTransform: "uppercase",
     letterSpacing: 0.5,
-    background: "#F9FAFB",
-    borderBottom: "1px solid #E5E7EB",
+    background: "rgba(255, 255, 255, 0.04)",
+    borderBottom: "1px solid rgba(125, 140, 255, 0.18)",
   };
   const tdStyle = {
     padding: "12px 14px",
     fontSize: 14,
-    color: "#374151",
-    borderBottom: "1px solid #F3F4F6",
+    color: "#C3CCE8",
+    borderBottom: "1px solid rgba(255, 255, 255, 0.06)",
     verticalAlign: "top",
   };
 
   return (
     <div
       style={{
-        border: "1px solid #E5E7EB",
+        border: "1px solid rgba(125, 140, 255, 0.18)",
         borderRadius: 10,
         overflow: "hidden",
         marginTop: 16,

@@ -1,16 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import JsonLd from "./components/JsonLd";
 import { websiteJsonLd, faqJsonLd } from "./lib/structured-data";
 
 const FEATURES = [
-  { icon: "📨", title: "Offertmejl", desc: "Proffsiga offerter som vinner affärer", href: "/verktyg/offertmejl" },
-  { icon: "🏷️", title: "Produkttexter", desc: "Säljande beskrivningar för webben", href: "/verktyg/produkttext" },
-  { icon: "💬", title: "Kundmejl", desc: "Uppföljningar, tack och reklamationer", href: "/verktyg/kundmejl" },
-  { icon: "📱", title: "Sociala medier", desc: "Engagerande inlägg som syns", href: "/verktyg/sociala-medier" },
-  { icon: "🧾", title: "Fakturatexter", desc: "Tydliga betalningspåminnelser", href: "/verktyg/fakturatext" },
-  { icon: "✨", title: "Fritext", desc: "Vad som helst ditt företag behöver", href: "/verktyg/fritext" },
+  { icon: "📨", title: "Offertmejl", desc: "Proffsiga offerter som vinner affärer", href: "/verktyg/offertmejl", hue: "#22D3EE" },
+  { icon: "🏷️", title: "Produkttexter", desc: "Säljande beskrivningar för webben", href: "/verktyg/produkttext", hue: "#A78BFA" },
+  { icon: "💬", title: "Kundmejl", desc: "Uppföljningar, tack och reklamationer", href: "/verktyg/kundmejl", hue: "#34D399" },
+  { icon: "📱", title: "Sociala medier", desc: "Engagerande inlägg som syns", href: "/verktyg/sociala-medier", hue: "#F472B6" },
+  { icon: "🧾", title: "Fakturatexter", desc: "Tydliga betalningspåminnelser", href: "/verktyg/fakturatext", hue: "#FBBF24" },
+  { icon: "✨", title: "Fritext", desc: "Vad som helst ditt företag behöver", href: "/verktyg/fritext", hue: "#818CF8" },
 ];
 
 const USECASES = [
@@ -39,6 +41,15 @@ const STATS = [
   { value: "100%", label: "gratis" },
   { value: "<5s", label: "per text" },
   { value: "🇸🇪", label: "svenskt" },
+];
+
+const GUIDES = [
+  { href: "/blogg/offertmejl-guide", title: "Så skriver du ett offertmejl som vinner affären", tag: "Guide" },
+  { href: "/blogg/kundmejl-mallar", title: "Färdiga mallar för kundmejl — uppföljning, tack och reklamation", tag: "Mallar" },
+  { href: "/blogg/produktbeskrivningar-guide", title: "Produktbeskrivningar som faktiskt säljer", tag: "Guide" },
+  { href: "/blogg/betalningspaminnelse-mall", title: "Betalningspåminnelser med rätt ton — mall och exempel", tag: "Mallar" },
+  { href: "/blogg/seo-smaforetag", title: "SEO för småföretag — synas på Google utan budget", tag: "Guide" },
+  { href: "/blogg/starta-eget-vid-sidan-av-jobbet", title: "Starta eget vid sidan av jobbet — så kommer du igång", tag: "Inspiration" },
 ];
 
 const faqs = [
@@ -76,6 +87,9 @@ const faqs = [
   },
 ];
 
+const MONO = "'JetBrains Mono', monospace";
+const DISPLAY = "'Space Grotesk', sans-serif";
+
 function FadeIn({ children, delay = 0, style = {} }) {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -96,6 +110,24 @@ function FadeIn({ children, delay = 0, style = {} }) {
   );
 }
 
+function SectionLabel({ children }) {
+  return (
+    <div
+      style={{
+        fontFamily: MONO,
+        fontSize: 12,
+        letterSpacing: 3,
+        textTransform: "uppercase",
+        color: "#22D3EE",
+        marginBottom: 14,
+        textAlign: "center",
+      }}
+    >
+      {"// "}{children}
+    </div>
+  );
+}
+
 export default function LandingPage() {
   const [activeFaq, setActiveFaq] = useState(null);
 
@@ -103,106 +135,86 @@ export default function LandingPage() {
     <div
       style={{
         minHeight: "100vh",
-        background: "#FAFAF9",
-        fontFamily: "'DM Sans', sans-serif",
-        color: "#1A1A1A",
+        background: "transparent",
+        fontFamily: "'Inter', sans-serif",
+        color: "#EAEEFF",
         overflowX: "hidden",
+        position: "relative",
       }}
     >
       <JsonLd data={[...websiteJsonLd(), faqJsonLd(faqs)]} />
 
-      {/* Nav */}
-      <FadeIn>
-        <nav
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "20px 28px",
-            maxWidth: 960,
-            margin: "0 auto",
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ fontSize: 24 }}>✍️</span>
-            <span style={{ fontWeight: 700, fontSize: 18 }}>Textverket</span>
-          </div>
-          <div className="home-nav-links" style={{ display: "flex", alignItems: "center", gap: 24 }}>
-            {[
-              { href: "/blogg", label: "Blogg" },
-              { href: "/guide", label: "Guide" },
-              { href: "/om-oss", label: "Om oss" },
-              { href: "/kontakt", label: "Kontakt" },
-            ].map(l => (
-              <a key={l.href} href={l.href} style={{ fontSize: 14, fontWeight: 500, color: "#555", textDecoration: "none" }}>
-                {l.label}
-              </a>
-            ))}
-            <a
-              href="/verktyg"
-              style={{
-                background: "#1A1A1A",
-                color: "#fff",
-                padding: "10px 22px",
-                borderRadius: 100,
-                fontSize: 14,
-                fontWeight: 600,
-                textDecoration: "none",
-              }}
-            >
-              Testa gratis →
-            </a>
-          </div>
-          <style>{`
-            @media (max-width: 640px) { .home-nav-links { display: none !important; } }
-          `}</style>
-        </nav>
-      </FadeIn>
+      <NavBar />
 
       {/* Hero */}
       <div
         style={{
-          maxWidth: 960,
+          maxWidth: 1020,
           margin: "0 auto",
-          padding: "60px 28px 40px",
+          padding: "72px 28px 40px",
           textAlign: "center",
+          position: "relative",
         }}
       >
+        {/* Svävande glödklot */}
+        <div aria-hidden style={{
+          position: "absolute", top: 30, left: "6%", width: 130, height: 130,
+          borderRadius: "50%", filter: "blur(60px)", pointerEvents: "none",
+          background: "rgba(34, 211, 238, 0.25)", animation: "floatY 9s ease-in-out infinite",
+        }} />
+        <div aria-hidden style={{
+          position: "absolute", top: 140, right: "4%", width: 170, height: 170,
+          borderRadius: "50%", filter: "blur(70px)", pointerEvents: "none",
+          background: "rgba(139, 92, 246, 0.22)", animation: "floatY 11s ease-in-out infinite 1.5s",
+        }} />
+
         <FadeIn delay={100}>
           <div
             style={{
-              display: "inline-block",
-              background: "#E8F5E9",
-              color: "#2E7D32",
-              fontSize: 13,
-              fontWeight: 600,
-              padding: "6px 16px",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 9,
+              background: "rgba(34, 211, 238, 0.07)",
+              border: "1px solid rgba(34, 211, 238, 0.3)",
+              color: "#67E8F9",
+              fontFamily: MONO,
+              fontSize: 12,
+              letterSpacing: 1.5,
+              padding: "8px 18px",
               borderRadius: 100,
-              marginBottom: 24,
+              marginBottom: 28,
+              boxShadow: "0 0 24px rgba(34, 211, 238, 0.15)",
             }}
           >
-            ✓ 100% gratis – inga dolda kostnader
+            <span style={{
+              width: 7, height: 7, borderRadius: "50%", background: "#34D399",
+              boxShadow: "0 0 8px #34D399", animation: "pulseGlow 2s ease-in-out infinite",
+            }} />
+            100% GRATIS · INGEN INLOGGNING
           </div>
         </FadeIn>
 
         <FadeIn delay={200}>
           <h1
             style={{
-              fontFamily: "'Instrument Serif', serif",
-              fontSize: "clamp(36px, 7vw, 64px)",
-              fontWeight: 400,
-              lineHeight: 1.1,
-              margin: "0 0 20px",
-              color: "#111",
+              fontFamily: DISPLAY,
+              fontSize: "clamp(40px, 7.5vw, 76px)",
+              fontWeight: 700,
+              lineHeight: 1.06,
+              margin: "0 0 24px",
+              color: "#F4F7FF",
+              letterSpacing: "-0.03em",
             }}
           >
             Proffsiga texter för
             <br />
             <span
               style={{
-                background: "linear-gradient(135deg, #2563EB 0%, #059669 100%)",
+                background: "linear-gradient(120deg, #22D3EE 0%, #818CF8 45%, #C084FC 100%)",
+                backgroundSize: "200% 200%",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
+                animation: "gradientShift 6s ease infinite",
               }}
             >
               ditt företag
@@ -216,71 +228,118 @@ export default function LandingPage() {
           <p
             style={{
               fontSize: 18,
-              color: "#666",
-              maxWidth: 520,
+              color: "#9AA5CC",
+              maxWidth: 620,
               margin: "0 auto 36px",
-              lineHeight: 1.6,
+              lineHeight: 1.7,
             }}
           >
-            Proffsiga AI-texter för svenska företag.
+            Textverket är en gratis AI-skrivverkstad byggd för svenska småföretag.
+            Beskriv vad du behöver — ett offertmejl, en produkttext eller en
+            betalningspåminnelse — och få en färdig, professionell text på svenska
+            inom några sekunder. Inget konto, inga kostnader, ingen inlärningskurva.
           </p>
         </FadeIn>
 
         <FadeIn delay={400}>
-          <a
-            href="/verktyg"
+          <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
+            <a href="/verktyg" className="tv-cta-primary">
+              Börja skriva gratis →
+            </a>
+            <a href="/guide" className="tv-cta-ghost">
+              Läs guiden
+            </a>
+          </div>
+        </FadeIn>
+
+        {/* Terminal-förhandsvisning */}
+        <FadeIn delay={550}>
+          <div
             style={{
-              display: "inline-block",
-              background: "linear-gradient(135deg, #1A1A1A 0%, #333 100%)",
-              color: "#fff",
-              padding: "16px 40px",
-              borderRadius: 100,
-              fontSize: 17,
-              fontWeight: 700,
-              textDecoration: "none",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
+              maxWidth: 660,
+              margin: "56px auto 0",
+              textAlign: "left",
+              background: "rgba(8, 11, 26, 0.82)",
+              border: "1px solid rgba(125, 140, 255, 0.22)",
+              borderRadius: 16,
+              overflow: "hidden",
+              boxShadow: "0 24px 80px rgba(5, 6, 15, 0.8), 0 0 50px rgba(99, 102, 241, 0.14)",
+              backdropFilter: "blur(12px)",
             }}
           >
-            Börja skriva gratis →
-          </a>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+                padding: "12px 18px",
+                borderBottom: "1px solid rgba(125, 140, 255, 0.14)",
+                background: "rgba(13, 17, 36, 0.7)",
+              }}
+            >
+              <span style={{ width: 11, height: 11, borderRadius: "50%", background: "#F87171" }} />
+              <span style={{ width: 11, height: 11, borderRadius: "50%", background: "#FBBF24" }} />
+              <span style={{ width: 11, height: 11, borderRadius: "50%", background: "#34D399" }} />
+              <span style={{ fontFamily: MONO, fontSize: 12, color: "#7E88B5", marginLeft: 10, letterSpacing: 1 }}>
+                textverket.se — offertmejl
+              </span>
+            </div>
+            <div style={{ padding: "20px 22px", fontFamily: MONO, fontSize: 13.5, lineHeight: 1.8 }}>
+              <div style={{ color: "#67E8F9" }}>
+                <span style={{ color: "#7E88B5" }}>&gt;</span> Offert på fasadmålning, villa i Bromma,
+                45 000 kr inkl. material, klart innan midsommar
+              </div>
+              <div style={{ color: "#34D399", margin: "10px 0 4px", fontSize: 12, letterSpacing: 1 }}>
+                ✓ TEXT GENERERAD PÅ 3.2s
+              </div>
+              <div style={{ color: "#C3CCE8", fontFamily: "'Inter', sans-serif", fontSize: 14 }}>
+                Hej Anna! Tack för din förfrågan om fasadmålning. Vi kan erbjuda komplett
+                målning av er villa för 45 000 kr inklusive material och ställning.
+                Arbetet tar cirka två veckor och vi garanterar att allt är klart innan
+                midsommar…<span style={{ color: "#22D3EE", animation: "blink 1s step-end infinite" }}>▌</span>
+              </div>
+            </div>
+          </div>
         </FadeIn>
       </div>
 
-      {/* Stats bar */}
+      {/* Statistikrad */}
       <FadeIn delay={500}>
         <div
           style={{
-            maxWidth: 640,
-            margin: "20px auto 60px",
+            maxWidth: 660,
+            margin: "36px auto 72px",
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
             gap: 0,
-            background: "#fff",
+            background: "rgba(13, 17, 36, 0.6)",
             borderRadius: 16,
-            boxShadow: "0 2px 20px rgba(0,0,0,0.04)",
             overflow: "hidden",
-            border: "1px solid #EDEDED",
+            border: "1px solid rgba(125, 140, 255, 0.18)",
+            backdropFilter: "blur(10px)",
+            boxShadow: "0 0 40px rgba(99, 102, 241, 0.1)",
           }}
         >
           {STATS.map((s, i) => (
             <div
               key={i}
               style={{
-                padding: "20px 12px",
+                padding: "22px 12px",
                 textAlign: "center",
-                borderRight: i < 3 ? "1px solid #F0F0F0" : "none",
+                borderRight: i < 3 ? "1px solid rgba(125, 140, 255, 0.12)" : "none",
               }}
             >
-              <div style={{ fontSize: 26, fontWeight: 700, color: "#111" }}>
+              <div style={{ fontFamily: DISPLAY, fontSize: 27, fontWeight: 700, color: "#F4F7FF" }}>
                 {s.value}
               </div>
               <div
                 style={{
-                  fontSize: 12,
-                  color: "#999",
-                  marginTop: 4,
+                  fontFamily: MONO,
+                  fontSize: 11,
+                  color: "#7E88B5",
+                  marginTop: 5,
                   textTransform: "uppercase",
-                  letterSpacing: 0.5,
+                  letterSpacing: 1.5,
                 }}
               >
                 {s.label}
@@ -290,21 +349,24 @@ export default function LandingPage() {
         </div>
       </FadeIn>
 
-      {/* Features */}
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 28px 60px" }}>
+      {/* Verktyg */}
+      <div style={{ maxWidth: 1020, margin: "0 auto", padding: "0 28px 80px" }}>
         <FadeIn delay={100}>
-          <div style={{ textAlign: "center", marginBottom: 40 }}>
+          <div style={{ textAlign: "center", marginBottom: 44 }}>
+            <SectionLabel>verktyg</SectionLabel>
             <h2
               style={{
-                fontFamily: "'Instrument Serif', serif",
-                fontSize: 36,
-                fontWeight: 400,
+                fontFamily: DISPLAY,
+                fontSize: "clamp(28px, 4.5vw, 40px)",
+                fontWeight: 700,
                 margin: "0 0 12px",
+                color: "#F4F7FF",
+                letterSpacing: "-0.02em",
               }}
             >
               Sex verktyg, ett mål
             </h2>
-            <p style={{ color: "#888", fontSize: 16 }}>
+            <p style={{ color: "#8E99C2", fontSize: 16 }}>
               Allt ditt företag behöver för att kommunicera professionellt
             </p>
           </div>
@@ -313,28 +375,39 @@ export default function LandingPage() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))",
             gap: 16,
           }}
         >
           {FEATURES.map((f, i) => (
             <FadeIn key={i} delay={150 + i * 80}>
-              <a href={f.href} style={{ textDecoration: "none", color: "inherit", display: "block" }}>
-                <div
-                  style={{
-                    background: "#fff",
-                    border: "1px solid #EDEDED",
-                    borderRadius: 14,
-                    padding: "24px 22px",
-                    cursor: "pointer",
-                  }}
-                >
-                  <div style={{ fontSize: 30, marginBottom: 12 }}>{f.icon}</div>
-                  <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>
+              <a href={f.href} style={{ textDecoration: "none", color: "inherit", display: "block", height: "100%" }}>
+                <div className="tv-card" style={{ "--hue": f.hue }}>
+                  <div
+                    style={{
+                      width: 52,
+                      height: 52,
+                      borderRadius: 14,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: 26,
+                      marginBottom: 16,
+                      background: `color-mix(in srgb, ${f.hue} 12%, transparent)`,
+                      border: `1px solid color-mix(in srgb, ${f.hue} 35%, transparent)`,
+                      boxShadow: `0 0 18px color-mix(in srgb, ${f.hue} 18%, transparent)`,
+                    }}
+                  >
+                    {f.icon}
+                  </div>
+                  <div style={{ fontFamily: DISPLAY, fontSize: 17, fontWeight: 700, marginBottom: 6, color: "#F4F7FF" }}>
                     {f.title}
                   </div>
-                  <div style={{ fontSize: 14, color: "#777", lineHeight: 1.5 }}>
+                  <div style={{ fontSize: 14, color: "#8E99C2", lineHeight: 1.6 }}>
                     {f.desc}
+                  </div>
+                  <div style={{ fontFamily: MONO, fontSize: 12, color: f.hue, marginTop: 14, letterSpacing: 1 }}>
+                    ÖPPNA →
                   </div>
                 </div>
               </a>
@@ -343,17 +416,34 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/* How it works */}
-      <div style={{ background: "#111", color: "#fff", padding: "60px 28px" }}>
-        <div style={{ maxWidth: 700, margin: "0 auto" }}>
+      {/* Så fungerar det */}
+      <div
+        style={{
+          background: "linear-gradient(180deg, rgba(13, 17, 36, 0.7) 0%, rgba(8, 11, 26, 0.85) 100%)",
+          borderTop: "1px solid rgba(125, 140, 255, 0.14)",
+          borderBottom: "1px solid rgba(125, 140, 255, 0.14)",
+          padding: "72px 28px",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div aria-hidden style={{
+          position: "absolute", top: "-40%", left: "50%", transform: "translateX(-50%)",
+          width: 600, height: 400, borderRadius: "50%", filter: "blur(110px)",
+          background: "rgba(99, 102, 241, 0.16)", pointerEvents: "none",
+        }} />
+        <div style={{ maxWidth: 720, margin: "0 auto", position: "relative" }}>
           <FadeIn>
+            <SectionLabel>process</SectionLabel>
             <h2
               style={{
-                fontFamily: "'Instrument Serif', serif",
-                fontSize: 36,
-                fontWeight: 400,
+                fontFamily: DISPLAY,
+                fontSize: "clamp(28px, 4.5vw, 40px)",
+                fontWeight: 700,
                 textAlign: "center",
-                marginBottom: 48,
+                marginBottom: 52,
+                color: "#F4F7FF",
+                letterSpacing: "-0.02em",
               }}
             >
               Tre steg. Noll krångel.
@@ -381,39 +471,33 @@ export default function LandingPage() {
               <div
                 style={{
                   display: "flex",
-                  gap: 20,
+                  gap: 24,
                   alignItems: "flex-start",
                   marginBottom: 36,
                   paddingBottom: 36,
-                  borderBottom:
-                    i < 2 ? "1px solid rgba(255,255,255,0.08)" : "none",
+                  borderBottom: i < 2 ? "1px solid rgba(125, 140, 255, 0.1)" : "none",
                 }}
               >
                 <div
                   style={{
-                    fontFamily: "'Instrument Serif', serif",
-                    fontSize: 40,
-                    color: "rgba(255,255,255,0.15)",
-                    lineHeight: 1,
+                    fontFamily: MONO,
+                    fontSize: 32,
+                    fontWeight: 600,
+                    background: "linear-gradient(135deg, #22D3EE, #818CF8)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    lineHeight: 1.1,
                     flexShrink: 0,
-                    width: 56,
+                    width: 64,
                   }}
                 >
                   {step.num}
                 </div>
                 <div>
-                  <div
-                    style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}
-                  >
+                  <div style={{ fontFamily: DISPLAY, fontSize: 19, fontWeight: 700, marginBottom: 6, color: "#F4F7FF" }}>
                     {step.title}
                   </div>
-                  <div
-                    style={{
-                      fontSize: 15,
-                      color: "rgba(255,255,255,0.6)",
-                      lineHeight: 1.6,
-                    }}
-                  >
+                  <div style={{ fontSize: 15, color: "#9AA5CC", lineHeight: 1.7 }}>
                     {step.desc}
                   </div>
                 </div>
@@ -423,21 +507,112 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/* Use cases */}
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "60px 28px" }}>
+      {/* Varför bra texter spelar roll */}
+      <div style={{ maxWidth: 720, margin: "0 auto", padding: "80px 28px 40px" }}>
         <FadeIn>
+          <SectionLabel>därför</SectionLabel>
           <h2
             style={{
-              fontFamily: "'Instrument Serif', serif",
-              fontSize: 36,
-              fontWeight: 400,
+              fontFamily: DISPLAY,
+              fontSize: "clamp(28px, 4.5vw, 40px)",
+              fontWeight: 700,
+              textAlign: "center",
+              marginBottom: 28,
+              color: "#F4F7FF",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Därför gör bra texter skillnad
+          </h2>
+        </FadeIn>
+        <FadeIn delay={100}>
+          <p style={{ fontSize: 16.5, color: "#B6C0DE", lineHeight: 1.85, marginBottom: 20 }}>
+            För ett litet företag är texten ofta hela första intrycket. En kund som får
+            ett rörigt offertmejl antar att leveransen blir lika rörig. En webbutik med
+            slarviga produktbeskrivningar tappar köpare i sista steget. Och en
+            betalningspåminnelse med fel ton kan kosta en kundrelation som tagit år att
+            bygga. Skillnaden mellan en text som fungerar och en som inte gör det är
+            sällan talang — det är struktur, ton och tid. Tid som de flesta
+            företagare inte har.
+          </p>
+        </FadeIn>
+        <FadeIn delay={200}>
+          <p style={{ fontSize: 16.5, color: "#B6C0DE", lineHeight: 1.85, marginBottom: 20 }}>
+            Det är därför Textverket finns. Varje verktyg är byggt kring en specifik
+            svensk affärssituation och tränat på hur svenska företag faktiskt
+            kommunicerar — inte direktöversatta engelska mallar. Du beskriver ditt
+            ärende med några rader, och AI:n gör grovjobbet: struktur, formuleringar,
+            rätt ton för mottagaren. Sedan finjusterar du med detaljerna som bara du
+            kan — namn, priser, det där personliga.
+          </p>
+        </FadeIn>
+        <FadeIn delay={300}>
+          <p style={{ fontSize: 16.5, color: "#B6C0DE", lineHeight: 1.85 }}>
+            Vill du hellre lära dig skriva själv? Vi publicerar djupgående guider och
+            färdiga mallar i <a href="/blogg" style={{ color: "#22D3EE", textDecoration: "none", borderBottom: "1px solid rgba(34, 211, 238, 0.4)" }}>bloggen</a> —
+            om allt från offertteknik och kundmejl till SEO och nyhetsbrev. Verktygen
+            och guiderna kompletterar varandra: använd verktyget när det är bråttom,
+            guiden när du vill förstå hantverket.
+          </p>
+        </FadeIn>
+      </div>
+
+      {/* Guider från bloggen */}
+      <div style={{ maxWidth: 1020, margin: "0 auto", padding: "40px 28px 80px" }}>
+        <FadeIn>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))",
+              gap: 14,
+            }}
+          >
+            {GUIDES.map((g, i) => (
+              <a key={i} href={g.href} style={{ textDecoration: "none" }}>
+                <div className="tv-guide-card">
+                  <span
+                    style={{
+                      fontFamily: MONO,
+                      fontSize: 11,
+                      letterSpacing: 1.5,
+                      textTransform: "uppercase",
+                      color: "#A5B4FC",
+                      background: "rgba(129, 140, 248, 0.13)",
+                      border: "1px solid rgba(129, 140, 248, 0.3)",
+                      padding: "3px 10px",
+                      borderRadius: 100,
+                    }}
+                  >
+                    {g.tag}
+                  </span>
+                  <div style={{ fontSize: 15, fontWeight: 600, color: "#DDE4FB", lineHeight: 1.5, marginTop: 12 }}>
+                    {g.title}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </FadeIn>
+      </div>
+
+      {/* Användningsfall */}
+      <div style={{ maxWidth: 1020, margin: "0 auto", padding: "0 28px 80px" }}>
+        <FadeIn>
+          <SectionLabel>exempel</SectionLabel>
+          <h2
+            style={{
+              fontFamily: DISPLAY,
+              fontSize: "clamp(28px, 4.5vw, 40px)",
+              fontWeight: 700,
               textAlign: "center",
               marginBottom: 12,
+              color: "#F4F7FF",
+              letterSpacing: "-0.02em",
             }}
           >
             Vad kan du skapa?
           </h2>
-          <p style={{ textAlign: "center", color: "#888", fontSize: 16, marginBottom: 40 }}>
+          <p style={{ textAlign: "center", color: "#8E99C2", fontSize: 16, marginBottom: 44 }}>
             Tre exempel på hur svenska företagare använder Textverket varje dag.
           </p>
         </FadeIn>
@@ -445,28 +620,19 @@ export default function LandingPage() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))",
             gap: 16,
           }}
         >
           {USECASES.map((u, i) => (
             <FadeIn key={i} delay={i * 100}>
-              <a href={u.href} style={{ textDecoration: "none", color: "inherit", display: "block" }}>
-                <div
-                  style={{
-                    background: "#fff",
-                    border: "1px solid #EDEDED",
-                    borderRadius: 14,
-                    padding: "24px 22px",
-                    height: "100%",
-                    boxSizing: "border-box",
-                  }}
-                >
-                  <div style={{ fontSize: 28, marginBottom: 12 }}>{u.icon}</div>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: "#111", marginBottom: 8 }}>
+              <a href={u.href} style={{ textDecoration: "none", color: "inherit", display: "block", height: "100%" }}>
+                <div className="tv-card" style={{ "--hue": "#22D3EE", height: "100%" }}>
+                  <div style={{ fontSize: 28, marginBottom: 14 }}>{u.icon}</div>
+                  <div style={{ fontFamily: DISPLAY, fontSize: 16, fontWeight: 700, color: "#F4F7FF", marginBottom: 8 }}>
                     {u.title}
                   </div>
-                  <div style={{ fontSize: 14, color: "#666", lineHeight: 1.6 }}>
+                  <div style={{ fontSize: 14, color: "#9AA5CC", lineHeight: 1.7 }}>
                     {u.desc}
                   </div>
                 </div>
@@ -477,17 +643,18 @@ export default function LandingPage() {
       </div>
 
       {/* FAQ */}
-      <div
-        style={{ maxWidth: 640, margin: "0 auto", padding: "20px 28px 60px" }}
-      >
+      <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 28px 80px" }}>
         <FadeIn>
+          <SectionLabel>faq</SectionLabel>
           <h2
             style={{
-              fontFamily: "'Instrument Serif', serif",
-              fontSize: 36,
-              fontWeight: 400,
+              fontFamily: DISPLAY,
+              fontSize: "clamp(28px, 4.5vw, 40px)",
+              fontWeight: 700,
               textAlign: "center",
-              marginBottom: 32,
+              marginBottom: 36,
+              color: "#F4F7FF",
+              letterSpacing: "-0.02em",
             }}
           >
             Vanliga frågor
@@ -499,12 +666,16 @@ export default function LandingPage() {
             <div
               onClick={() => setActiveFaq(activeFaq === i ? null : i)}
               style={{
-                background: "#fff",
-                border: "1px solid #EDEDED",
-                borderRadius: 12,
+                background: activeFaq === i ? "rgba(34, 211, 238, 0.05)" : "rgba(13, 17, 36, 0.6)",
+                border: activeFaq === i
+                  ? "1px solid rgba(34, 211, 238, 0.35)"
+                  : "1px solid rgba(125, 140, 255, 0.16)",
+                borderRadius: 14,
                 padding: "18px 22px",
                 marginBottom: 10,
                 cursor: "pointer",
+                transition: "all 0.25s ease",
+                backdropFilter: "blur(8px)",
               }}
             >
               <div
@@ -512,16 +683,18 @@ export default function LandingPage() {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
+                  gap: 12,
                 }}
               >
-                <span style={{ fontSize: 15, fontWeight: 600 }}>{faq.q}</span>
+                <span style={{ fontSize: 15, fontWeight: 600, color: "#E5EAFD" }}>{faq.q}</span>
                 <span
                   style={{
                     fontSize: 20,
-                    color: "#999",
-                    transition: "transform 0.3s",
+                    color: activeFaq === i ? "#22D3EE" : "#7E88B5",
+                    transition: "transform 0.3s, color 0.3s",
                     transform: activeFaq === i ? "rotate(45deg)" : "none",
                     display: "inline-block",
+                    flexShrink: 0,
                   }}
                 >
                   +
@@ -531,9 +704,9 @@ export default function LandingPage() {
                 <div
                   style={{
                     marginTop: 12,
-                    fontSize: 14,
-                    color: "#666",
-                    lineHeight: 1.7,
+                    fontSize: 14.5,
+                    color: "#9AA5CC",
+                    lineHeight: 1.75,
                   }}
                 >
                   {faq.a}
@@ -548,68 +721,125 @@ export default function LandingPage() {
       <div
         id="cta"
         style={{
-          background: "linear-gradient(135deg, #111 0%, #1a2332 100%)",
-          padding: "60px 28px",
-          textAlign: "center",
+          maxWidth: 960,
+          margin: "0 auto 90px",
+          padding: "0 28px",
         }}
       >
         <FadeIn>
-          <h2
+          <div
             style={{
-              fontFamily: "'Instrument Serif', serif",
-              fontSize: 36,
-              fontWeight: 400,
-              color: "#fff",
-              marginBottom: 16,
+              position: "relative",
+              borderRadius: 24,
+              padding: "64px 32px",
+              textAlign: "center",
+              overflow: "hidden",
+              background: "linear-gradient(135deg, rgba(49, 46, 129, 0.55) 0%, rgba(8, 11, 28, 0.9) 100%)",
+              border: "1px solid rgba(125, 140, 255, 0.25)",
+              boxShadow: "0 0 80px rgba(99, 102, 241, 0.18)",
             }}
           >
-            Redo att spara tid?
-          </h2>
-          <p
-            style={{
-              color: "rgba(255,255,255,0.6)",
-              fontSize: 16,
-              marginBottom: 32,
-            }}
-          >
-            Gå direkt till verktyget och skriv din första text på under 30
-            sekunder.
-          </p>
-          <a
-            href="/verktyg"
-            style={{
-              display: "inline-block",
-              background: "#fff",
-              color: "#111",
-              padding: "16px 44px",
-              borderRadius: 100,
-              fontSize: 17,
-              fontWeight: 700,
-              textDecoration: "none",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.3)",
-            }}
-          >
-            Öppna Textverket – det är gratis
-          </a>
+            <div aria-hidden style={{
+              position: "absolute", top: "-60%", left: "50%", transform: "translateX(-50%)",
+              width: 500, height: 320, borderRadius: "50%", filter: "blur(100px)",
+              background: "rgba(34, 211, 238, 0.2)", pointerEvents: "none",
+            }} />
+            <h2
+              style={{
+                fontFamily: DISPLAY,
+                fontSize: "clamp(28px, 4.5vw, 40px)",
+                fontWeight: 700,
+                color: "#F4F7FF",
+                marginBottom: 16,
+                position: "relative",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Redo att spara tid?
+            </h2>
+            <p
+              style={{
+                color: "#9AA5CC",
+                fontSize: 16,
+                marginBottom: 32,
+                position: "relative",
+              }}
+            >
+              Gå direkt till verktyget och skriv din första text på under 30 sekunder.
+            </p>
+            <a href="/verktyg" className="tv-cta-primary" style={{ position: "relative" }}>
+              Öppna Textverket – det är gratis
+            </a>
+          </div>
         </FadeIn>
       </div>
 
-      {/* Footer */}
-      <div style={{ textAlign: "center", padding: "32px 28px", color: "#BBB", fontSize: 13, background: "#0A0A0A" }}>
-        © 2026 Textverket · Gratis AI-verktyg för svenska småföretag ·{" "}
-        {[
-          { href: "/om-oss", label: "Om oss" },
-          { href: "/kontakt", label: "Kontakt" },
-          { href: "/guide", label: "Guide" },
-          { href: "/integritetspolicy", label: "Integritetspolicy" },
-          { href: "/blogg", label: "Blogg" },
-        ].map((l, i, arr) => (
-          <span key={l.href}>
-            <a href={l.href} style={{ color: "#BBB", textDecoration: "underline" }}>{l.label}</a>
-            {i < arr.length - 1 && " · "}
-          </span>
-        ))}
-      </div>
+      <Footer />
+
+      <style>{`
+        .tv-cta-primary {
+          display: inline-block;
+          background: linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
+          color: #fff;
+          padding: 16px 38px;
+          border-radius: 100px;
+          font-size: 16px;
+          font-weight: 700;
+          text-decoration: none;
+          box-shadow: 0 0 28px rgba(34, 211, 238, 0.35), 0 4px 24px rgba(0, 0, 0, 0.4);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .tv-cta-primary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 0 44px rgba(34, 211, 238, 0.55), 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+        .tv-cta-ghost {
+          display: inline-block;
+          background: rgba(13, 17, 36, 0.5);
+          color: #C3CCE8;
+          padding: 16px 32px;
+          border-radius: 100px;
+          font-size: 16px;
+          font-weight: 600;
+          text-decoration: none;
+          border: 1px solid rgba(125, 140, 255, 0.25);
+          backdrop-filter: blur(8px);
+          transition: border-color 0.2s ease, color 0.2s ease;
+        }
+        .tv-cta-ghost:hover {
+          border-color: rgba(34, 211, 238, 0.5);
+          color: #fff;
+        }
+        .tv-card {
+          background: rgba(13, 17, 36, 0.6);
+          border: 1px solid rgba(125, 140, 255, 0.16);
+          border-radius: 16px;
+          padding: 26px 24px;
+          cursor: pointer;
+          height: 100%;
+          backdrop-filter: blur(8px);
+          transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .tv-card:hover {
+          transform: translateY(-4px);
+          border-color: color-mix(in srgb, var(--hue, #22D3EE) 55%, transparent);
+          box-shadow: 0 0 32px color-mix(in srgb, var(--hue, #22D3EE) 22%, transparent);
+        }
+        .tv-guide-card {
+          background: rgba(13, 17, 36, 0.55);
+          border: 1px solid rgba(125, 140, 255, 0.14);
+          border-radius: 14px;
+          padding: 20px 22px;
+          height: 100%;
+          backdrop-filter: blur(8px);
+          transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .tv-guide-card:hover {
+          transform: translateY(-3px);
+          border-color: rgba(165, 180, 252, 0.45);
+          box-shadow: 0 0 26px rgba(129, 140, 248, 0.2);
+        }
+      `}</style>
     </div>
   );
 }

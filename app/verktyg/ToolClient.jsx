@@ -136,9 +136,9 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
     <div
       style={{
         minHeight: "100vh",
-        background: "#FAFAF9",
-        fontFamily: "'DM Sans', sans-serif",
-        color: "#1A1A1A",
+        background: "transparent",
+        fontFamily: "'Inter', sans-serif",
+        color: "#EAEEFF",
       }}
     >
       <NavBar />
@@ -154,11 +154,12 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
       >
         <h1
           style={{
-            fontFamily: "'Instrument Serif', serif",
+            fontFamily: "'Space Grotesk', sans-serif",
             fontSize: "clamp(28px, 5vw, 38px)",
-            fontWeight: 400,
+            fontWeight: 700,
+            letterSpacing: "-0.02em",
             margin: "0 0 10px",
-            color: "#111",
+            color: "#F4F7FF",
             lineHeight: 1.2,
           }}
         >
@@ -169,7 +170,7 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
         <p
           style={{
             fontSize: 15,
-            color: "#6B7280",
+            color: "#949EC9",
             margin: 0,
             lineHeight: 1.6,
           }}
@@ -184,7 +185,7 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
           <div
             style={{
               fontSize: 12,
-              color: "#9CA3AF",
+              color: "#7E88B5",
               textTransform: "uppercase",
               letterSpacing: 1.2,
               marginBottom: 12,
@@ -201,11 +202,11 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
                 key={cat.id}
                 onClick={() => router.push(cat.slug)}
                 style={{
-                  background: selected === cat.id ? "#EFF6FF" : "#fff",
+                  background: selected === cat.id ? "rgba(34, 211, 238, 0.08)" : "#fff",
                   border:
                     selected === cat.id
-                      ? "1.5px solid #2563EB"
-                      : "1.5px solid #EDEDED",
+                      ? "1.5px solid #22D3EE"
+                      : "1.5px solid rgba(125, 140, 255, 0.16)",
                   borderRadius: 12,
                   padding: "14px 8px",
                   cursor: "pointer",
@@ -214,7 +215,7 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
                   transform: selected === cat.id ? "scale(1.03)" : "scale(1)",
                   boxShadow:
                     selected === cat.id
-                      ? "0 0 0 3px rgba(37,99,235,0.08)"
+                      ? "0 0 0 3px rgba(34, 211, 238,0.08)"
                       : "none",
                 }}
               >
@@ -223,7 +224,7 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
                   style={{
                     fontSize: 12,
                     fontWeight: selected === cat.id ? 700 : 500,
-                    color: selected === cat.id ? "#2563EB" : "#6B7280",
+                    color: selected === cat.id ? "#22D3EE" : "#949EC9",
                   }}
                 >
                   {cat.label}
@@ -249,19 +250,25 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
               style={{
                 width: "100%",
                 boxSizing: "border-box",
-                background: "#fff",
-                border: "1.5px solid #EDEDED",
+                background: "rgba(13, 17, 36, 0.66)",
+                border: "1.5px solid rgba(125, 140, 255, 0.16)",
                 borderRadius: 12,
                 padding: 16,
-                color: "#1A1A1A",
+                color: "#EAEEFF",
                 fontSize: 15,
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 resize: "vertical",
                 outline: "none",
                 transition: "border-color 0.2s",
               }}
-              onFocus={(e) => (e.target.style.borderColor = "#2563EB")}
-              onBlur={(e) => (e.target.style.borderColor = "#EDEDED")}
+              onFocus={(e) => {
+                e.target.style.borderColor = "#22D3EE";
+                e.target.style.boxShadow = "0 0 20px rgba(34, 211, 238, 0.18)";
+              }}
+              onBlur={(e) => {
+                e.target.style.borderColor = "rgba(125, 140, 255, 0.16)";
+                e.target.style.boxShadow = "none";
+              }}
             />
 
             <button
@@ -273,20 +280,24 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
                 padding: "14px 24px",
                 background:
                   loading || !input.trim()
-                    ? "#F3F4F6"
-                    : "linear-gradient(135deg, #2563EB 0%, #059669 100%)",
-                color: loading || !input.trim() ? "#9CA3AF" : "#fff",
+                    ? "rgba(255, 255, 255, 0.06)"
+                    : "linear-gradient(135deg, #22D3EE 0%, #818CF8 100%)",
+                color: loading || !input.trim() ? "#7E88B5" : "#fff",
                 border: "none",
                 borderRadius: 12,
                 fontSize: 15,
                 fontWeight: 700,
                 cursor: loading || !input.trim() ? "not-allowed" : "pointer",
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 letterSpacing: 0.3,
                 transition: "all 0.2s",
+                boxShadow:
+                  loading || !input.trim()
+                    ? "none"
+                    : "0 0 26px rgba(34, 211, 238, 0.32)",
               }}
             >
-              {loading ? "⏳ Genererar..." : "Skapa text →"}
+              {loading ? "⚡ Genererar…" : "Skapa text →"}
             </button>
           </div>
         )}
@@ -297,10 +308,10 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
             style={{
               marginTop: 16,
               padding: 14,
-              background: "#FFF5F5",
-              border: "1px solid #FED7D7",
+              background: "rgba(248, 113, 113, 0.09)",
+              border: "1px solid rgba(248, 113, 113, 0.28)",
               borderRadius: 10,
-              color: "#C53030",
+              color: "#F87171",
               fontSize: 14,
             }}
           >
@@ -313,11 +324,12 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
           <div style={{ marginTop: 20, animation: "fadeIn 0.4s ease" }}>
             <div
               style={{
-                background: "#fff",
-                border: "1.5px solid #BFDBFE",
+                background: "rgba(13, 17, 36, 0.66)",
+                border: "1.5px solid rgba(34, 211, 238, 0.35)",
                 borderRadius: 14,
                 padding: 20,
-                boxShadow: "0 2px 12px rgba(37,99,235,0.06)",
+                boxShadow: "0 0 32px rgba(34, 211, 238, 0.12)",
+                backdropFilter: "blur(10px)",
               }}
             >
               <div
@@ -330,27 +342,28 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
               >
                 <span
                   style={{
+                    fontFamily: "'JetBrains Mono', monospace",
                     fontSize: 11,
-                    color: "#2563EB",
-                    fontWeight: 700,
+                    color: "#22D3EE",
+                    fontWeight: 600,
                     textTransform: "uppercase",
-                    letterSpacing: 1,
+                    letterSpacing: 2,
                   }}
                 >
-                  Resultat
+                  ✓ Resultat
                 </span>
                 <button
                   onClick={handleCopy}
                   style={{
-                    background: copied ? "#F0FDF4" : "#F9FAFB",
-                    border: `1px solid ${copied ? "#BBF7D0" : "#E5E7EB"}`,
+                    background: copied ? "rgba(52, 211, 153, 0.1)" : "rgba(255, 255, 255, 0.04)",
+                    border: `1px solid ${copied ? "rgba(52, 211, 153, 0.32)" : "rgba(125, 140, 255, 0.18)"}`,
                     borderRadius: 8,
                     padding: "5px 14px",
-                    color: copied ? "#15803D" : "#6B7280",
+                    color: copied ? "#34D399" : "#949EC9",
                     fontSize: 12,
                     fontWeight: 600,
                     cursor: "pointer",
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Inter', sans-serif",
                     transition: "all 0.2s",
                   }}
                 >
@@ -361,7 +374,7 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
                 style={{
                   fontSize: 15,
                   lineHeight: 1.75,
-                  color: "#374151",
+                  color: "#C3CCE8",
                   whiteSpace: "pre-wrap",
                 }}
               >
@@ -380,7 +393,7 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
             <div
               style={{
                 fontSize: 12,
-                color: "#9CA3AF",
+                color: "#7E88B5",
                 textTransform: "uppercase",
                 letterSpacing: 1.2,
                 marginBottom: 10,
@@ -397,8 +410,8 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
                   setCopied(false);
                 }}
                 style={{
-                  background: "#fff",
-                  border: "1px solid #EDEDED",
+                  background: "rgba(13, 17, 36, 0.66)",
+                  border: "1px solid rgba(125, 140, 255, 0.16)",
                   borderRadius: 10,
                   padding: "12px 14px",
                   marginBottom: 8,
@@ -406,22 +419,22 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
                   transition: "border-color 0.15s, box-shadow 0.15s",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "#BFDBFE";
+                  e.currentTarget.style.borderColor = "rgba(34, 211, 238, 0.35)";
                   e.currentTarget.style.boxShadow =
-                    "0 1px 6px rgba(37,99,235,0.08)";
+                    "0 1px 6px rgba(34, 211, 238,0.08)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "#EDEDED";
+                  e.currentTarget.style.borderColor = "rgba(125, 140, 255, 0.16)";
                   e.currentTarget.style.boxShadow = "none";
                 }}
               >
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                   <span
-                    style={{ fontSize: 13, fontWeight: 600, color: "#1A1A1A" }}
+                    style={{ fontSize: 13, fontWeight: 600, color: "#EAEEFF" }}
                   >
                     {item.category}
                   </span>
-                  <span style={{ fontSize: 11, color: "#9CA3AF" }}>
+                  <span style={{ fontSize: 11, color: "#7E88B5" }}>
                     {item.time.toLocaleTimeString("sv-SE", {
                       hour: "2-digit",
                       minute: "2-digit",
@@ -431,7 +444,7 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
                 <div
                   style={{
                     fontSize: 12,
-                    color: "#6B7280",
+                    color: "#949EC9",
                     marginTop: 4,
                     overflow: "hidden",
                     textOverflow: "ellipsis",

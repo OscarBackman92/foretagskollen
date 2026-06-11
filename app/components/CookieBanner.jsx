@@ -34,22 +34,25 @@ export default function CookieBanner() {
       bottom: 0,
       left: 0,
       right: 0,
-      background: '#fff',
-      boxShadow: '0 -2px 12px rgba(0,0,0,0.08)',
+      background: 'rgba(8, 11, 26, 0.92)',
+      backdropFilter: 'blur(16px)',
+      WebkitBackdropFilter: 'blur(16px)',
+      borderTop: '1px solid rgba(125, 140, 255, 0.25)',
+      boxShadow: '0 -8px 40px rgba(2, 3, 10, 0.7)',
       padding: '16px 24px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
       gap: '16px',
       flexWrap: 'wrap',
-      fontFamily: "'DM Sans', sans-serif",
+      fontFamily: "'Inter', sans-serif",
       fontSize: '14px',
-      color: '#111',
+      color: '#C3CCE8',
       zIndex: 9999,
     }}>
       <p style={{ flex: 1, minWidth: '200px', lineHeight: '1.5' }}>
         Vi använder cookies för att analysera trafik och visa annonser. Läs mer i vår{' '}
-        <Link href="/integritetspolicy" style={{ color: '#111', textDecoration: 'underline' }}>
+        <Link href="/integritetspolicy" style={{ color: '#22D3EE', textDecoration: 'underline' }}>
           integritetspolicy
         </Link>
         .
@@ -58,14 +61,14 @@ export default function CookieBanner() {
         <button
           onClick={() => accept('necessary')}
           style={{
-            padding: '8px 16px',
-            border: '1px solid #d1d5db',
-            borderRadius: '6px',
-            background: '#fff',
-            fontFamily: "'DM Sans', sans-serif",
+            padding: '9px 16px',
+            border: '1px solid rgba(125, 140, 255, 0.3)',
+            borderRadius: '100px',
+            background: 'transparent',
+            fontFamily: "'Inter', sans-serif",
             fontSize: '14px',
             cursor: 'pointer',
-            color: '#111',
+            color: '#C3CCE8',
           }}
         >
           Bara nödvändiga
@@ -73,14 +76,16 @@ export default function CookieBanner() {
         <button
           onClick={() => accept('all')}
           style={{
-            padding: '8px 16px',
+            padding: '9px 18px',
             border: 'none',
-            borderRadius: '6px',
-            background: '#111',
-            fontFamily: "'DM Sans', sans-serif",
+            borderRadius: '100px',
+            background: 'linear-gradient(135deg, #6366F1 0%, #22D3EE 100%)',
+            fontFamily: "'Inter', sans-serif",
             fontSize: '14px',
+            fontWeight: 600,
             cursor: 'pointer',
             color: '#fff',
+            boxShadow: '0 0 18px rgba(34, 211, 238, 0.3)',
           }}
         >
           Acceptera alla

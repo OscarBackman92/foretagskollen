@@ -5,3 +5,110 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --bg: #05060f;
+  --text: #eaeeff;
+  --text-dim: #7e88b5;
+  --line: rgba(125, 140, 255, 0.16);
+  --cyan: #22d3ee;
+  --indigo: #6366f1;
+  --violet: #a78bfa;
+  --glass: rgba(13, 17, 36, 0.66);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 55% at 18% -12%, rgba(99, 102, 241, 0.22), transparent 62%),
+    radial-gradient(ellipse 55% 40% at 85% -5%, rgba(34, 211, 238, 0.14), transparent 58%),
+    radial-gradient(ellipse 70% 50% at 50% 112%, rgba(139, 92, 246, 0.13), transparent 60%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtilt HUD-rutnät över rymdbakgrunden */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(125, 140, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125, 140, 255, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse 95% 75% at 50% 0%, black 0%, transparent 78%);
+  mask-image: radial-gradient(ellipse 95% 75% at 50% 0%, black 0%, transparent 78%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.35);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #070a18;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #312e81, #155e75);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #4338ca, #0e7490);
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+}
+
+a:focus-visible,
+button:focus-visible,
+textarea:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+/* Delade animationer för hela sajten */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 1; }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes scanline {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100%); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}

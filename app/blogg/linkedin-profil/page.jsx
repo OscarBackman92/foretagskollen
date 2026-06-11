@@ -31,38 +31,38 @@ export const metadata = {
 };
 
 const S = {
-  page: { minHeight: "100vh", background: "#FAFAF9", fontFamily: "'DM Sans', sans-serif", color: "#1A1A1A" },
-  navWrap: { borderBottom: "1px solid #EDEDED" },
+  page: { minHeight: "100vh", background: "transparent", fontFamily: "'Inter', sans-serif", color: "#EAEEFF" },
+  navWrap: { borderBottom: "1px solid rgba(125, 140, 255, 0.16)" },
   nav: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "18px 28px", maxWidth: 960, margin: "0 auto" },
-  logo: { display: "flex", alignItems: "center", gap: 8, textDecoration: "none", color: "#1A1A1A" },
+  logo: { display: "flex", alignItems: "center", gap: 8, textDecoration: "none", color: "#EAEEFF" },
   navLinks: { display: "flex", alignItems: "center", gap: 24 },
-  navLink: { fontSize: 14, fontWeight: 500, color: "#555", textDecoration: "none" },
-  navCta: { background: "#1A1A1A", color: "#fff", padding: "9px 20px", borderRadius: 100, fontSize: 14, fontWeight: 600, textDecoration: "none" },
+  navLink: { fontSize: 14, fontWeight: 500, color: "#A7B1D6", textDecoration: "none" },
+  navCta: { background: "linear-gradient(135deg, #6366F1 0%, #22D3EE 100%)", color: "#fff", padding: "9px 20px", borderRadius: 100, fontSize: 14, fontWeight: 600, textDecoration: "none" },
   article: { maxWidth: 720, margin: "0 auto", padding: "52px 28px 80px" },
-  breadcrumb: { fontSize: 13, color: "#9CA3AF", marginBottom: 28, display: "flex", gap: 6, alignItems: "center" },
-  breadcrumbLink: { color: "#9CA3AF", textDecoration: "none" },
-  categoryPill: { display: "inline-block", background: "#EEF2FF", color: "#4338CA", fontSize: 12, fontWeight: 600, padding: "4px 12px", borderRadius: 100, marginBottom: 20, letterSpacing: 0.3, textTransform: "uppercase" },
-  h1: { fontFamily: "'Instrument Serif', serif", fontSize: "clamp(30px, 5vw, 44px)", fontWeight: 400, lineHeight: 1.2, margin: "0 0 20px", color: "#111" },
-  meta: { fontSize: 14, color: "#9CA3AF", marginBottom: 36, display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" },
-  metaDot: { color: "#D1D5DB" },
-  divider: { border: "none", borderTop: "1px solid #E5E7EB", margin: "0 0 40px" },
-  p: { fontSize: 17, lineHeight: 1.85, color: "#374151", margin: "0 0 22px" },
-  h2: { fontFamily: "'Instrument Serif', serif", fontSize: 28, fontWeight: 400, color: "#111", margin: "56px 0 20px", lineHeight: 1.3 },
-  h3: { fontSize: 18, fontWeight: 700, color: "#1A1A1A", margin: "36px 0 14px", lineHeight: 1.4 },
-  tip: { background: "#FFFBEB", border: "1px solid #FDE68A", borderRadius: 10, padding: "14px 18px", fontSize: 14, color: "#92400E", lineHeight: 1.7, margin: "20px 0" },
-  quote: { margin: "20px 0", padding: "16px 20px", background: "#F8FAFC", borderLeft: "3px solid #CBD5E0", borderRadius: "0 8px 8px 0", fontSize: 15, color: "#4A5568", lineHeight: 1.8, fontStyle: "italic" },
+  breadcrumb: { fontSize: 13, color: "#7E88B5", marginBottom: 28, display: "flex", gap: 6, alignItems: "center" },
+  breadcrumbLink: { color: "#7E88B5", textDecoration: "none" },
+  categoryPill: { display: "inline-block", background: "rgba(129, 140, 248, 0.13)", color: "#A5B4FC", fontSize: 12, fontWeight: 600, padding: "4px 12px", borderRadius: 100, marginBottom: 20, letterSpacing: 0.3, textTransform: "uppercase" },
+  h1: { fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(30px, 5vw, 44px)", fontWeight: 700, lineHeight: 1.2, margin: "0 0 20px", color: "#EAEEFF" },
+  meta: { fontSize: 14, color: "#7E88B5", marginBottom: 36, display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" },
+  metaDot: { color: "rgba(125, 140, 255, 0.25)" },
+  divider: { border: "none", borderTop: "1px solid rgba(125, 140, 255, 0.18)", margin: "0 0 40px" },
+  p: { fontSize: 17, lineHeight: 1.85, color: "#C3CCE8", margin: "0 0 22px" },
+  h2: { fontFamily: "'Space Grotesk', sans-serif", fontSize: 28, fontWeight: 700, color: "#EAEEFF", margin: "56px 0 20px", lineHeight: 1.3 },
+  h3: { fontSize: 18, fontWeight: 700, color: "#EAEEFF", margin: "36px 0 14px", lineHeight: 1.4 },
+  tip: { background: "rgba(251, 191, 36, 0.09)", border: "1px solid rgba(251, 191, 36, 0.32)", borderRadius: 10, padding: "14px 18px", fontSize: 14, color: "#FCD34D", lineHeight: 1.7, margin: "20px 0" },
+  quote: { margin: "20px 0", padding: "16px 20px", background: "rgba(255, 255, 255, 0.04)", borderLeft: "3px solid rgba(125, 140, 255, 0.28)", borderRadius: "0 8px 8px 0", fontSize: 15, color: "#B6C0DE", lineHeight: 1.8, fontStyle: "italic" },
   compRow: { display: "flex", flexDirection: "column", gap: 8, margin: "16px 0" },
-  compBefore: { background: "#FFF5F5", border: "1px solid #FED7D7", borderRadius: 8, padding: "10px 14px", fontSize: 14, color: "#7F1D1D" },
-  compAfter: { background: "#F0FDF4", border: "1px solid #BBF7D0", borderRadius: 8, padding: "10px 14px", fontSize: 14, color: "#14532D" },
+  compBefore: { background: "rgba(248, 113, 113, 0.09)", border: "1px solid rgba(248, 113, 113, 0.28)", borderRadius: 8, padding: "10px 14px", fontSize: 14, color: "#FCA5A5" },
+  compAfter: { background: "rgba(52, 211, 153, 0.1)", border: "1px solid rgba(52, 211, 153, 0.32)", borderRadius: 8, padding: "10px 14px", fontSize: 14, color: "#6EE7B7" },
   listItem: { display: "flex", gap: 12, margin: "10px 0", alignItems: "flex-start" },
-  bullet: { width: 6, height: 6, borderRadius: "50%", background: "#9CA3AF", flexShrink: 0, marginTop: 10 },
-  sectionCard: { background: "#fff", border: "1px solid #E5E7EB", borderRadius: 12, padding: "20px 24px", margin: "16px 0" },
-  ctaBox: { background: "linear-gradient(135deg, #111 0%, #1a2332 100%)", borderRadius: 16, padding: "32px 28px", margin: "48px 0 0", color: "#fff" },
-  ctaTitle: { fontFamily: "'Instrument Serif', serif", fontSize: 24, fontWeight: 400, margin: "0 0 10px", color: "#fff" },
+  bullet: { width: 6, height: 6, borderRadius: "50%", background: "#7E88B5", flexShrink: 0, marginTop: 10 },
+  sectionCard: { background: "rgba(13, 17, 36, 0.66)", border: "1px solid rgba(125, 140, 255, 0.18)", borderRadius: 12, padding: "20px 24px", margin: "16px 0" },
+  ctaBox: { background: "linear-gradient(135deg, rgba(49, 46, 129, 0.55) 0%, rgba(8, 11, 28, 0.9) 100%)", borderRadius: 16, padding: "32px 28px", margin: "48px 0 0", color: "#fff" },
+  ctaTitle: { fontFamily: "'Space Grotesk', sans-serif", fontSize: 24, fontWeight: 700, margin: "0 0 10px", color: "#fff" },
   ctaDesc: { fontSize: 15, color: "rgba(255,255,255,0.7)", margin: "0 0 20px", lineHeight: 1.7 },
-  ctaBtn: { display: "inline-block", background: "#fff", color: "#111", padding: "12px 28px", borderRadius: 100, fontSize: 15, fontWeight: 700, textDecoration: "none" },
-  footerNote: { borderTop: "1px solid #E5E7EB", marginTop: 56, paddingTop: 24, fontSize: 14, color: "#9CA3AF", lineHeight: 1.7, fontStyle: "italic" },
-  footer: { textAlign: "center", padding: "32px 28px", color: "#9CA3AF", fontSize: 13, borderTop: "1px solid #EDEDED" },
+  ctaBtn: { display: "inline-block", background: "rgba(13, 17, 36, 0.66)", color: "#EAEEFF", padding: "12px 28px", borderRadius: 100, fontSize: 15, fontWeight: 700, textDecoration: "none" },
+  footerNote: { borderTop: "1px solid rgba(125, 140, 255, 0.18)", marginTop: 56, paddingTop: 24, fontSize: 14, color: "#7E88B5", lineHeight: 1.7, fontStyle: "italic" },
+  footer: { textAlign: "center", padding: "32px 28px", color: "#7E88B5", fontSize: 13, borderTop: "1px solid rgba(125, 140, 255, 0.16)" },
 };
 
 export default function LinkedInProfilPage() {
@@ -174,8 +174,8 @@ export default function LinkedInProfilPage() {
           { label: "Avslutning med CTA", desc: 'Hur kan folk kontakta dig? "Hör av dig på [mejl] om du vill diskutera X" fungerar bättre än "Kontakta mig gärna".' },
         ].map((item) => (
           <div key={item.label} style={S.sectionCard}>
-            <p style={{ fontSize: 15, fontWeight: 700, color: "#111", margin: "0 0 6px" }}>{item.label}</p>
-            <p style={{ fontSize: 15, color: "#374151", lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
+            <p style={{ fontSize: 15, fontWeight: 700, color: "#EAEEFF", margin: "0 0 6px" }}>{item.label}</p>
+            <p style={{ fontSize: 15, color: "#C3CCE8", lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
           </div>
         ))}
 
@@ -241,7 +241,7 @@ export default function LinkedInProfilPage() {
 
         <p style={S.footerNote}>
           Textverket hjälper svenska småföretag och privatpersoner att skriva professionella texter med AI.{" "}
-          <a href="/verktyg" style={{ color: "#6B7280" }}>Testa gratis på textverket.se.</a>
+          <a href="/verktyg" style={{ color: "#949EC9" }}>Testa gratis på textverket.se.</a>
         </p>
       </article>
 

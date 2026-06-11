@@ -2,7 +2,7 @@ export default function sitemap() {
   return [
     {
       url: "https://www.textverket.se",
-      lastModified: new Date("2026-06-09"),
+      lastModified: new Date("2026-06-11"),
       changeFrequency: "weekly",
       priority: 1.0,
     },
@@ -159,6 +159,12 @@ export default function sitemap() {
     {
       url: "https://www.textverket.se/integritetspolicy",
       lastModified: new Date("2026-04-21"),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: "https://www.textverket.se/anvandarvillkor",
+      lastModified: new Date("2026-06-11"),
       changeFrequency: "yearly",
       priority: 0.3,
     },

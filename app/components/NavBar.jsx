@@ -21,43 +21,64 @@ export default function NavBar() {
     <>
       <style>{`
         .tv-nav-wrap {
-          border-bottom: 1px solid #EDEDED;
-          font-family: 'DM Sans', sans-serif;
-          background: #fff;
-          position: relative;
+          border-bottom: 1px solid rgba(125, 140, 255, 0.14);
+          font-family: 'Inter', sans-serif;
+          background: rgba(5, 6, 15, 0.72);
+          backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px);
+          position: sticky;
+          top: 0;
           z-index: 100;
         }
         .tv-nav {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 18px 28px;
-          max-width: 960px;
+          padding: 16px 28px;
+          max-width: 1020px;
           margin: 0 auto;
         }
         .tv-logo {
           display: flex;
           align-items: center;
-          gap: 8px;
+          gap: 9px;
           text-decoration: none;
-          color: #1A1A1A;
+          color: #F4F7FF;
           font-weight: 700;
           font-size: 18px;
+          font-family: 'Space Grotesk', sans-serif;
+          letter-spacing: -0.02em;
+        }
+        .tv-logo-mark {
+          width: 30px;
+          height: 30px;
+          border-radius: 9px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 16px;
+          background: linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(34, 211, 238, 0.25));
+          border: 1px solid rgba(34, 211, 238, 0.4);
+          box-shadow: 0 0 14px rgba(34, 211, 238, 0.25);
         }
         .tv-desktop-links {
           display: flex;
           align-items: center;
-          gap: 24px;
+          gap: 26px;
         }
         .tv-nav-link {
           font-size: 14px;
           font-weight: 500;
-          color: #555;
+          color: #9AA5CC;
           text-decoration: none;
+          transition: color 0.2s ease, text-shadow 0.2s ease;
         }
-        .tv-nav-link:hover { color: #1A1A1A; }
+        .tv-nav-link:hover {
+          color: #F4F7FF;
+          text-shadow: 0 0 12px rgba(34, 211, 238, 0.6);
+        }
         .tv-cta {
-          background: #1A1A1A;
+          background: linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
           color: #fff;
           padding: 9px 20px;
           border-radius: 100px;
@@ -65,6 +86,12 @@ export default function NavBar() {
           font-weight: 600;
           text-decoration: none;
           white-space: nowrap;
+          box-shadow: 0 0 18px rgba(34, 211, 238, 0.3);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .tv-cta:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 0 28px rgba(34, 211, 238, 0.5);
         }
         .tv-hamburger {
           display: none;
@@ -74,7 +101,7 @@ export default function NavBar() {
           padding: 4px;
           font-size: 26px;
           line-height: 1;
-          color: #1A1A1A;
+          color: #F4F7FF;
         }
         @media (max-width: 768px) {
           .tv-desktop-links { display: none; }
@@ -91,7 +118,8 @@ export default function NavBar() {
         .tv-overlay-backdrop {
           position: absolute;
           inset: 0;
-          background: rgba(0, 0, 0, 0.5);
+          background: rgba(2, 3, 10, 0.7);
+          backdrop-filter: blur(4px);
         }
         .tv-overlay-panel {
           position: absolute;
@@ -99,12 +127,14 @@ export default function NavBar() {
           right: 0;
           bottom: 0;
           width: min(320px, 100vw);
-          background: #fff;
+          background: rgba(8, 11, 26, 0.96);
+          border-left: 1px solid rgba(125, 140, 255, 0.2);
           display: flex;
           flex-direction: column;
           padding: 24px 28px 40px;
           overflow-y: auto;
           animation: slideIn 0.22s ease-out;
+          backdrop-filter: blur(16px);
         }
         @keyframes slideIn {
           from { transform: translateX(100%); opacity: 0; }
@@ -122,31 +152,33 @@ export default function NavBar() {
           cursor: pointer;
           font-size: 32px;
           line-height: 1;
-          color: #1A1A1A;
+          color: #F4F7FF;
           padding: 4px;
         }
         .tv-overlay-link {
           font-size: 24px;
           font-weight: 600;
-          color: #1A1A1A;
+          color: #E5EAFD;
           text-decoration: none;
           padding: 16px 0;
-          border-bottom: 1px solid #F0F0F0;
-          font-family: 'DM Sans', sans-serif;
+          border-bottom: 1px solid rgba(125, 140, 255, 0.12);
+          font-family: 'Space Grotesk', sans-serif;
+          transition: color 0.2s ease;
         }
-        .tv-overlay-link:hover { color: #555; }
+        .tv-overlay-link:hover { color: #22D3EE; }
         .tv-overlay-cta {
           margin-top: 32px;
           display: block;
           text-align: center;
-          background: #1A1A1A;
+          background: linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
           color: #fff;
           padding: 16px 20px;
           border-radius: 100px;
           font-size: 18px;
           font-weight: 700;
           text-decoration: none;
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Inter', sans-serif;
+          box-shadow: 0 0 24px rgba(34, 211, 238, 0.35);
         }
       `}</style>
 
@@ -154,7 +186,7 @@ export default function NavBar() {
       <div className="tv-nav-wrap">
         <nav className="tv-nav">
           <a href="/" className="tv-logo">
-            <span style={{ fontSize: 22 }}>✍️</span>
+            <span className="tv-logo-mark">✍️</span>
             Textverket
           </a>
 
@@ -182,7 +214,7 @@ export default function NavBar() {
           <div className="tv-overlay-panel">
             <div className="tv-overlay-top">
               <a href="/" className="tv-logo" onClick={() => setOpen(false)}>
-                <span style={{ fontSize: 22 }}>✍️</span>
+                <span className="tv-logo-mark">✍️</span>
                 Textverket
               </a>
               <button

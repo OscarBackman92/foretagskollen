@@ -31,41 +31,41 @@ export const metadata = {
 };
 
 const S = {
-  page: { minHeight: "100vh", background: "#FAFAF9", fontFamily: "'DM Sans', sans-serif", color: "#1A1A1A" },
-  navWrap: { borderBottom: "1px solid #EDEDED" },
+  page: { minHeight: "100vh", background: "transparent", fontFamily: "'Inter', sans-serif", color: "#EAEEFF" },
+  navWrap: { borderBottom: "1px solid rgba(125, 140, 255, 0.16)" },
   nav: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "18px 28px", maxWidth: 960, margin: "0 auto" },
-  logo: { display: "flex", alignItems: "center", gap: 8, textDecoration: "none", color: "#1A1A1A" },
+  logo: { display: "flex", alignItems: "center", gap: 8, textDecoration: "none", color: "#EAEEFF" },
   navLinks: { display: "flex", alignItems: "center", gap: 24 },
-  navLink: { fontSize: 14, fontWeight: 500, color: "#555", textDecoration: "none" },
-  navCta: { background: "#1A1A1A", color: "#fff", padding: "9px 20px", borderRadius: 100, fontSize: 14, fontWeight: 600, textDecoration: "none" },
+  navLink: { fontSize: 14, fontWeight: 500, color: "#A7B1D6", textDecoration: "none" },
+  navCta: { background: "linear-gradient(135deg, #6366F1 0%, #22D3EE 100%)", color: "#fff", padding: "9px 20px", borderRadius: 100, fontSize: 14, fontWeight: 600, textDecoration: "none" },
   article: { maxWidth: 720, margin: "0 auto", padding: "52px 28px 80px" },
-  breadcrumb: { fontSize: 13, color: "#9CA3AF", marginBottom: 28, display: "flex", gap: 6, alignItems: "center" },
-  breadcrumbLink: { color: "#9CA3AF", textDecoration: "none" },
-  categoryPill: { display: "inline-block", background: "#EEF2FF", color: "#4338CA", fontSize: 12, fontWeight: 600, padding: "4px 12px", borderRadius: 100, marginBottom: 20, letterSpacing: 0.3, textTransform: "uppercase" },
-  h1: { fontFamily: "'Instrument Serif', serif", fontSize: "clamp(30px, 5vw, 44px)", fontWeight: 400, lineHeight: 1.2, margin: "0 0 20px", color: "#111" },
-  meta: { fontSize: 14, color: "#9CA3AF", marginBottom: 36, display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" },
-  metaDot: { color: "#D1D5DB" },
-  divider: { border: "none", borderTop: "1px solid #E5E7EB", margin: "0 0 40px" },
-  p: { fontSize: 17, lineHeight: 1.85, color: "#374151", margin: "0 0 22px" },
-  h2: { fontFamily: "'Instrument Serif', serif", fontSize: 28, fontWeight: 400, color: "#111", margin: "56px 0 20px", lineHeight: 1.3 },
-  h3: { fontSize: 18, fontWeight: 700, color: "#1A1A1A", margin: "36px 0 14px", lineHeight: 1.4 },
-  stepBadge: { display: "inline-flex", alignItems: "center", gap: 8, background: "#F3F4F6", border: "1px solid #E5E7EB", borderRadius: 100, padding: "4px 14px", fontSize: 13, fontWeight: 600, color: "#374151", marginBottom: 16 },
-  emailBlock: { background: "#fff", border: "1px solid #E2E8F0", borderRadius: 12, overflow: "hidden", margin: "20px 0", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" },
-  emailHeader: { background: "#F7FAFC", padding: "12px 20px", borderBottom: "1px solid #E2E8F0", fontSize: 13, color: "#4A5568", lineHeight: 1.6 },
-  emailBody: { padding: "24px 20px", fontSize: 15, lineHeight: 1.85, color: "#374151" },
-  emailPayment: { background: "#F8FAFC", borderRadius: 8, padding: "12px 16px", margin: "16px 0", fontSize: 14, lineHeight: 1.8, color: "#374151" },
-  emailSignature: { borderTop: "1px solid #E2E8F0", marginTop: 16, paddingTop: 12, color: "#6B7280", fontSize: 14, lineHeight: 1.7 },
-  tip: { background: "#FFFBEB", border: "1px solid #FDE68A", borderRadius: 10, padding: "14px 18px", fontSize: 14, color: "#92400E", lineHeight: 1.7, margin: "20px 0" },
-  infoBox: { background: "#EEF2FF", border: "1px solid #C7D2FE", borderRadius: 10, padding: "14px 18px", fontSize: 14, color: "#3730A3", lineHeight: 1.7, margin: "20px 0" },
+  breadcrumb: { fontSize: 13, color: "#7E88B5", marginBottom: 28, display: "flex", gap: 6, alignItems: "center" },
+  breadcrumbLink: { color: "#7E88B5", textDecoration: "none" },
+  categoryPill: { display: "inline-block", background: "rgba(129, 140, 248, 0.13)", color: "#A5B4FC", fontSize: 12, fontWeight: 600, padding: "4px 12px", borderRadius: 100, marginBottom: 20, letterSpacing: 0.3, textTransform: "uppercase" },
+  h1: { fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(30px, 5vw, 44px)", fontWeight: 700, lineHeight: 1.2, margin: "0 0 20px", color: "#EAEEFF" },
+  meta: { fontSize: 14, color: "#7E88B5", marginBottom: 36, display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" },
+  metaDot: { color: "rgba(125, 140, 255, 0.25)" },
+  divider: { border: "none", borderTop: "1px solid rgba(125, 140, 255, 0.18)", margin: "0 0 40px" },
+  p: { fontSize: 17, lineHeight: 1.85, color: "#C3CCE8", margin: "0 0 22px" },
+  h2: { fontFamily: "'Space Grotesk', sans-serif", fontSize: 28, fontWeight: 700, color: "#EAEEFF", margin: "56px 0 20px", lineHeight: 1.3 },
+  h3: { fontSize: 18, fontWeight: 700, color: "#EAEEFF", margin: "36px 0 14px", lineHeight: 1.4 },
+  stepBadge: { display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255, 255, 255, 0.06)", border: "1px solid rgba(125, 140, 255, 0.18)", borderRadius: 100, padding: "4px 14px", fontSize: 13, fontWeight: 600, color: "#C3CCE8", marginBottom: 16 },
+  emailBlock: { background: "rgba(13, 17, 36, 0.66)", border: "1px solid rgba(125, 140, 255, 0.18)", borderRadius: 12, overflow: "hidden", margin: "20px 0", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" },
+  emailHeader: { background: "rgba(255, 255, 255, 0.04)", padding: "12px 20px", borderBottom: "1px solid rgba(125, 140, 255, 0.18)", fontSize: 13, color: "#B6C0DE", lineHeight: 1.6 },
+  emailBody: { padding: "24px 20px", fontSize: 15, lineHeight: 1.85, color: "#C3CCE8" },
+  emailPayment: { background: "rgba(255, 255, 255, 0.04)", borderRadius: 8, padding: "12px 16px", margin: "16px 0", fontSize: 14, lineHeight: 1.8, color: "#C3CCE8" },
+  emailSignature: { borderTop: "1px solid rgba(125, 140, 255, 0.18)", marginTop: 16, paddingTop: 12, color: "#949EC9", fontSize: 14, lineHeight: 1.7 },
+  tip: { background: "rgba(251, 191, 36, 0.09)", border: "1px solid rgba(251, 191, 36, 0.32)", borderRadius: 10, padding: "14px 18px", fontSize: 14, color: "#FCD34D", lineHeight: 1.7, margin: "20px 0" },
+  infoBox: { background: "rgba(129, 140, 248, 0.13)", border: "1px solid rgba(165, 180, 252, 0.3)", borderRadius: 10, padding: "14px 18px", fontSize: 14, color: "#BCC7FE", lineHeight: 1.7, margin: "20px 0" },
   preventList: { margin: "0 0 22px 0", padding: 0, listStyle: "none" },
-  preventItem: { display: "flex", gap: 12, alignItems: "flex-start", padding: "12px 0", borderBottom: "1px solid #F3F4F6", fontSize: 16, lineHeight: 1.7, color: "#374151" },
+  preventItem: { display: "flex", gap: 12, alignItems: "flex-start", padding: "12px 0", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", fontSize: 16, lineHeight: 1.7, color: "#C3CCE8" },
   preventIcon: { fontSize: 18, flexShrink: 0, marginTop: 2 },
-  ctaBox: { background: "linear-gradient(135deg, #111 0%, #1a2332 100%)", borderRadius: 16, padding: "32px 28px", margin: "48px 0 0", color: "#fff" },
-  ctaTitle: { fontFamily: "'Instrument Serif', serif", fontSize: 24, fontWeight: 400, margin: "0 0 10px", color: "#fff" },
+  ctaBox: { background: "linear-gradient(135deg, rgba(49, 46, 129, 0.55) 0%, rgba(8, 11, 28, 0.9) 100%)", borderRadius: 16, padding: "32px 28px", margin: "48px 0 0", color: "#fff" },
+  ctaTitle: { fontFamily: "'Space Grotesk', sans-serif", fontSize: 24, fontWeight: 700, margin: "0 0 10px", color: "#fff" },
   ctaDesc: { fontSize: 15, color: "rgba(255,255,255,0.7)", margin: "0 0 20px", lineHeight: 1.7 },
-  ctaBtn: { display: "inline-block", background: "#fff", color: "#111", padding: "12px 28px", borderRadius: 100, fontSize: 15, fontWeight: 700, textDecoration: "none" },
-  footerNote: { borderTop: "1px solid #E5E7EB", marginTop: 56, paddingTop: 24, fontSize: 14, color: "#9CA3AF", lineHeight: 1.7, fontStyle: "italic" },
-  footer: { textAlign: "center", padding: "32px 28px", color: "#9CA3AF", fontSize: 13, borderTop: "1px solid #EDEDED" },
+  ctaBtn: { display: "inline-block", background: "rgba(13, 17, 36, 0.66)", color: "#EAEEFF", padding: "12px 28px", borderRadius: 100, fontSize: 15, fontWeight: 700, textDecoration: "none" },
+  footerNote: { borderTop: "1px solid rgba(125, 140, 255, 0.18)", marginTop: 56, paddingTop: 24, fontSize: 14, color: "#7E88B5", lineHeight: 1.7, fontStyle: "italic" },
+  footer: { textAlign: "center", padding: "32px 28px", color: "#7E88B5", fontSize: 13, borderTop: "1px solid rgba(125, 140, 255, 0.16)" },
 };
 
 export default function BetalningspaminnelseMallPage() {
@@ -230,7 +230,7 @@ export default function BetalningspaminnelseMallPage() {
               <span style={S.preventIcon}>{icon}</span>
               <div>
                 <div style={{ fontWeight: 700, marginBottom: 2 }}>{title}</div>
-                <div style={{ fontSize: 15, color: "#6B7280" }}>{desc}</div>
+                <div style={{ fontSize: 15, color: "#949EC9" }}>{desc}</div>
               </div>
             </li>
           ))}
@@ -254,7 +254,7 @@ export default function BetalningspaminnelseMallPage() {
 
         <p style={S.footerNote}>
           Textverket hjälper svenska småföretag att skriva professionella texter med AI.{" "}
-          <a href="/verktyg/fakturatext" style={{ color: "#6B7280" }}>Testa Fakturatext-generatorn gratis.</a>
+          <a href="/verktyg/fakturatext" style={{ color: "#949EC9" }}>Testa Fakturatext-generatorn gratis.</a>
         </p>
       </article>
 

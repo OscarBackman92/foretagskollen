@@ -49,18 +49,18 @@ const S = {
   section: {
     margin: "32px 0 0",
     padding: "28px 0 0",
-    borderTop: "1px solid #F0F0F0",
+    borderTop: "1px solid rgba(125, 140, 255, 0.12)",
   },
   h2: {
-    fontFamily: "'Instrument Serif', serif",
+    fontFamily: "'Space Grotesk', sans-serif",
     fontSize: 22,
-    fontWeight: 400,
-    color: "#111",
+    fontWeight: 700,
+    color: "#EAEEFF",
     margin: "0 0 12px",
   },
   p: {
     fontSize: 15,
-    color: "#555",
+    color: "#A7B1D6",
     lineHeight: 1.75,
     margin: "0 0 12px",
   },
@@ -71,17 +71,17 @@ const S = {
     marginBottom: 16,
   },
   stepNum: {
-    fontFamily: "'Instrument Serif', serif",
+    fontFamily: "'Space Grotesk', sans-serif",
     fontSize: 28,
-    color: "#BFDBFE",
+    color: "rgba(34, 211, 238, 0.35)",
     lineHeight: 1,
     flexShrink: 0,
     width: 36,
   },
-  stepText: { fontSize: 15, color: "#374151", lineHeight: 1.7 },
+  stepText: { fontSize: 15, color: "#C3CCE8", lineHeight: 1.7 },
   exampleBox: {
-    background: "#F8FAFF",
-    border: "1px solid #BFDBFE",
+    background: "rgba(34, 211, 238, 0.07)",
+    border: "1px solid rgba(34, 211, 238, 0.35)",
     borderRadius: 12,
     padding: "18px 20px",
     margin: "12px 0",
@@ -91,10 +91,10 @@ const S = {
     fontWeight: 700,
     textTransform: "uppercase",
     letterSpacing: 1,
-    color: "#2563EB",
+    color: "#22D3EE",
     marginBottom: 6,
   },
-  exampleText: { fontSize: 14, color: "#374151", lineHeight: 1.7 },
+  exampleText: { fontSize: 14, color: "#C3CCE8", lineHeight: 1.7 },
   tipList: {
     margin: "12px 0",
     paddingLeft: 0,
@@ -102,21 +102,21 @@ const S = {
   },
   tipItem: {
     fontSize: 15,
-    color: "#374151",
+    color: "#C3CCE8",
     lineHeight: 1.7,
     paddingLeft: 22,
     marginBottom: 10,
     position: "relative",
   },
   faqItem: {
-    background: "#fff",
-    border: "1px solid #EDEDED",
+    background: "rgba(13, 17, 36, 0.66)",
+    border: "1px solid rgba(125, 140, 255, 0.16)",
     borderRadius: 10,
     padding: "16px 18px",
     marginBottom: 10,
   },
-  faqQ: { fontSize: 15, fontWeight: 600, color: "#111", marginBottom: 6 },
-  faqA: { fontSize: 14, color: "#555", lineHeight: 1.7, margin: 0 },
+  faqQ: { fontSize: 15, fontWeight: 600, color: "#EAEEFF", marginBottom: 6 },
+  faqA: { fontSize: 14, color: "#A7B1D6", lineHeight: 1.7, margin: 0 },
 };
 
 function BeforeContent() {
@@ -133,7 +133,7 @@ function BeforeContent() {
       </p>
       <p style={{ ...S.p, marginBottom: 0 }}>
         Vill du fördjupa dig?{" "}
-        <Link href="/blogg/offertmejl-guide" style={{ color: "#2563EB" }}>
+        <Link href="/blogg/offertmejl-guide" style={{ color: "#22D3EE" }}>
           Läs vår kompletta guide om offertmejl
         </Link>
         .
@@ -193,7 +193,7 @@ function AfterContent() {
             ["Visa att du förstått behovet innan du presenterar lösningen.", "Det skiljer dig från konkurrenter som hoppar rakt på pris."],
           ].map(([bold, rest], i) => (
             <li key={i} style={S.tipItem}>
-              <span style={{ position: "absolute", left: 0, color: "#2563EB", fontWeight: 700 }}>›</span>
+              <span style={{ position: "absolute", left: 0, color: "#22D3EE", fontWeight: 700 }}>›</span>
               <strong>{bold}</strong> {rest}
             </li>
           ))}
@@ -226,8 +226,8 @@ function AfterContent() {
       </div>
 
       <div style={{ ...S.section, borderTop: "none", paddingTop: 8 }}>
-        <p style={{ ...S.p, fontSize: 13, color: "#9CA3AF" }}>
-          <Link href="/blogg/offertmejl-guide" style={{ color: "#2563EB" }}>
+        <p style={{ ...S.p, fontSize: 13, color: "#7E88B5" }}>
+          <Link href="/blogg/offertmejl-guide" style={{ color: "#22D3EE" }}>
             Läs vår guide: Så skriver du ett professionellt offertmejl →
           </Link>
         </p>
