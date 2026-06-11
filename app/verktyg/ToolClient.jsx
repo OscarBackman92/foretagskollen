@@ -9,6 +9,12 @@ import AdUnit from "../components/AdUnit";
 const ADSENSE_SLOT_TOOLS = process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOLS;
 const MAX_INPUT_LENGTH = 2000;
 
+const TONES = [
+  { id: "avslappnad", label: "Avslappnad" },
+  { id: "professionell", label: "Professionell" },
+  { id: "formell", label: "Formell" },
+];
+
 const CATEGORIES = [
   {
     id: "offert",
@@ -76,6 +82,7 @@ function TypewriterText({ text }) {
 export default function ToolClient({ initialCategory = null, pageTitle, pageSubtitle, beforeContent, afterContent }) {
   const router = useRouter();
   const [selected] = useState(initialCategory);
+  const [tone, setTone] = useState("professionell");
   const [input, setInput] = useState("");
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
@@ -103,7 +110,7 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
       const response = await fetch("/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ tool: selected, input }),
+        body: JSON.stringify({ tool: selected, input, tone }),
       });
 
       const data = await response.json();
@@ -240,6 +247,61 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
         {/* Input area */}
         {selected && (
           <div style={{ animation: "fadeIn 0.3s ease" }}>
+            {/* Tonväljare */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+                flexWrap: "wrap",
+                marginBottom: 10,
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: 11,
+                  color: "#7E88B5",
+                  textTransform: "uppercase",
+                  letterSpacing: 2,
+                  marginRight: 4,
+                }}
+              >
+                Ton
+              </span>
+              {TONES.map((t) => {
+                const active = tone === t.id;
+                return (
+                  <button
+                    key={t.id}
+                    onClick={() => setTone(t.id)}
+                    aria-pressed={active}
+                    style={{
+                      background: active
+                        ? "rgba(34, 211, 238, 0.1)"
+                        : "rgba(13, 17, 36, 0.66)",
+                      border: active
+                        ? "1px solid rgba(34, 211, 238, 0.55)"
+                        : "1px solid rgba(125, 140, 255, 0.18)",
+                      boxShadow: active
+                        ? "0 0 14px rgba(34, 211, 238, 0.18)"
+                        : "none",
+                      color: active ? "#67E8F9" : "#949EC9",
+                      borderRadius: 100,
+                      padding: "6px 14px",
+                      fontSize: 13,
+                      fontWeight: active ? 600 : 500,
+                      cursor: "pointer",
+                      fontFamily: "'Inter', sans-serif",
+                      transition: "all 0.15s ease",
+                    }}
+                  >
+                    {t.label}
+                  </button>
+                );
+              })}
+            </div>
+
             <textarea
               ref={textareaRef}
               value={input}

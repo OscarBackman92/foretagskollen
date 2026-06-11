@@ -23,6 +23,16 @@ const TOOLS = {
   fri: "Hjälp användaren med den text eller skrivuppgift hen beskriver.",
 };
 
+const TONES = {
+  avslappnad:
+    "Tonen ska vara avslappnad och personlig — varm, rak och mänsklig, som mellan två personer som haft kontakt förut. Fortfarande proffsig, aldrig slarvig.",
+  professionell:
+    "Tonen ska vara professionell och naturlig — tydlig, förtroendeingivande affärssvenska utan stelhet.",
+  formell:
+    "Tonen ska vara formell och strukturerad — saklig och korrekt, lämplig för myndigheter, kommuner och större organisationer.",
+};
+const DEFAULT_TONE = "professionell";
+
 // Best-effort in-memory rate limiting per IP. On serverless gäller den per
 // instans, men stoppar ändå enkla skript och loopar.
 const RATE_LIMIT = 10;
@@ -65,10 +75,13 @@ export async function POST(request) {
     return Response.json({ error: "Ogiltig förfrågan." }, { status: 400 });
   }
 
-  const { tool, input } = body ?? {};
+  const { tool, input, tone } = body ?? {};
 
   if (!Object.hasOwn(TOOLS, tool)) {
     return Response.json({ error: "Okänt verktyg." }, { status: 400 });
+  }
+  if (tone != null && !Object.hasOwn(TONES, tone)) {
+    return Response.json({ error: "Okänd ton." }, { status: 400 });
   }
   if (typeof input !== "string" || !input.trim()) {
     return Response.json({ error: "Skriv en beskrivning först." }, { status: 400 });
@@ -84,7 +97,7 @@ export async function POST(request) {
     const message = await client.messages.create({
       model: "claude-haiku-4-5",
       max_tokens: 1000,
-      system: `${BASE_SYSTEM}\n\nUppgift: ${TOOLS[tool]}`,
+      system: `${BASE_SYSTEM}\n\nUppgift: ${TOOLS[tool]}\n\n${TONES[tone ?? DEFAULT_TONE]}`,
       messages: [{ role: "user", content: input.trim() }],
     });
 
