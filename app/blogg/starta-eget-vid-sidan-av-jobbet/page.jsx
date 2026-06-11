@@ -240,23 +240,31 @@ const STEPS = [
     title: "Hobbyverksamhet eller enskild firma?",
     content: (
       <>
-        <p style={S.p}>Det beror på hur mycket du förväntar dig att tjäna.</p>
         <p style={S.p}>
-          <strong>Hobbyverksamhet</strong> passar om du tjänar under 30 000 kronor per år.
-          Du behöver inte registrera företag, inte ha F-skatt och inte vara momsregistrerad.
-          Du deklarerar inkomsten som "övrig inkomst" på din vanliga deklaration. Du kan
-          inte dra av kostnader mot intäkterna.
+          Gränsen handlar inte om en viss summa pengar — Skatteverket bedömer i stället om
+          verksamheten drivs självständigt, varaktigt och med vinstsyfte. Uppfyller du alla
+          tre är det näringsverksamhet, annars hobbyverksamhet.
         </p>
         <p style={S.p}>
-          <strong>Enskild firma</strong> passar om du tror att du kommer tjäna mer, vill
-          framstå som professionell, eller vill kunna dra av kostnader. Registrering görs
-          på verksamt.se och kostar cirka 900 kronor. Du kan ansöka om F-skatt och
-          momsregistrering samtidigt.
+          <strong>Hobbyverksamhet</strong> passar när du gör något i liten skala utan
+          tydligt vinstsyfte. Du behöver inte registrera företag eller ha F-skatt, utan
+          deklarerar överskottet som inkomst av tjänst. Kostnader får dras av mot
+          hobbyinkomsterna (men inte mot din lön), och blir det underskott får det sparas
+          och kvittas mot samma hobby kommande år.
+        </p>
+        <p style={S.p}>
+          <strong>Enskild firma</strong> passar när du säljer regelbundet, vill framstå som
+          professionell eller vill kunna dra av kostnader fullt ut. Att registrera sig för
+          F-skatt och moms hos Skatteverket via verksamt.se är gratis. Vill du dessutom
+          skydda företagsnamnet registrerar du det hos Bolagsverket, vilket kostar drygt
+          tusenlappen — men det är frivilligt för enskild firma. Omsätter du under
+          120 000 kronor per år kan du dessutom välja att vara momsbefriad.
         </p>
         <div style={S.tip}>
-          <strong>Råd:</strong> Börja som hobbyverksamhet. Registrera enskild firma när
-          intäkterna motiverar det. Det tar en kvart att registrera sig — du kan göra det
-          när som helst.
+          <strong>Råd:</strong> Sälj något till en handfull kunder först. När det börjar
+          rulla in regelbundna intäkter ansöker du om F-skatt — det tar en kvart på
+          verksamt.se och du kan göra det när som helst. Är du osäker på var gränsen går i
+          just ditt fall, kolla Skatteverkets vägledning om hobby kontra näringsverksamhet.
         </div>
       </>
     ),

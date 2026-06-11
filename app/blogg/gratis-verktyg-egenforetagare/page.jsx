@@ -217,13 +217,13 @@ const CATEGORIES = [
     title: "Bokföring och fakturering",
     tools: [
       {
-        name: "Bokio",
-        highlight: "Rekommenderas",
-        desc: "Bokio erbjuder en generös gratisplan med bokföring, fakturering och kvittohantering. Gränssnittet är enkelt och anpassat för den som inte är ekonom. Perfekt för enskild firma och mindre aktiebolag. Integrationer med banker gör att transaktioner importeras automatiskt.",
+        name: "Zervant",
+        highlight: "Gratis fakturering",
+        desc: "Zervant har länge erbjudit gratis fakturering för småföretag — du skapar och skickar professionella fakturor utan kostnad. Bokföringsfunktioner och fler finesser finns i betalplanerna. Kontrollera alltid aktuella villkor, gratisnivåer ändras med jämna mellanrum.",
       },
       {
-        name: "Fortnox Gratis",
-        desc: "Fortnox är branschstandarden i Sverige. Gratisversionen är begränsad men ger dig grundläggande fakturering. Om du växer är det enkelt att uppgradera, och nästan alla revisorer och bokföringsbyråer jobbar med Fortnox.",
+        name: "Bokio",
+        desc: "Bokio gör bokföring begriplig för den som inte är ekonom: fakturering, kvittohantering och automatisk bankimport i ett. Gratisplanen togs bort 2023, så numera kostar det en månadsavgift — men för många enskilda firmor är det fortfarande det enklaste sättet att sköta bokföringen själv.",
       },
     ],
   },

@@ -81,11 +81,11 @@ export default function OmOssPage() {
         </h2>
 
         <p style={{ fontSize: 17, lineHeight: 1.85, color: "#C3CCE8", margin: "0 0 22px" }}>
-          Textverket är byggt för att ge en enmansförmare samma möjlighet som ett medelstort bolag med copywriter på kontoret. Du ska kunna öppna en webbläsare, beskriva vad du behöver, och få en färdig text på tio sekunder — utan inlärningskurva, utan månadskostnad och utan att behöva skriva en enda rad kod.
+          Textverket är byggt för att ge en enmansföretagare samma möjlighet som ett medelstort bolag med copywriter på kontoret. Du ska kunna öppna en webbläsare, beskriva vad du behöver, och få en färdig text på tio sekunder — utan inlärningskurva, utan månadskostnad och utan att behöva skriva en enda rad kod.
         </p>
 
         <p style={{ fontSize: 17, lineHeight: 1.85, color: "#C3CCE8", margin: "0 0 22px" }}>
-          Vi tror att bra kommunikation inte ska vara ett privilegium för de som råd med en byrå. En välformulerad offert ger fler uppdrag. Ett tydligt kundmejl bygger förtroende. En säljande produkttext ökar konverteringen. Det är skillnad i kronor — och den skillnaden ska vara tillgänglig för alla.
+          Vi tror att bra kommunikation inte ska vara ett privilegium för dem som har råd med en byrå. En välformulerad offert ger fler uppdrag. Ett tydligt kundmejl bygger förtroende. En säljande produkttext ökar konverteringen. Det är skillnad i kronor — och den skillnaden ska vara tillgänglig för alla.
         </p>
 
         <h2 style={{

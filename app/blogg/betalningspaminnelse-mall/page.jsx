@@ -105,7 +105,7 @@ export default function BetalningspaminnelseMallPage() {
         <div style={S.infoBox}>
           <p style={{ margin: "0 0 10px", fontWeight: 600 }}>Dina rättigheter som borgenär:</p>
           <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.85 }}>
-            <li>Du har rätt att ta ut en <strong>påminnelseavgift på 60 kr</strong> (regleras i lag 1981:739)</li>
+            <li>Du har rätt att ta ut en <strong>påminnelseavgift på 60 kr</strong> (lag 1981:739) — men bara om avgiften är avtalad i förväg, till exempel i dina fakturavillkor eller ert avtal</li>
             <li>Bara en påminnelseavgift per faktura, och inte förrän fakturan förfallit</li>
             <li><strong>Dröjsmålsränta</strong> gäller från förfallodagen — referensräntan + 8 procentenheter (ca 10–11% per år under 2026)</li>
             <li>Du måste inte skicka påminnelse innan inkasso, men det är praxis</li>
@@ -179,7 +179,7 @@ export default function BetalningspaminnelseMallPage() {
         </div>
 
         <div style={S.tip}>
-          <strong>Tips för steg 2:</strong> Erbjud alltid en dialog — en delbetalningsplan kan rädda både pengarna och kundrelationen. Var tydlig med nytt sista datum. Lägg till påminnelseavgiften — du har rätt till den och det signalerar att du menar allvar.
+          <strong>Tips för steg 2:</strong> Erbjud alltid en dialog — en delbetalningsplan kan rädda både pengarna och kundrelationen. Var tydlig med nytt sista datum. Lägg till påminnelseavgiften om den finns med i dina villkor — det signalerar att du menar allvar. Skriv in avgiften i fakturavillkoren redan idag om den saknas.
         </div>
 
         <h2 style={S.h2}>Steg 3: Sista påminnelse</h2>
