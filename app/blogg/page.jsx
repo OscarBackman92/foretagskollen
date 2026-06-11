@@ -306,36 +306,6 @@ export default function BloggPage() {
             </a>
           ))}
 
-          {/* Placeholder card */}
-          <div
-            style={{
-              background: "rgba(255, 255, 255, 0.04)",
-              border: "1px dashed rgba(125, 140, 255, 0.25)",
-              borderRadius: 16,
-              padding: "28px 24px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              textAlign: "center",
-              minHeight: 200,
-            }}
-          >
-            <div style={{ fontSize: 28, marginBottom: 12 }}>✍️</div>
-            <p
-              style={{
-                fontSize: 15,
-                fontWeight: 600,
-                color: "#7E88B5",
-                margin: "0 0 6px",
-              }}
-            >
-              Fler artiklar kommer
-            </p>
-            <p style={{ fontSize: 13, color: "rgba(125, 140, 255, 0.25)", margin: 0 }}>
-              Vi publicerar nya guider regelbundet
-            </p>
-          </div>
         </div>
       </div>
 
