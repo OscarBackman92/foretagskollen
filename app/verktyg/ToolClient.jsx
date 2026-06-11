@@ -21,6 +21,7 @@ const CATEGORIES = [
     icon: "📨",
     label: "Offertmejl",
     slug: "/verktyg/offertmejl",
+    hue: "#22D3EE",
     placeholder: "Beskriv vad offerten gäller, pris, mottagare...",
   },
   {
@@ -28,6 +29,7 @@ const CATEGORIES = [
     icon: "🏷️",
     label: "Produkttext",
     slug: "/verktyg/produkttext",
+    hue: "#A78BFA",
     placeholder: "Beskriv produkten, målgrupp, ton...",
   },
   {
@@ -35,6 +37,7 @@ const CATEGORIES = [
     icon: "💬",
     label: "Kundmejl",
     slug: "/verktyg/kundmejl",
+    hue: "#34D399",
     placeholder: "Beskriv situationen (uppföljning, reklamation, tack...)",
   },
   {
@@ -42,6 +45,7 @@ const CATEGORIES = [
     icon: "📱",
     label: "Sociala medier",
     slug: "/verktyg/sociala-medier",
+    hue: "#F472B6",
     placeholder: "Beskriv vad inlägget ska handla om, plattform...",
   },
   {
@@ -49,6 +53,7 @@ const CATEGORIES = [
     icon: "🧾",
     label: "Fakturatext",
     slug: "/verktyg/fakturatext",
+    hue: "#FBBF24",
     placeholder: "Beskriv vad fakturan gäller, belopp, villkor...",
   },
   {
@@ -56,6 +61,7 @@ const CATEGORIES = [
     icon: "✨",
     label: "Fritext",
     slug: "/verktyg/fritext",
+    hue: "#818CF8",
     placeholder: "Skriv vad du behöver hjälp med...",
   },
 ];
@@ -204,40 +210,61 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
           <div
             style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}
           >
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => router.push(cat.slug)}
-                style={{
-                  background: selected === cat.id ? "rgba(34, 211, 238, 0.08)" : "#fff",
-                  border:
-                    selected === cat.id
-                      ? "1.5px solid #22D3EE"
-                      : "1.5px solid rgba(125, 140, 255, 0.16)",
-                  borderRadius: 12,
-                  padding: "14px 8px",
-                  cursor: "pointer",
-                  textAlign: "center",
-                  transition: "all 0.15s ease",
-                  transform: selected === cat.id ? "scale(1.03)" : "scale(1)",
-                  boxShadow:
-                    selected === cat.id
-                      ? "0 0 0 3px rgba(34, 211, 238,0.08)"
-                      : "none",
-                }}
-              >
-                <div style={{ fontSize: 22, marginBottom: 4 }}>{cat.icon}</div>
-                <div
+            {CATEGORIES.map((cat) => {
+              const active = selected === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => router.push(cat.slug)}
+                  className="tv-cat-btn"
+                  aria-pressed={active}
                   style={{
-                    fontSize: 12,
-                    fontWeight: selected === cat.id ? 700 : 500,
-                    color: selected === cat.id ? "#22D3EE" : "#949EC9",
+                    "--hue": cat.hue,
+                    background: active
+                      ? "rgba(34, 211, 238, 0.08)"
+                      : "rgba(13, 17, 36, 0.6)",
+                    border: active
+                      ? "1.5px solid rgba(34, 211, 238, 0.6)"
+                      : "1.5px solid rgba(125, 140, 255, 0.16)",
+                    borderRadius: 12,
+                    padding: "14px 8px",
+                    cursor: "pointer",
+                    textAlign: "center",
+                    backdropFilter: "blur(8px)",
+                    transform: active ? "scale(1.03)" : "scale(1)",
+                    boxShadow: active
+                      ? "0 0 20px rgba(34, 211, 238, 0.2)"
+                      : "none",
                   }}
                 >
-                  {cat.label}
-                </div>
-              </button>
-            ))}
+                  <div
+                    style={{
+                      width: 38,
+                      height: 38,
+                      margin: "0 auto 7px",
+                      borderRadius: 10,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: 19,
+                      background: `color-mix(in srgb, ${cat.hue} 12%, transparent)`,
+                      border: `1px solid color-mix(in srgb, ${cat.hue} 30%, transparent)`,
+                    }}
+                  >
+                    {cat.icon}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: 12,
+                      fontWeight: active ? 700 : 500,
+                      color: active ? "#67E8F9" : "#A7B1D6",
+                    }}
+                  >
+                    {cat.label}
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
 
@@ -531,6 +558,14 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(8px); }
           to { opacity: 1; transform: translateY(0); }
+        }
+        .tv-cat-btn {
+          transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .tv-cat-btn:hover {
+          transform: translateY(-2px) !important;
+          border-color: color-mix(in srgb, var(--hue, #22D3EE) 55%, transparent) !important;
+          box-shadow: 0 0 18px color-mix(in srgb, var(--hue, #22D3EE) 22%, transparent) !important;
         }
       `}</style>
     </div>
