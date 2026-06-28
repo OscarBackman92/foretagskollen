@@ -5,24 +5,25 @@ import { blogPostJsonLd } from "../../lib/structured-data";
 import AdUnit from "../../components/AdUnit";
 
 export const metadata = {
-  title: "SEO för småföretag — enkel guide som faktiskt fungerar (2026) — Textverket",
+  title: "SEO för dina texter — så rankar produkttexter och blogg (2026) — Textverket",
   description:
-    "5-stegsguide till SEO för småföretag. Hitta rätt sökord, skriv innehåll som rankar, teknisk SEO och länkbygge — utan byrå och utan dyra verktyg.",
-  keywords: "SEO småföretag, lokal SEO Sverige, sökmotoroptimering guide, Google sökning optimering, SEO guide gratis",
+    "För småföretag avgörs SEO mest av själva texterna, inte av teknik och byråer. Så skriver du produkttexter, hemsidetexter och blogginlägg som rankar på Google — med konkreta före/efter-exempel.",
+  keywords:
+    "SEO produkttexter, SEO för småföretag texter, unika produkttexter, lokal SEO text, skriva texter som rankar, duplicerat innehåll",
   alternates: {
     canonical: "/blogg/seo-smaforetag",
   },
   openGraph: {
-    title: "SEO för småföretag — enkel guide som faktiskt fungerar (2026)",
+    title: "SEO för dina texter — så rankar produkttexter och blogg (2026)",
     description:
-      "Lär dig SEO utan byrå och utan dyra verktyg. Gratis AI-verktyg på textverket.se.",
+      "SEO för småföretag handlar mest om orden på sidan. Så skriver du texter som rankar — med exempel. Gratis AI-verktyg på textverket.se.",
     url: "https://www.textverket.se/blogg/seo-smaforetag",
     siteName: "Textverket",
     locale: "sv_SE",
     type: "article",
     images: [
       {
-        url: `/og?title=${encodeURIComponent("SEO för småföretag — enkel guide")}`,
+        url: `/og?title=${encodeURIComponent("SEO för dina texter")}`,
         width: 1200,
         height: 630,
       },
@@ -58,8 +59,10 @@ const S = {
   stepNum: { background: "linear-gradient(135deg, #6366F1 0%, #22D3EE 100%)", color: "#fff", width: 36, height: 36, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, fontWeight: 700, flexShrink: 0, marginTop: 2 },
   listItem: { display: "flex", gap: 12, margin: "10px 0", alignItems: "flex-start" },
   bullet: { width: 6, height: 6, borderRadius: "50%", background: "#7E88B5", flexShrink: 0, marginTop: 10 },
-  timelineRow: { display: "flex", gap: 16, margin: "12px 0", alignItems: "flex-start" },
-  timeBadge: { background: "rgba(129, 140, 248, 0.13)", color: "#A5B4FC", fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 4, flexShrink: 0, whiteSpace: "nowrap", marginTop: 3, letterSpacing: 0.3 },
+  snippet: { background: "rgba(13, 17, 36, 0.66)", border: "1px solid rgba(125, 140, 255, 0.18)", borderRadius: 10, padding: "14px 18px", margin: "16px 0", lineHeight: 1.5 },
+  snippetTitle: { color: "#8AB4F8", fontSize: 18, margin: "0 0 2px", lineHeight: 1.3 },
+  snippetUrl: { color: "#6EE7B7", fontSize: 13, margin: "0 0 6px" },
+  snippetDesc: { color: "#A7B1D6", fontSize: 13, margin: 0, lineHeight: 1.55 },
   ctaBox: { background: "linear-gradient(135deg, rgba(49, 46, 129, 0.55) 0%, rgba(8, 11, 28, 0.9) 100%)", borderRadius: 16, padding: "32px 28px", margin: "48px 0 0", color: "#fff" },
   ctaTitle: { fontFamily: "'Space Grotesk', sans-serif", fontSize: 24, fontWeight: 700, margin: "0 0 10px", color: "#fff" },
   ctaDesc: { fontSize: 15, color: "rgba(255,255,255,0.7)", margin: "0 0 20px", lineHeight: 1.7 },
@@ -71,7 +74,7 @@ const S = {
 export default function SeoSmaforetagPage() {
   return (
     <div style={S.page}>
-      <JsonLd data={blogPostJsonLd(metadata, "2026-04-21")} />
+      <JsonLd data={blogPostJsonLd(metadata, "2026-06-28")} />
       <NavBar />
 
       <article style={S.article}>
@@ -80,219 +83,196 @@ export default function SeoSmaforetagPage() {
           <span>›</span>
           <a href="/blogg" style={S.breadcrumbLink}>Blogg</a>
           <span>›</span>
-          <span>SEO för småföretag</span>
+          <span>SEO för dina texter</span>
         </div>
 
         <span style={S.categoryPill}>Guide</span>
 
         <h1 style={S.h1}>
-          SEO för småföretag — enkel guide som faktiskt fungerar (2026)
+          SEO för dina texter — så rankar produkttexter, hemsidetexter och blogg
         </h1>
 
         <div style={S.meta}>
           <span>Publicerad av Textverket</span>
           <span style={S.metaDot}>·</span>
-          <span>Uppdaterad april 2026</span>
+          <span>Uppdaterad juni 2026</span>
           <span style={S.metaDot}>·</span>
-          <span>Lästid: 9 minuter</span>
+          <span>Lästid: 8 minuter</span>
         </div>
 
         <hr style={S.divider} />
 
         <p style={S.p}>
-          SEO verkar krångligare än det är. Byråer älskar att prata om "latent semantic indexing",
-          "schema markup" och andra begrepp som får dig att känna att du behöver anlita experter för
-          att ens förstå. Det behöver du inte.
+          Fråga tio småföretagare vad SEO är och nio svarar något om teknik, byråer och
+          mystiska inställningar. Men för dig som driver eget avgörs det mesta av en enda
+          sak: orden på dina sidor. En snabb, mobilanpassad sajt med tunna texter rankar
+          inte. En enkel sajt med texter som faktiskt svarar på vad kunden söker gör det.
         </p>
         <p style={S.p}>
-          För småföretag handlar SEO egentligen om tre saker: att ha innehåll folk söker efter, att
-          sajten fungerar bra, och att andra refererar till dig. Allt annat är detaljer.
-        </p>
-        <p style={S.p}>
-          I den här guiden får du en enkel strategi som du kan implementera själv — utan byrå och
-          utan fancy verktyg.
+          Den här guiden hoppar över det tekniska och handlar om det du själv kan styra —
+          hur du skriver produkttexter, tjänstesidor och blogginlägg som Google vill visa.
+          Inga verktyg du måste köpa, ingen kod.
         </p>
 
-        <h2 style={S.h2}>Varför SEO är värt det för småföretag</h2>
+        <h2 style={S.h2}>1. Skriv det kunden faktiskt söker — och svara högt upp</h2>
         <p style={S.p}>
-          En kund som hittar dig via Google söker aktivt efter det du erbjuder. De är redan halvvägs
-          till köp. Jämför med någon som scrollar förbi din annons på Instagram utan att fråga efter den.
+          Det vanligaste textmisstaget är att skriva om det du vill berätta, inte om det
+          folk söker efter. En takläggare vill skriva om "vår noggranna arbetsprocess".
+          Men ingen googlar det. Folk googlar "byta tak villa kostnad", "läcker tak vad
+          göra" och "takläggare Borås".
         </p>
         <p style={S.p}>
-          Dessutom är organisk trafik gratis. När en artikel rankar på Google ger den dig trafik
-          månad efter månad, år efter år, utan att du behöver göra något. Det är passiv inkomst i
-          ren form.
+          Lyssna på dina egna kunder: vilka frågor får du om och om igen? Varje
+          återkommande fråga är en sida eller ett stycke värt att skriva. Skriv in frågan
+          ungefär som kunden ställer den, och ge svaret direkt — inte efter tre stycken om
+          företagets historia. Både besökaren och Google belönar texter som svarar snabbt.
         </p>
         <div style={S.tip}>
-          <strong>Haken:</strong> SEO tar tid. Räkna med 3–6 månader innan du ser resultat. Men det är värt väntan.
+          <strong>Gratis research:</strong> skriv din tjänst i Googles sökfält och läs
+          förslagen som dyker upp, samt rutan "Fler frågor" (People Also Ask). Det är
+          riktiga sökningar från riktiga människor — en färdig innehållslista.
         </div>
 
-        <h2 style={S.h2}>5 steg till bättre SEO</h2>
-
-        {/* Steg 1 */}
-        <div style={S.stepItem}>
-          <div style={S.stepNum}>1</div>
-          <div style={{ flex: 1 }}>
-            <h3 style={{ ...S.h3, margin: "0 0 14px" }}>Förstå vad folk faktiskt söker på</h3>
-            <p style={S.p}>
-              Det vanligaste misstaget i SEO är att skriva om det du vill skriva om, inte om det
-              folk söker efter. En frisör kanske vill skriva om "vår filosofi kring hårvård". Men
-              ingen googlar det. Folk googlar "klippning Stockholm", "blondering skada hår" och
-              "billig frisör Vasastan".
-            </p>
-            <p style={{ ...S.p, fontWeight: 600 }}>Hitta sökord gratis:</p>
-            {[
-              ["Google Autocomplete", "Skriv in ett ord i Googles sökfält och se vad som dyker upp."],
-              ["People Also Ask", "Visar relaterade frågor i sökresultaten. Där hittar du guldkorn."],
-              ["Google Trends", "Se hur sökvolymen på ett ord har förändrats över tid."],
-              ["Konkurrenter", "Kolla deras sidor — de har redan gjort research."],
-              ["Dina egna kunder", "Vilka frågor får du oftast? Varje fråga är en potentiell artikel."],
-            ].map(([title, desc]) => (
-              <div key={title} style={S.listItem}>
-                <div style={S.bullet} />
-                <p style={{ ...S.p, margin: 0 }}><strong>{title}:</strong> {desc}</p>
-              </div>
-            ))}
-            <p style={{ ...S.p, marginTop: 16 }}>
-              Som småföretag ska du undvika de stora, konkurrensutsatta sökorden. Satsa istället på
-              "long tail keywords" — längre, mer specifika sökord med mindre konkurrens.
-            </p>
-            <div style={S.compRow}>
-              <div style={S.compBefore}><strong>Dåligt mål:</strong> "bokföring"</div>
-              <div style={S.compAfter}><strong>Bra mål:</strong> "bokföring för enskild firma frilansare"</div>
-            </div>
-            <div style={S.compRow}>
-              <div style={S.compBefore}><strong>Dåligt mål:</strong> "marknadsföring"</div>
-              <div style={S.compAfter}><strong>Bra mål:</strong> "marknadsföring för lokala hantverkare i Malmö"</div>
-            </div>
+        <h2 style={S.h2}>2. Unika texter slår kopierade — varje gång</h2>
+        <p style={S.p}>
+          Det här är den enskilt största SEO-vinsten för e-handel och tjänsteföretag, och
+          den de flesta missar. Om du klistrar in leverantörens standardbeskrivning har du
+          exakt samma text som hundra andra butiker. Google väljer då sällan dig — varför
+          skulle det ranka den hundraförsta kopian?
+        </p>
+        <p style={S.p}>
+          Skriv om varje produkt- och tjänstetext med dina egna ord, riktad till din kund.
+          Det behöver inte vara långt; det behöver vara ditt.
+        </p>
+        <div style={S.compRow}>
+          <div style={S.compBefore}>
+            <strong>Leverantörens text (finns överallt):</strong> "Ergonomisk kontorsstol
+            med justerbart ländryggsstöd och andningsbar mesh-rygg. Gaslyft klass 4."
+          </div>
+          <div style={S.compAfter}>
+            <strong>Din text (unik, sökbar):</strong> "Slipp ryggvärken efter långa
+            arbetsdagar vid skrivbordet. Den här kontorsstolen anpassar sig efter din
+            kropp — ländryggsstödet ställs in på sekunder och mesh-ryggen håller dig sval
+            även under en hel hemmakontorsdag. Hållbar gaslyft som klarar daglig
+            användning i åratal."
           </div>
         </div>
-
-        {/* Steg 2 */}
-        <div style={S.stepItem}>
-          <div style={S.stepNum}>2</div>
-          <div style={{ flex: 1 }}>
-            <h3 style={{ ...S.h3, margin: "0 0 14px" }}>Skriv innehåll som svarar på frågor</h3>
-            <p style={S.p}>
-              Google premierar innehåll som faktiskt är hjälpsamt. Tunna, generiska artiklar rankar
-              inte längre.
-            </p>
-            {[
-              ["Längd", "Sikta på 1000–2000 ord. Kortare artiklar rankar sällan."],
-              ["Struktur", "Använd rubriker (H2, H3). Folk skannar — rubrikerna gör det enkelt att hitta rätt del."],
-              ["Djup", "Svara på frågan bättre än någon annan. Om bästa existerande artikel har 5 tips, skriv en med 10."],
-              ["Specifikt", "Konkreta exempel, siffror, steg-för-steg. Generiska råd rankar inte."],
-              ["Uppdaterad", "Google premierar färskt innehåll. Uppdatera gamla artiklar med nya datum och info."],
-            ].map(([title, desc]) => (
-              <div key={title} style={S.listItem}>
-                <div style={S.bullet} />
-                <p style={{ ...S.p, margin: 0 }}><strong>{title}:</strong> {desc}</p>
-              </div>
-            ))}
-          </div>
+        <div style={S.infoBox}>
+          Har du många produkter och tycker det är oöverstigligt? Det är precis det jobbet{" "}
+          <a href="/verktyg/produkttext" style={{ color: "#7DD3FC", textDecoration: "underline" }}>
+            produkttext-generatorn
+          </a>{" "}
+          är byggd för — beskriv produkten kort så får du ett unikt utkast att putsa, i
+          stället för en kopia.
         </div>
 
-        {/* Steg 3 */}
-        <div style={S.stepItem}>
-          <div style={S.stepNum}>3</div>
-          <div style={{ flex: 1 }}>
-            <h3 style={{ ...S.h3, margin: "0 0 14px" }}>Teknisk SEO (enklare än du tror)</h3>
-            <p style={S.p}>Du behöver inte vara utvecklare. Fokusera på grunderna:</p>
-            {[
-              ["Sajten laddar snabbt", "Testa på pagespeed.web.dev. Över 80 poäng på mobil är bra."],
-              ["Mobilanpassad", "Över 60% av all sökning sker på mobil. Din sajt måste fungera bra där."],
-              ["HTTPS", "Sajten ska ha https:// framför URL:en. Det är säkerhet, men också en rankingfaktor."],
-              ["Enkla URL:er", "/blogg/offertmejl-guide är bättre än /page?id=42."],
-              ["Alt-texter på bilder", "Varje bild ska ha en beskrivande alt-text."],
-              ["Metabeskrivning", "Varje sida ska ha en unik titel och beskrivning — det som syns i sökresultaten."],
-              ["Webbplatskarta", "En sitemap hjälper Google att hitta alla dina sidor. Skicka in den i Google Search Console."],
-            ].map(([title, desc]) => (
-              <div key={title} style={S.listItem}>
-                <div style={S.bullet} />
-                <p style={{ ...S.p, margin: 0 }}><strong>{title}:</strong> {desc}</p>
-              </div>
-            ))}
-          </div>
+        <h2 style={S.h2}>3. Lokal SEO sitter i orden</h2>
+        <p style={S.p}>
+          Är du beroende av kunder i ett visst område är ortnamnet en av dina starkaste
+          tillgångar — och det hör hemma i texten, inte bara i sidfoten. Skriv naturligt
+          om var du verkar: "Vi tar uppdrag i hela Uppsala med omnejd" säger mer till
+          Google än ett ensamt "Uppsala" i kontaktrutan.
+        </p>
+        <p style={S.p}>
+          Tänk i specifika sökningar. "Elektriker" är hopplöst att ranka på och drar
+          dessutom besökare från hela landet som du ändå inte kan hjälpa. "Elektriker
+          Vasastan" eller "jourelektriker Malmö helg" är både lättare att ranka på och ger
+          besökare som faktiskt kan bli kunder.
+        </p>
+        <div style={S.tip}>
+          <strong>Komplement:</strong> en gratis och korrekt ifylld Google
+          Företagsprofil är ofta den största enskilda lokala SEO-faktorn för småföretag.
+          Lägg en kvart på den.
         </div>
 
-        {/* Steg 4 */}
-        <div style={S.stepItem}>
-          <div style={S.stepNum}>4</div>
-          <div style={{ flex: 1 }}>
-            <h3 style={{ ...S.h3, margin: "0 0 14px" }}>Få andra att länka till dig</h3>
-            <p style={S.p}>
-              Länkar från andra sajter till din är som röster. Ju fler och bättre röster, desto mer
-              litar Google på dig.
-            </p>
-            {[
-              ["Bra innehåll", "Om du skriver verkligt bra artiklar länkar folk till dem naturligt."],
-              ["Gästinlägg", "Skriv ett gästinlägg på någon annans blogg mot att de länkar till din."],
-              ["Lokala kataloger", "Registrera ditt företag på hitta.se, Eniro, lokala branschkataloger. Gratis länkar."],
-              ["Google Företagsprofil", "Gratis och extremt viktigt för lokala företag."],
-              ["Samarbeten", "Har du samarbetspartners? Be om en länk från deras sida."],
-            ].map(([title, desc]) => (
-              <div key={title} style={S.listItem}>
-                <div style={S.bullet} />
-                <p style={{ ...S.p, margin: 0 }}><strong>{title}:</strong> {desc}</p>
-              </div>
-            ))}
-            <div style={{ ...S.tip, marginTop: 16 }}>
-              <strong>Undvik:</strong> att köpa länkar, länknätverk, eller andra "genvägar". Google ser igenom det och bestraffar dig.
-            </div>
-          </div>
+        <h2 style={S.h2}>4. Titel och beskrivning är också säljtext</h2>
+        <p style={S.p}>
+          Sidans titel (det blå klickbara) och metabeskrivningen (texten under) är det
+          första kunden ser i sökresultatet. De påverkar både om du rankar och om någon
+          faktiskt klickar. Ändå lämnar många dem tomma eller likadana på alla sidor.
+        </p>
+        <p style={S.p}>Skriv dem som en liten annons — specifik, med sökordet och en anledning att klicka:</p>
+        <div style={S.snippet}>
+          <p style={S.snippetTitle}>Takläggare i Borås — fast pris på takbyte | Tak &amp; Plåt AB</p>
+          <p style={S.snippetUrl}>www.dittforetag.se › takbyte</p>
+          <p style={S.snippetDesc}>
+            Byta tak i Borås? Vi ger fast pris efter kostnadsfri besiktning och är klara på
+            1–2 veckor. ROT-avdrag dras direkt. Begär offert idag.
+          </p>
         </div>
+        <p style={S.p}>
+          Håll titeln under cirka 60 tecken och beskrivningen under cirka 155, annars
+          klipps de av. Och gör varje sida unik — samma titel på tjugo sidor förvirrar
+          både Google och kunden.
+        </p>
 
-        {/* Steg 5 */}
-        <div style={S.stepItem}>
-          <div style={S.stepNum}>5</div>
-          <div style={{ flex: 1 }}>
-            <h3 style={{ ...S.h3, margin: "0 0 14px" }}>Följ upp och justera</h3>
-            <p style={S.p}>SEO är inte "gör en gång, klart". Det är en pågående process.</p>
-            <p style={S.p}>
-              Använd <strong>Google Search Console</strong> (gratis) för att se vilka sökord folk
-              hittar dig på, vilka sidor som rankar bäst, och var det finns förbättringspotential.
-            </p>
-            <p style={S.p}>
-              Använd <strong>Google Analytics</strong> (gratis) för att se vad besökarna faktiskt
-              gör när de kommer till din sajt. Stannar de? Klickar de vidare? Konverterar de?
-            </p>
-            <p style={{ ...S.p, margin: 0 }}>
-              Kolla statistiken varje månad. Identifiera vad som fungerar och gör mer av det.
-            </p>
+        <h2 style={S.h2}>5. Bind ihop dina sidor med länkar</h2>
+        <p style={S.p}>
+          Interna länkar — länkar mellan dina egna sidor — hjälper Google förstå vad som
+          hör ihop och leder besökaren vidare i stället för bort. En guide som förklarar
+          hantverket bör länka till sidan som löser problemet, och tvärtom.
+        </p>
+        <p style={S.p}>
+          Det är precis så den här sajten är byggd: guiden om{" "}
+          <a href="/blogg/produktbeskrivningar-guide" style={{ color: "#7DD3FC", textDecoration: "underline" }}>
+            produktbeskrivningar
+          </a>{" "}
+          länkar till{" "}
+          <a href="/verktyg/produkttext" style={{ color: "#7DD3FC", textDecoration: "underline" }}>
+            produkttext-verktyget
+          </a>, och guiden om{" "}
+          <a href="/blogg/betalningspaminnelse-mall" style={{ color: "#7DD3FC", textDecoration: "underline" }}>
+            betalningspåminnelser
+          </a>{" "}
+          till{" "}
+          <a href="/verktyg/fakturatext" style={{ color: "#7DD3FC", textDecoration: "underline" }}>
+            fakturatext-verktyget
+          </a>. Använd länktext som beskriver vad som väntar ("läs guiden om
+          offertmejl"), inte "klicka här".
+        </p>
+
+        <h2 style={S.h2}>6. AI-texter rankar — om du använder dem rätt</h2>
+        <p style={S.p}>
+          Google bestraffar inte AI-text i sig. Det bestraffar tunt, generiskt innehåll
+          som inte tillför något — oavsett vem som skrivit det. Efter de senaste
+          kärnuppdateringarna är det viktigare än någonsin att texten visar verklig
+          erfarenhet och hjälper läsaren på riktigt.
+        </p>
+        <p style={S.p}>
+          Använd därför AI som utkast, inte som slutprodukt. Ett bra arbetssätt:
+        </p>
+        {[
+          ["Låt verktyget ge dig strukturen och första utkastet", "Det sparar den tomma-sidan-ångesten och ger dig något att jobba med."],
+          ["Lägg till det bara du vet", "Ett verkligt kundexempel, en siffra från din vardag, ett misstag du sett andra göra. Det är det AI inte kan hitta på — och det Google premierar."],
+          ["Stryk allt som kunde stått på vilken sajt som helst", "Tomma övergångsmeningar och självklarheter sänker både läsupplevelsen och rankingen."],
+        ].map(([title, desc]) => (
+          <div key={title} style={S.listItem}>
+            <div style={S.bullet} />
+            <p style={{ ...S.p, margin: 0 }}><strong>{title}:</strong> {desc}</p>
           </div>
+        ))}
+        <div style={S.infoBox}>
+          <strong>Färre men djupare slår fler men tunnare.</strong> Tio riktigt bra sidor
+          som var och en svarar fullständigt på en sökning rankar bättre än femtio tunna.
+          Lägg tiden på att göra varje sida värd att läsa, inte på att fylla bloggen.
         </div>
 
         <h2 style={S.h2}>Förväntningar — och tålamod</h2>
-        <p style={S.p}>Det här är viktigt att förstå: SEO tar tid.</p>
-        {[
-          ["Månad 1–2", "Ingenting händer. Du publicerar innehåll, Google indexerar det gradvis."],
-          ["Månad 3–6", "Första träffarna börjar komma. 10–50 besökare per dag från Google."],
-          ["Månad 6–12", "Trafiken börjar växa organiskt. 100–500 besökare per dag. Bästa artiklarna rankar på sidan 1."],
-          ["År 1–2", "Stadig tillväxt. Tusentals besökare per månad. SEO blir din största trafikkälla."],
-        ].map(([period, desc]) => (
-          <div key={period} style={S.timelineRow}>
-            <div style={S.timeBadge}>{period}</div>
-            <p style={{ ...S.p, margin: 0 }}>{desc}</p>
-          </div>
-        ))}
-        <p style={{ ...S.p, marginTop: 20 }}>
-          Nyckeln är att inte ge upp under de första svåra månaderna när ingenting händer. Det är
-          då de flesta småföretag slutar — och varför så få lyckas med SEO.
+        <p style={S.p}>
+          En sak till, för att slippa besvikelse: SEO tar tid. Räkna med 3–6 månader innan
+          en ny text börjar synas, eftersom Google behöver hitta, indexera och bygga
+          förtroende för den. Men en text som väl rankar fortsätter ge besökare månad efter
+          månad utan att du gör något mer. Det är det som gör jobbet värt väntan.
         </p>
 
-        <h2 style={S.h2}>Spara tid med AI</h2>
-        <p style={S.p}>
-          Att skriva 1500-ords artiklar regelbundet tar tid. Med Textverket kan du generera utkast
-          och textavsnitt på svenska på sekunder. Perfekt att komma igång när du har skrivtorka
-          eller behöver struktur för ett längre inlägg.
-        </p>
         <div style={S.ctaBox}>
-          <p style={S.ctaTitle}>Skapa SEO-vänliga artiklar på sekunder</p>
+          <p style={S.ctaTitle}>Skriv unika texter som rankar — på sekunder</p>
           <p style={S.ctaDesc}>
-            Beskriv ämnet och målgruppen — AI:n levererar ett utkast på svenska du kan bygga vidare på.
-            Gratis, inga konton.
+            Slipp leverantörens kopierade beskrivningar. Textverket genererar unika
+            produkttexter, hemsidetexter och blogginlägg på svenska som du kan göra till
+            dina. Gratis, inga konton.
           </p>
-          <a href="/verktyg" style={S.ctaBtn}>Testa gratis på Textverket →</a>
+          <a href="/verktyg/produkttext" style={S.ctaBtn}>Öppna Produkttext-generatorn →</a>
         </div>
 
         <p style={S.footerNote}>

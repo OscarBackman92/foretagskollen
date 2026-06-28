@@ -475,7 +475,7 @@ export default function StartaEgetPage() {
 
         <h2 style={S.h2}>Får jag starta eget vid sidan av jobbet?</h2>
         <p style={S.p}>
-          Ja, i de allesta fall. I Sverige har du som huvudregel rätt att driva ett
+          Ja, i de allra flesta fall. I Sverige har du som huvudregel rätt att driva ett
           sidoföretag så länge det inte konkurrerar med din arbetsgivare och inte påverkar
           ditt ordinarie arbete negativt.
         </p>

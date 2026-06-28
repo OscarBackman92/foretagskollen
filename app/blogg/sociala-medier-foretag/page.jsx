@@ -271,7 +271,7 @@ const IDEAS = [
   "En lista med tre tips relaterade till din bransch.",
   "Ett före- och efterexempel på ett nyligen avslutat jobb.",
   "En kort berättelse om varför du startade ditt företag.",
-  "En fråga till dina följare om deras biggest pain point.",
+  "En fråga till dina följare om deras största utmaning.",
   "En rekommendation av ett verktyg eller en produkt du använder.",
   "Ett tack till en kund eller samarbetspartner.",
   "En vanlig missuppfattning i din bransch — och sanningen.",

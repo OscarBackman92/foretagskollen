@@ -74,7 +74,7 @@ export default function sitemap() {
     },
     {
       url: "https://www.textverket.se/blogg/seo-smaforetag",
-      lastModified: new Date("2026-04-21"),
+      lastModified: new Date("2026-06-28"),
       changeFrequency: "monthly",
       priority: 0.7,
     },

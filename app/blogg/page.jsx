@@ -28,11 +28,11 @@ const ARTICLES = [
   {
     slug: "seo-smaforetag",
     category: "Guide",
-    title: "SEO för småföretag — enkel guide som faktiskt fungerar (2026)",
+    title: "SEO för dina texter — så rankar produkttexter och blogg (2026)",
     excerpt:
-      "5-stegsguide till SEO utan byrå och utan dyra verktyg. Hitta sökord, skriv innehåll som rankar, teknisk SEO och länkbygge.",
-    date: "April 2026",
-    readTime: "9 min",
+      "För småföretag avgörs SEO mest av själva texterna. Skriv unika produkttexter, lokala tjänstesidor och blogg som rankar — med konkreta före/efter-exempel.",
+    date: "Juni 2026",
+    readTime: "8 min",
   },
   {
     slug: "nyhetsbrev-guide",

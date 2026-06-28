@@ -197,63 +197,18 @@ export default function KundmejlMallarPage() {
 
         <h2 style={S.h2}>Mall 4: Påminnelse om obetald faktura</h2>
         <p style={S.p}>
-          Att jaga betalningar är obehagligt men nödvändigt. Nyckeln är att vara tydlig utan att vara otrevlig. Du vill ha dina pengar OCH behålla kundrelationen.
+          Att jaga betalningar är obehagligt men nödvändigt. Nyckeln är att trappa upp i tre steg — vänlig påminnelse först, bestämd därefter, sista varning innan inkasso — och att alltid vara saklig utan att vara otrevlig. Du vill ha dina pengar OCH behålla kundrelationen.
         </p>
-
-        <h3 style={S.h3}>Steg 1: Vänlig påminnelse (1 vecka efter förfallodatum)</h3>
-        <div style={S.emailBlock}>
-          <div style={S.emailHeader}>
-            <strong>Ämne:</strong> Påminnelse — faktura #1234
-          </div>
-          <div style={S.emailBody}>
-            <p>Hej Magnus!</p>
-            <p>Jag hoppas att allt är bra hos er. Jag ville bara påminna om att faktura #1234 på 15 000 kr förföll till betalning den 1 april.</p>
-            <p>Det kan förstås ha passerat i mängden — det händer oss alla. Du hittar fakturan bifogad för enkelhets skull.</p>
-            <p>Om betalningen redan är skickad kan du bortse från detta mejl.</p>
-            <div style={S.emailSignature}>
-              Vänliga hälsningar,<br />[Ditt namn]
-            </div>
-          </div>
+        <p style={S.p}>
+          Betalningspåminnelser är ett ämne för sig: det finns regler kring påminnelseavgift, dröjsmålsränta och inkasso som är värda att ha koll på. Vi har därför samlat färdiga mallar för alla tre stegen — plus det du behöver veta om de svenska reglerna — i en egen guide.
+        </p>
+        <div style={S.tip}>
+          <strong>Läs vidare:</strong>{" "}
+          <a href="/blogg/betalningspaminnelse-mall" style={{ color: "#FCD34D", textDecoration: "underline" }}>
+            Betalningspåminnelse — mall och tips för småföretag
+          </a>{" "}
+          med tre färdiga mallar (vänlig, bestämd, sista varning) och de svenska reglerna förklarade.
         </div>
-
-        <h3 style={S.h3}>Steg 2: Bestämd påminnelse (2 veckor efter förfallodatum)</h3>
-        <div style={S.emailBlock}>
-          <div style={S.emailHeader}>
-            <strong>Ämne:</strong> Andra påminnelse — faktura #1234, förfallen 1 april
-          </div>
-          <div style={S.emailBody}>
-            <p>Hej Magnus!</p>
-            <p>Jag återkommer angående faktura #1234 på 15 000 kr som förföll den 1 april. Jag har inte registrerat någon betalning ännu.</p>
-            <p>Jag vill gärna lösa detta smidigt. Om det finns omständigheter som påverkar betalningen, hör gärna av dig så hittar vi en lösning.</p>
-            <p>Vänligen se till att betalningen genomförs inom fem arbetsdagar.</p>
-            <div style={S.emailSignature}>
-              Med vänliga hälsningar,<br />[Ditt namn]
-            </div>
-          </div>
-        </div>
-
-        <h3 style={S.h3}>Steg 3: Sista påminnelse (4 veckor efter förfallodatum)</h3>
-        <div style={S.emailBlock}>
-          <div style={S.emailHeader}>
-            <strong>Ämne:</strong> Sista påminnelse — faktura #1234, förfallen sedan 1 april
-          </div>
-          <div style={S.emailBody}>
-            <p>Hej Magnus!</p>
-            <p>Trots tidigare påminnelser har faktura #1234 på 15 000 kr fortfarande inte betalats. Fakturan förföll den 1 april.</p>
-            <p>Jag ber dig vänligen att genomföra betalningen inom fem arbetsdagar. Om betalning inte inkommer kommer ärendet att överlämnas till inkasso, vilket innebär ytterligare kostnader.</p>
-            <p>Kontakta mig gärna om du vill diskutera en betalningsplan.</p>
-            <div style={S.emailSignature}>
-              Med vänliga hälsningar,<br />[Ditt namn]
-            </div>
-          </div>
-        </div>
-
-        <h3 style={S.h3}>Nycklar</h3>
-        <ul style={S.keysList}>
-          <li>Trappa upp gradvis — aldrig hotfullt i första mejlet</li>
-          <li>Var alltid saklig och erbjud alltid en utväg (betalningsplan)</li>
-          <li>Dokumentera allt skriftligt</li>
-        </ul>
 
         <h2 style={S.h2}>Mall 5: Uppföljningsmejl till vilande kund</h2>
         <p style={S.p}>
