@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Logo from './Logo';
 
 const links = [
   { href: '/blogg', label: 'Blogg' },
@@ -48,18 +49,6 @@ export default function NavBar() {
           font-size: 18px;
           font-family: 'Space Grotesk', sans-serif;
           letter-spacing: -0.02em;
-        }
-        .tv-logo-mark {
-          width: 30px;
-          height: 30px;
-          border-radius: 9px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 16px;
-          background: linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(34, 211, 238, 0.25));
-          border: 1px solid rgba(34, 211, 238, 0.4);
-          box-shadow: 0 0 14px rgba(34, 211, 238, 0.25);
         }
         .tv-desktop-links {
           display: flex;
@@ -185,9 +174,8 @@ export default function NavBar() {
       {/* Navbar bar */}
       <div className="tv-nav-wrap">
         <nav className="tv-nav">
-          <a href="/" className="tv-logo">
-            <span className="tv-logo-mark">✍️</span>
-            Textverket
+          <a href="/" className="tv-logo" aria-label="Textverket.se">
+            <Logo size={20} />
           </a>
 
           <div className="tv-desktop-links">
@@ -213,9 +201,8 @@ export default function NavBar() {
           <div className="tv-overlay-backdrop" onClick={() => setOpen(false)} />
           <div className="tv-overlay-panel">
             <div className="tv-overlay-top">
-              <a href="/" className="tv-logo" onClick={() => setOpen(false)}>
-                <span className="tv-logo-mark">✍️</span>
-                Textverket
+              <a href="/" className="tv-logo" aria-label="Textverket.se" onClick={() => setOpen(false)}>
+                <Logo size={20} />
               </a>
               <button
                 className="tv-close"

@@ -1,3 +1,5 @@
+import Logo from './Logo';
+
 const LINKS = [
   { href: '/om-oss', label: 'Om oss' },
   { href: '/kontakt', label: 'Kontakt' },
@@ -19,15 +21,8 @@ export default function Footer() {
       fontFamily: "'Inter', sans-serif",
       position: 'relative',
     }}>
-      <div style={{
-        fontFamily: "'Space Grotesk', sans-serif",
-        fontSize: 16,
-        fontWeight: 700,
-        color: '#E5EAFD',
-        marginBottom: 14,
-        letterSpacing: '-0.02em',
-      }}>
-        ✍️ Textverket
+      <div style={{ marginBottom: 14 }}>
+        <Logo size={18} />
       </div>
       <div style={{
         display: 'flex',
