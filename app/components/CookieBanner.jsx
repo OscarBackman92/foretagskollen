@@ -8,6 +8,7 @@ export default function CookieBanner() {
 
   useEffect(() => {
     if (!localStorage.getItem('cookie-consent')) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- läser localStorage efter mount
       setVisible(true);
     }
   }, []);

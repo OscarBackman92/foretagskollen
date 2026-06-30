@@ -1,8 +1,5 @@
-import NavBar from "../../components/NavBar";
-import Footer from "../../components/Footer";
-import JsonLd from "../../components/JsonLd";
-import { blogPostJsonLd } from "../../lib/structured-data";
-import AdUnit from "../../components/AdUnit";
+import BlogPostLayout from "../../components/BlogPostLayout";
+import { blogStyles as S } from "../../lib/blog-styles";
 
 export const metadata = {
   title: "Starta eget vid sidan av jobbet — komplett guide för Sverige (2026) — Textverket",
@@ -30,209 +27,7 @@ export const metadata = {
   },
 };
 
-const S = {
-  page: {
-    minHeight: "100vh",
-    background: "transparent",
-    fontFamily: "'Inter', sans-serif",
-    color: "#EAEEFF",
-  },
-  navWrap: { borderBottom: "1px solid rgba(125, 140, 255, 0.16)" },
-  nav: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "18px 28px",
-    maxWidth: 960,
-    margin: "0 auto",
-  },
-  logo: {
-    display: "flex",
-    alignItems: "center",
-    gap: 8,
-    textDecoration: "none",
-    color: "#EAEEFF",
-  },
-  navLinks: { display: "flex", alignItems: "center", gap: 24 },
-  navLink: { fontSize: 14, fontWeight: 500, color: "#A7B1D6", textDecoration: "none" },
-  navCta: {
-    background: "linear-gradient(135deg, #6366F1 0%, #22D3EE 100%)",
-    color: "#fff",
-    padding: "9px 20px",
-    borderRadius: 100,
-    fontSize: 14,
-    fontWeight: 600,
-    textDecoration: "none",
-  },
-  article: { maxWidth: 720, margin: "0 auto", padding: "52px 28px 80px" },
-  breadcrumb: {
-    fontSize: 13,
-    color: "#7E88B5",
-    marginBottom: 28,
-    display: "flex",
-    gap: 6,
-    alignItems: "center",
-  },
-  breadcrumbLink: { color: "#7E88B5", textDecoration: "none" },
-  categoryPill: {
-    display: "inline-block",
-    background: "rgba(129, 140, 248, 0.13)",
-    color: "#A5B4FC",
-    fontSize: 12,
-    fontWeight: 600,
-    padding: "4px 12px",
-    borderRadius: 100,
-    marginBottom: 20,
-    letterSpacing: 0.3,
-    textTransform: "uppercase",
-  },
-  h1: {
-    fontFamily: "'Space Grotesk', sans-serif",
-    fontSize: "clamp(30px, 5vw, 44px)",
-    fontWeight: 700,
-    lineHeight: 1.2,
-    margin: "0 0 20px",
-    color: "#EAEEFF",
-  },
-  meta: {
-    fontSize: 14,
-    color: "#7E88B5",
-    marginBottom: 36,
-    display: "flex",
-    flexWrap: "wrap",
-    gap: 6,
-    alignItems: "center",
-  },
-  metaDot: { color: "rgba(125, 140, 255, 0.25)" },
-  divider: { border: "none", borderTop: "1px solid rgba(125, 140, 255, 0.18)", margin: "0 0 40px" },
-  p: { fontSize: 17, lineHeight: 1.85, color: "#C3CCE8", margin: "0 0 22px" },
-  h2: {
-    fontFamily: "'Space Grotesk', sans-serif",
-    fontSize: 28,
-    fontWeight: 700,
-    color: "#EAEEFF",
-    margin: "56px 0 20px",
-    lineHeight: 1.3,
-  },
-  h3: {
-    fontSize: 18,
-    fontWeight: 700,
-    color: "#EAEEFF",
-    margin: "36px 0 14px",
-    lineHeight: 1.4,
-  },
-  tip: {
-    background: "rgba(251, 191, 36, 0.09)",
-    border: "1px solid rgba(251, 191, 36, 0.32)",
-    borderRadius: 10,
-    padding: "14px 18px",
-    fontSize: 14,
-    color: "#FCD34D",
-    lineHeight: 1.7,
-    margin: "20px 0",
-  },
-  infoBox: {
-    background: "rgba(52, 211, 153, 0.1)",
-    border: "1px solid rgba(52, 211, 153, 0.32)",
-    borderRadius: 10,
-    padding: "14px 18px",
-    fontSize: 14,
-    color: "#6EE7B7",
-    lineHeight: 1.7,
-    margin: "20px 0",
-  },
-  warningBox: {
-    background: "rgba(248, 113, 113, 0.09)",
-    border: "1px solid rgba(248, 113, 113, 0.28)",
-    borderRadius: 10,
-    padding: "14px 18px",
-    fontSize: 14,
-    color: "#FCA5A5",
-    lineHeight: 1.7,
-    margin: "20px 0",
-  },
-  stepItem: {
-    display: "flex",
-    gap: 20,
-    margin: "0 0 40px",
-    alignItems: "flex-start",
-  },
-  stepNum: {
-    background: "linear-gradient(135deg, #6366F1 0%, #22D3EE 100%)",
-    color: "#fff",
-    width: 36,
-    height: 36,
-    borderRadius: "50%",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: 15,
-    fontWeight: 700,
-    flexShrink: 0,
-    marginTop: 2,
-  },
-  mistakeItem: {
-    display: "flex",
-    gap: 16,
-    margin: "20px 0",
-    alignItems: "flex-start",
-  },
-  mistakeBullet: {
-    width: 8,
-    height: 8,
-    borderRadius: "50%",
-    background: "#7E88B5",
-    flexShrink: 0,
-    marginTop: 10,
-  },
-  ctaBox: {
-    background: "linear-gradient(135deg, rgba(49, 46, 129, 0.55) 0%, rgba(8, 11, 28, 0.9) 100%)",
-    borderRadius: 16,
-    padding: "32px 28px",
-    margin: "48px 0 0",
-    color: "#fff",
-  },
-  ctaTitle: {
-    fontFamily: "'Space Grotesk', sans-serif",
-    fontSize: 24,
-    fontWeight: 700,
-    margin: "0 0 10px",
-    color: "#fff",
-  },
-  ctaDesc: {
-    fontSize: 15,
-    color: "rgba(255,255,255,0.7)",
-    margin: "0 0 20px",
-    lineHeight: 1.7,
-  },
-  ctaBtn: {
-    display: "inline-block",
-    background: "linear-gradient(135deg, #6366F1 0%, #22D3EE 100%)",
-    color: "#fff",
-    padding: "12px 28px",
-    boxShadow: "0 0 24px rgba(34, 211, 238, 0.3)",
-    borderRadius: 100,
-    fontSize: 15,
-    fontWeight: 700,
-    textDecoration: "none",
-  },
-  footerNote: {
-    borderTop: "1px solid rgba(125, 140, 255, 0.18)",
-    marginTop: 56,
-    paddingTop: 24,
-    fontSize: 14,
-    color: "#7E88B5",
-    lineHeight: 1.7,
-    fontStyle: "italic",
-  },
-  footer: {
-    textAlign: "center",
-    padding: "32px 28px",
-    color: "#7E88B5",
-    fontSize: 13,
-    borderTop: "1px solid rgba(125, 140, 255, 0.16)",
-  },
-};
+
 
 const STEPS = [
   {
@@ -433,114 +228,87 @@ const MISTAKES = [
 
 export default function StartaEgetPage() {
   return (
-    <div style={S.page}>
-      <JsonLd data={blogPostJsonLd(metadata, "2026-04-20")} />
-      <NavBar />
-
-      <article style={S.article}>
-        <div style={S.breadcrumb}>
-          <a href="/" style={S.breadcrumbLink}>Hem</a>
-          <span>›</span>
-          <a href="/blogg" style={S.breadcrumbLink}>Blogg</a>
-          <span>›</span>
-          <span>Starta eget vid sidan av jobbet</span>
-        </div>
-
-        <span style={S.categoryPill}>Guide</span>
-
-        <h1 style={S.h1}>
-          Starta eget vid sidan av jobbet — komplett guide för dig i Sverige (2026)
-        </h1>
-
-        <div style={S.meta}>
-          <span>Publicerad av Textverket</span>
-          <span style={S.metaDot}>·</span>
-          <span>Uppdaterad april 2026</span>
-          <span style={S.metaDot}>·</span>
-          <span>Lästid: 9 minuter</span>
-        </div>
-
-        <hr style={S.divider} />
-
-        <p style={S.p}>
-          Du har en idé. Kanske en tjänst du kan erbjuda, en produkt du vill sälja, eller
-          en kunskap du kan paketera. Men du har också ett jobb, och tanken på att säga
-          upp dig för att "satsa" känns inte realistisk. Det behöver det inte heller vara.
-        </p>
-        <p style={S.p}>
-          Att starta eget vid sidan av jobbet är det smartaste sättet att bli företagare.
-          Du behåller din trygghet medan du testar om din idé faktiskt funkar. I den här
-          guiden går vi igenom exakt hur du gör det — steg för steg.
-        </p>
-
-        <h2 style={S.h2}>Får jag starta eget vid sidan av jobbet?</h2>
-        <p style={S.p}>
-          Ja, i de allra flesta fall. I Sverige har du som huvudregel rätt att driva ett
-          sidoföretag så länge det inte konkurrerar med din arbetsgivare och inte påverkar
-          ditt ordinarie arbete negativt.
-        </p>
-        <p style={S.p}>
-          Kolla dock ditt anställningsavtal. Vissa avtal, särskilt inom IT och
-          konsultbranschen, har konkurrensklausuler eller kräver att du informerar din
-          arbetsgivare. Om du är osäker — prata med din chef. De flesta arbetsgivare har
-          inga problem med sidoprojekt som inte konkurrerar.
-        </p>
-        <div style={S.warningBox}>
-          <strong>Statligt anställd?</strong> Då gäller särskilda regler om bisyssla.
-          Du kan behöva anmäla din sidoverksamhet.
-        </div>
-
-        <h2 style={S.h2}>Steg för steg</h2>
-
-        {STEPS.map((step) => (
-          <div key={step.num} style={S.stepItem}>
-            <div style={S.stepNum}>{step.num}</div>
-            <div style={{ flex: 1 }}>
-              <h3 style={{ ...S.h3, margin: "0 0 16px" }}>Steg {step.num}: {step.title}</h3>
-              {step.content}
-            </div>
-          </div>
-        ))}
-
-        <h2 style={S.h2}>Vanliga fällor att undvika</h2>
-        {MISTAKES.map((m, i) => (
-          <div key={i} style={S.mistakeItem}>
-            <div style={S.mistakeBullet} />
-            <p style={{ ...S.p, margin: 0 }}>{m}</p>
-          </div>
-        ))}
-
-        <h2 style={S.h2}>Spara tid med AI</h2>
-        <p style={S.p}>
-          Som sidoprojektare är tid din knappaste resurs. Med Textverket kan du snabbt
-          generera professionella texter för ditt nya företag — offertmejl,
-          produktbeskrivningar, kundkommunikation och mycket mer. Helt gratis.
-        </p>
-
-        <div style={S.ctaBox}>
-          <p style={S.ctaTitle}>Skriv professionella texter till ditt sidoprojekt</p>
-          <p style={S.ctaDesc}>
-            Offertmejl, produkttexter, kundkommunikation — AI:n genererar dem på
-            sekunder. Gratis, inga konton.
-          </p>
-          <a href="/verktyg" style={S.ctaBtn}>
-            Testa gratis på Textverket →
-          </a>
-        </div>
-
-        <p style={S.footerNote}>
-          Textverket hjälper svenska småföretag att skriva professionella texter med AI.{" "}
-          <a href="/verktyg" style={{ color: "#949EC9" }}>
-            Testa gratis på textverket.se.
-          </a>
-        </p>
-      </article>
-
-      <div style={{ maxWidth: 720, margin: "0 auto", padding: "0 28px 40px" }}>
-        <AdUnit slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BLOG} />
-      </div>
-
-      <Footer />
-    </div>
+    <BlogPostLayout
+      metadata={metadata}
+      datePublished="2026-04-20"
+      category="Guide"
+      title={"Starta eget vid sidan av jobbet — komplett guide för dig i Sverige (2026)"}
+      breadcrumbLabel={"Starta eget vid sidan av jobbet"}
+      updated={"april 2026"}
+      readTime={"9 minuter"}
+    >
+      <p style={S.p}>
+                Du har en idé. Kanske en tjänst du kan erbjuda, en produkt du vill sälja, eller
+                en kunskap du kan paketera. Men du har också ett jobb, och tanken på att säga
+                upp dig för att "satsa" känns inte realistisk. Det behöver det inte heller vara.
+              </p>
+              <p style={S.p}>
+                Att starta eget vid sidan av jobbet är det smartaste sättet att bli företagare.
+                Du behåller din trygghet medan du testar om din idé faktiskt funkar. I den här
+                guiden går vi igenom exakt hur du gör det — steg för steg.
+              </p>
+      
+              <h2 style={S.h2}>Får jag starta eget vid sidan av jobbet?</h2>
+              <p style={S.p}>
+                Ja, i de allra flesta fall. I Sverige har du som huvudregel rätt att driva ett
+                sidoföretag så länge det inte konkurrerar med din arbetsgivare och inte påverkar
+                ditt ordinarie arbete negativt.
+              </p>
+              <p style={S.p}>
+                Kolla dock ditt anställningsavtal. Vissa avtal, särskilt inom IT och
+                konsultbranschen, har konkurrensklausuler eller kräver att du informerar din
+                arbetsgivare. Om du är osäker — prata med din chef. De flesta arbetsgivare har
+                inga problem med sidoprojekt som inte konkurrerar.
+              </p>
+              <div style={S.warningBox}>
+                <strong>Statligt anställd?</strong> Då gäller särskilda regler om bisyssla.
+                Du kan behöva anmäla din sidoverksamhet.
+              </div>
+      
+              <h2 style={S.h2}>Steg för steg</h2>
+      
+              {STEPS.map((step) => (
+                <div key={step.num} style={S.stepItem}>
+                  <div style={S.stepNum}>{step.num}</div>
+                  <div style={{ flex: 1 }}>
+                    <h3 style={{ ...S.h3, margin: "0 0 16px" }}>Steg {step.num}: {step.title}</h3>
+                    {step.content}
+                  </div>
+                </div>
+              ))}
+      
+              <h2 style={S.h2}>Vanliga fällor att undvika</h2>
+              {MISTAKES.map((m, i) => (
+                <div key={i} style={S.mistakeItem}>
+                  <div style={S.mistakeBullet} />
+                  <p style={{ ...S.p, margin: 0 }}>{m}</p>
+                </div>
+              ))}
+      
+              <h2 style={S.h2}>Spara tid med AI</h2>
+              <p style={S.p}>
+                Som sidoprojektare är tid din knappaste resurs. Med Textverket kan du snabbt
+                generera professionella texter för ditt nya företag — offertmejl,
+                produktbeskrivningar, kundkommunikation och mycket mer. Helt gratis.
+              </p>
+      
+              <div style={S.ctaBox}>
+                <p style={S.ctaTitle}>Skriv professionella texter till ditt sidoprojekt</p>
+                <p style={S.ctaDesc}>
+                  Offertmejl, produkttexter, kundkommunikation — AI:n genererar dem på
+                  sekunder. Gratis, inga konton.
+                </p>
+                <a href="/verktyg" style={S.ctaBtn}>
+                  Testa gratis på Textverket →
+                </a>
+              </div>
+      
+              <p style={S.footerNote}>
+                Textverket hjälper svenska småföretag att skriva professionella texter med AI.{" "}
+                <a href="/verktyg" style={{ color: "#949EC9" }}>
+                  Testa gratis på textverket.se.
+                </a>
+              </p>
+    </BlogPostLayout>
   );
 }

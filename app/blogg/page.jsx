@@ -1,3 +1,7 @@
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import { BLOG_ARTICLES as ARTICLES } from "../lib/content";
+
 export const metadata = {
   title: "Blogg — Textverket",
   description:
@@ -23,139 +27,6 @@ export const metadata = {
     ],
   },
 };
-
-const ARTICLES = [
-  {
-    slug: "seo-smaforetag",
-    category: "Guide",
-    title: "SEO för dina texter — så rankar produkttexter och blogg (2026)",
-    excerpt:
-      "För småföretag avgörs SEO mest av själva texterna. Skriv unika produkttexter, lokala tjänstesidor och blogg som rankar — med konkreta före/efter-exempel.",
-    date: "Juni 2026",
-    readTime: "8 min",
-  },
-  {
-    slug: "nyhetsbrev-guide",
-    category: "Guide",
-    title: "Nyhetsbrev som folk faktiskt vill läsa — guide med mallar",
-    excerpt:
-      "Den gyllene regeln, strukturen som fungerar, vad du ska skriva om och hur ofta. Sluta skicka nyhetsbrev ingen öppnar.",
-    date: "April 2026",
-    readTime: "7 min",
-  },
-  {
-    slug: "pressmeddelande-mall",
-    category: "Mallar",
-    title: "Pressmeddelande — mall och guide med exempel (2026)",
-    excerpt:
-      "Färdig mall med komplett exempel. Pyramidstrukturen, vad som är en nyhet, och 10 tips som gör att journalister faktiskt läser.",
-    date: "April 2026",
-    readTime: "7 min",
-  },
-  {
-    slug: "linkedin-profil",
-    category: "Guide",
-    title: "LinkedIn-profil som ger resultat — komplett guide (2026)",
-    excerpt:
-      "Rubrik, profilbild, sammanfattning, erfarenhet och aktivitet — gör om din LinkedIn från digitalt CV till magnet för affärer.",
-    date: "April 2026",
-    readTime: "7 min",
-  },
-  {
-    slug: "personligt-brev-cv",
-    category: "Mallar",
-    title: "Personligt brev och CV — kompletta mallar och tips (2026)",
-    excerpt:
-      "Strukturen som fungerar, komplett brevexempel och CV-tipset som gör all skillnad: fokusera på resultat, inte uppgifter.",
-    date: "April 2026",
-    readTime: "8 min",
-  },
-  {
-    slug: "offertmejl-guide",
-    category: "Guide",
-    title:
-      "Så skriver du ett professionellt offertmejl — komplett guide med exempel (2026)",
-    excerpt:
-      "Lär dig de 6 delarna i ett bra offertmejl, se ett komplett exempel och undvik de 5 vanligaste misstagen som kostar dig affärer.",
-    date: "April 2026",
-    readTime: "8 min",
-  },
-  {
-    slug: "kundmejl-mallar",
-    category: "Mallar",
-    title: "5 mallar för kundmejl som faktiskt fungerar (+ gratis generator)",
-    excerpt:
-      "Färdiga mallar för uppföljningsmejl, reklamationssvar, tackmejl, betalningspåminnelser och återaktivering av vilande kunder.",
-    date: "April 2026",
-    readTime: "7 min",
-  },
-  {
-    slug: "produktbeskrivningar-guide",
-    category: "Guide",
-    title: "Hur skriver man bra produktbeskrivningar? Komplett guide med exempel",
-    excerpt:
-      "7-stegsguide till produkttexter som konverterar — med före/efter-exempel och SEO-tips för svenska e-handlare och småföretag.",
-    date: "April 2026",
-    readTime: "8 min",
-  },
-  {
-    slug: "betalningspaminnelse-mall",
-    category: "Mallar",
-    title: "Betalningspåminnelse — mall och tips för småföretag (2026)",
-    excerpt:
-      "Färdiga mallar för betalningspåminnelser i tre steg: vänlig, bestämd och sista varning. Plus regler och tips för att förebygga sena betalningar.",
-    date: "April 2026",
-    readTime: "6 min",
-  },
-  {
-    slug: "gratis-ai-verktyg",
-    category: "Guide",
-    title: "Gratis AI-verktyg för småföretag i Sverige — 10 bästa valen (2026)",
-    excerpt:
-      "De bästa gratis AI-verktygen för svenska småföretag. Spara tid på textskrivning, design, kundservice och mer — utan kostnad.",
-    date: "April 2026",
-    readTime: "9 min",
-  },
-  {
-    slug: "professionella-mejl",
-    category: "Guide",
-    title: "Professionella mejl — 7 regler som gör ditt företag trovärdigt",
-    excerpt:
-      "7 konkreta regler för affärsmejl som öppnas, läses och besvaras. Från ämnesrad till tajming — gör varje mejl till ett visitkort.",
-    date: "April 2026",
-    readTime: "7 min",
-  },
-  {
-    slug: "sociala-medier-foretag",
-    category: "Guide",
-    title: "Så skriver du inlägg för sociala medier som företagare — guide med exempel",
-    excerpt:
-      "De fyra innehållstyperna, hook-kropp-CTA-formeln och 10 idéer du kan använda idag. Sluta stirra på en tom skärm.",
-    date: "April 2026",
-    readTime: "8 min",
-  },
-  {
-    slug: "starta-eget-vid-sidan-av-jobbet",
-    category: "Guide",
-    title: "Starta eget vid sidan av jobbet — komplett guide för dig i Sverige (2026)",
-    excerpt:
-      "Steg-för-steg: juridik, registrering, validering, första kunder och tidhantering. Behåll tryggheten medan du testar din idé.",
-    date: "April 2026",
-    readTime: "9 min",
-  },
-  {
-    slug: "gratis-verktyg-egenforetagare",
-    category: "Guide",
-    title: "Gratis verktyg för dig som driver eget — 15 som sparar tid och pengar (2026)",
-    excerpt:
-      "De bästa gratisverktygen för svenska egenföretagare: bokföring, design, webbplats, projekthantering och mer.",
-    date: "April 2026",
-    readTime: "8 min",
-  },
-];
-
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
 
 export default function BloggPage() {
   return (

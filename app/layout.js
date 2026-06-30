@@ -1,6 +1,7 @@
 import "./globals.css";
 import Script from "next/script";
 import CookieBanner from "./components/CookieBanner";
+import { inter, jetbrainsMono, spaceGrotesk } from "./fonts";
 
 export const metadata = {
   title: "Textverket — Proffsiga AI-texter för svenska företag",
@@ -33,10 +34,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="sv">
+    <html
+      lang="sv"
+      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+    >
       <head>
         <meta name="google-adsense-account" content="ca-pub-9223370591083087" />
-        {/* Consent Mode v2 — måste köras innan gtag/AdSense laddas */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -63,12 +66,6 @@ export default function RootLayout({ children }) {
           }}
         />
         <meta name="theme-color" content="#05060F" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
       </head>
       <body>
         {children}

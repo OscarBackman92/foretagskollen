@@ -1,4 +1,9 @@
 import Anthropic from "@anthropic-ai/sdk";
+import { checkRateLimit, rateLimitMessage } from "../../lib/rate-limit";
+
+if (!process.env.ANTHROPIC_API_KEY) {
+  console.error("ANTHROPIC_API_KEY saknas — /api/generate kommer inte fungera.");
+}
 
 const client = new Anthropic();
 
@@ -33,37 +38,21 @@ const TONES = {
 };
 const DEFAULT_TONE = "professionell";
 
-// Best-effort in-memory rate limiting per IP. On serverless gäller den per
-// instans, men stoppar ändå enkla skript och loopar.
-const RATE_LIMIT = 10;
-const RATE_WINDOW_MS = 60_000;
-const ipHits = new Map();
-
-function isRateLimited(ip) {
-  const now = Date.now();
-  const hits = (ipHits.get(ip) || []).filter((t) => now - t < RATE_WINDOW_MS);
-  if (hits.length >= RATE_LIMIT) {
-    ipHits.set(ip, hits);
-    return true;
-  }
-  hits.push(now);
-  ipHits.set(ip, hits);
-
-  if (ipHits.size > 5000) {
-    for (const [key, times] of ipHits) {
-      if (times.every((t) => now - t >= RATE_WINDOW_MS)) ipHits.delete(key);
-    }
-  }
-  return false;
-}
-
 export async function POST(request) {
+  if (!process.env.ANTHROPIC_API_KEY) {
+    return Response.json(
+      { error: "Tjänsten är inte konfigurerad. Kontakta administratören." },
+      { status: 503 }
+    );
+  }
+
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
 
-  if (isRateLimited(ip)) {
+  const rate = await checkRateLimit(ip);
+  if (rate.limited) {
     return Response.json(
-      { error: "För många förfrågningar. Vänta en minut och försök igen." },
+      { error: rateLimitMessage(rate.reason) },
       { status: 429 }
     );
   }

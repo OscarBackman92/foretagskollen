@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import Logo from './Logo';
 
 const links = [
@@ -174,9 +175,9 @@ export default function NavBar() {
       {/* Navbar bar */}
       <div className="tv-nav-wrap">
         <nav className="tv-nav">
-          <a href="/" className="tv-logo" aria-label="Textverket.se">
+          <Link href="/" className="tv-logo" aria-label="Textverket.se">
             <Logo size={20} />
-          </a>
+          </Link>
 
           <div className="tv-desktop-links">
             {links.map(l => (
@@ -201,9 +202,9 @@ export default function NavBar() {
           <div className="tv-overlay-backdrop" onClick={() => setOpen(false)} />
           <div className="tv-overlay-panel">
             <div className="tv-overlay-top">
-              <a href="/" className="tv-logo" aria-label="Textverket.se" onClick={() => setOpen(false)}>
+              <Link href="/" className="tv-logo" aria-label="Textverket.se" onClick={() => setOpen(false)}>
                 <Logo size={20} />
-              </a>
+              </Link>
               <button
                 className="tv-close"
                 onClick={() => setOpen(false)}

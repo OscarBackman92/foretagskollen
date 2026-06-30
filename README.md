@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Textverket
 
-## Getting Started
+Gratis AI-skrivverktyg för svenska småföretag — offertmejl, produkttexter, kundmejl och mer.
 
-First, run the development server:
+**Produktion:** [textverket.se](https://www.textverket.se)
+
+## Teknik
+
+- Next.js 16 (App Router)
+- React 19
+- Tailwind CSS 4
+- Claude (Anthropic) via `/api/generate`
+- Google AdSense + GA4
+
+## Kom igång lokalt
 
 ```bash
+npm install
+cp .env.example .env.local   # fyll i API-nycklar
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Öppna [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Miljövariabler
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variabel | Krävs | Beskrivning |
+|----------|-------|-------------|
+| `ANTHROPIC_API_KEY` | Ja (prod) | API-nyckel för Claude |
+| `UPSTASH_REDIS_REST_URL` | Rek. (prod) | Upstash Redis för rate limiting |
+| `UPSTASH_REDIS_REST_TOKEN` | Rek. (prod) | Upstash-token |
+| `NEXT_PUBLIC_ADSENSE_SLOT_TOOLS` | Nej | AdSense-slot för verktygssidor |
+| `NEXT_PUBLIC_ADSENSE_SLOT_BLOG` | Nej | AdSense-slot för blogg |
 
-## Learn More
+Utan Upstash används in-memory rate limiting (svagare på serverless).
 
-To learn more about Next.js, take a look at the following resources:
+## Skript
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run dev      # utvecklingsserver
+npm run build    # produktionsbuild
+npm run start    # kör produktionsbuild
+npm run lint     # ESLint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy
 
-## Deploy on Vercel
+Projektet är konfigurerat för Vercel. Sätt miljövariablerna i Vercel-projektet och deploya från `main`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`next.config.mjs` redirectar `textverket.se` → `www.textverket.se`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Projektstruktur
+
+```
+app/
+  api/generate/     # AI-textgenerering
+  verktyg/          # Sex textverktyg + ToolClient
+  blogg/            # SEO-guider och mallar
+  components/       # Delade UI-komponenter
+  lib/              # Rate limit, analytics, content, routes
+```
+
+## Repo-namn
+
+Git-mappen heter `foretagskollen` men produkten är **Textverket** (`package.json`: `textverket`).

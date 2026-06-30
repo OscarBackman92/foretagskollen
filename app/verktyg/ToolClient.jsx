@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import AdUnit from "../components/AdUnit";
+import { trackEvent } from "../lib/analytics";
 
 const ADSENSE_SLOT_TOOLS = process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOLS;
 const MAX_INPUT_LENGTH = 2000;
@@ -66,25 +67,6 @@ const CATEGORIES = [
   },
 ];
 
-function TypewriterText({ text }) {
-  const [displayed, setDisplayed] = useState("");
-  const idx = useRef(0);
-
-  useEffect(() => {
-    setDisplayed("");
-    idx.current = 0;
-    if (!text) return;
-    const interval = setInterval(() => {
-      idx.current += 2;
-      setDisplayed(text.slice(0, idx.current));
-      if (idx.current >= text.length) clearInterval(interval);
-    }, 12);
-    return () => clearInterval(interval);
-  }, [text]);
-
-  return <>{displayed}</>;
-}
-
 export default function ToolClient({ initialCategory = null, pageTitle, pageSubtitle, beforeContent, afterContent }) {
   const router = useRouter();
   const [selected] = useState(initialCategory);
@@ -123,6 +105,7 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
 
       if (response.ok && data.text) {
         setResult(data.text);
+        trackEvent("generate_success", { tool: selected, tone });
         setHistory((prev) =>
           [
             { category: cat.label, input, result: data.text, time: new Date() },
@@ -142,6 +125,7 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
   const handleCopy = () => {
     navigator.clipboard.writeText(result);
     setCopied(true);
+    trackEvent("copy_text", { tool: selected });
     setTimeout(() => setCopied(false), 2000);
   };
 
@@ -215,7 +199,10 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
               return (
                 <button
                   key={cat.id}
-                  onClick={() => router.push(cat.slug)}
+                  onClick={() => {
+                    trackEvent("tool_selected", { tool: cat.id });
+                    router.push(cat.slug);
+                  }}
                   className="tv-cat-btn"
                   aria-pressed={active}
                   style={{
@@ -360,6 +347,18 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
               }}
             />
 
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                marginTop: 6,
+                fontSize: 12,
+                color: input.length > MAX_INPUT_LENGTH * 0.9 ? "#FBBF24" : "#7E88B5",
+              }}
+            >
+              {input.length} / {MAX_INPUT_LENGTH}
+            </div>
+
             <button
               onClick={handleGenerate}
               disabled={loading || !input.trim()}
@@ -467,9 +466,28 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
                   whiteSpace: "pre-wrap",
                 }}
               >
-                <TypewriterText text={result} />
+                {result}
               </div>
             </div>
+            <button
+              onClick={handleGenerate}
+              disabled={loading || !input.trim()}
+              style={{
+                width: "100%",
+                marginTop: 12,
+                padding: "12px 24px",
+                background: "rgba(13, 17, 36, 0.66)",
+                color: loading || !input.trim() ? "#7E88B5" : "#67E8F9",
+                border: "1px solid rgba(34, 211, 238, 0.35)",
+                borderRadius: 12,
+                fontSize: 14,
+                fontWeight: 600,
+                cursor: loading || !input.trim() ? "not-allowed" : "pointer",
+                fontFamily: "var(--font-inter), sans-serif",
+              }}
+            >
+              {loading ? "⚡ Genererar…" : "↻ Generera igen"}
+            </button>
           </div>
         )}
 

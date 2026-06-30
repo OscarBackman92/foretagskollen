@@ -1,8 +1,5 @@
-import NavBar from "../../components/NavBar";
-import Footer from "../../components/Footer";
-import JsonLd from "../../components/JsonLd";
-import { blogPostJsonLd } from "../../lib/structured-data";
-import AdUnit from "../../components/AdUnit";
+import BlogPostLayout from "../../components/BlogPostLayout";
+import { blogStyles as S } from "../../lib/blog-styles";
 
 export const metadata = {
   title: "Så skriver du inlägg för sociala medier som företagare (2026) — Textverket",
@@ -30,210 +27,7 @@ export const metadata = {
   },
 };
 
-const S = {
-  page: {
-    minHeight: "100vh",
-    background: "transparent",
-    fontFamily: "'Inter', sans-serif",
-    color: "#EAEEFF",
-  },
-  navWrap: { borderBottom: "1px solid rgba(125, 140, 255, 0.16)" },
-  nav: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "18px 28px",
-    maxWidth: 960,
-    margin: "0 auto",
-  },
-  logo: {
-    display: "flex",
-    alignItems: "center",
-    gap: 8,
-    textDecoration: "none",
-    color: "#EAEEFF",
-  },
-  navLinks: { display: "flex", alignItems: "center", gap: 24 },
-  navLink: { fontSize: 14, fontWeight: 500, color: "#A7B1D6", textDecoration: "none" },
-  navCta: {
-    background: "linear-gradient(135deg, #6366F1 0%, #22D3EE 100%)",
-    color: "#fff",
-    padding: "9px 20px",
-    borderRadius: 100,
-    fontSize: 14,
-    fontWeight: 600,
-    textDecoration: "none",
-  },
-  article: { maxWidth: 720, margin: "0 auto", padding: "52px 28px 80px" },
-  breadcrumb: {
-    fontSize: 13,
-    color: "#7E88B5",
-    marginBottom: 28,
-    display: "flex",
-    gap: 6,
-    alignItems: "center",
-  },
-  breadcrumbLink: { color: "#7E88B5", textDecoration: "none" },
-  categoryPill: {
-    display: "inline-block",
-    background: "rgba(129, 140, 248, 0.13)",
-    color: "#A5B4FC",
-    fontSize: 12,
-    fontWeight: 600,
-    padding: "4px 12px",
-    borderRadius: 100,
-    marginBottom: 20,
-    letterSpacing: 0.3,
-    textTransform: "uppercase",
-  },
-  h1: {
-    fontFamily: "'Space Grotesk', sans-serif",
-    fontSize: "clamp(30px, 5vw, 44px)",
-    fontWeight: 700,
-    lineHeight: 1.2,
-    margin: "0 0 20px",
-    color: "#EAEEFF",
-  },
-  meta: {
-    fontSize: 14,
-    color: "#7E88B5",
-    marginBottom: 36,
-    display: "flex",
-    flexWrap: "wrap",
-    gap: 6,
-    alignItems: "center",
-  },
-  metaDot: { color: "rgba(125, 140, 255, 0.25)" },
-  divider: { border: "none", borderTop: "1px solid rgba(125, 140, 255, 0.18)", margin: "0 0 40px" },
-  p: { fontSize: 17, lineHeight: 1.85, color: "#C3CCE8", margin: "0 0 22px" },
-  h2: {
-    fontFamily: "'Space Grotesk', sans-serif",
-    fontSize: 28,
-    fontWeight: 700,
-    color: "#EAEEFF",
-    margin: "56px 0 20px",
-    lineHeight: 1.3,
-  },
-  h3: {
-    fontSize: 18,
-    fontWeight: 700,
-    color: "#EAEEFF",
-    margin: "36px 0 14px",
-    lineHeight: 1.4,
-  },
-  tip: {
-    background: "rgba(251, 191, 36, 0.09)",
-    border: "1px solid rgba(251, 191, 36, 0.32)",
-    borderRadius: 10,
-    padding: "14px 18px",
-    fontSize: 14,
-    color: "#FCD34D",
-    lineHeight: 1.7,
-    margin: "20px 0",
-  },
-  quote: {
-    margin: "20px 0",
-    padding: "16px 20px",
-    background: "rgba(255, 255, 255, 0.04)",
-    borderLeft: "3px solid rgba(125, 140, 255, 0.28)",
-    borderRadius: "0 8px 8px 0",
-    fontSize: 15,
-    color: "#B6C0DE",
-    lineHeight: 1.8,
-    fontStyle: "italic",
-  },
-  contentCard: {
-    background: "rgba(13, 17, 36, 0.66)",
-    border: "1px solid rgba(125, 140, 255, 0.18)",
-    borderRadius: 12,
-    padding: "20px 24px",
-    margin: "16px 0",
-  },
-  contentCardTitle: {
-    fontSize: 16,
-    fontWeight: 700,
-    color: "#EAEEFF",
-    margin: "0 0 8px",
-  },
-  contentCardWhy: {
-    fontSize: 14,
-    color: "#949EC9",
-    margin: "0 0 10px",
-    lineHeight: 1.6,
-  },
-  contentCardExample: {
-    background: "rgba(255, 255, 255, 0.04)",
-    borderLeft: "3px solid rgba(125, 140, 255, 0.28)",
-    borderRadius: "0 8px 8px 0",
-    padding: "12px 16px",
-    fontSize: 14,
-    color: "#B6C0DE",
-    lineHeight: 1.7,
-    fontStyle: "italic",
-    margin: 0,
-  },
-  platformCard: {
-    background: "rgba(13, 17, 36, 0.66)",
-    border: "1px solid rgba(125, 140, 255, 0.18)",
-    borderRadius: 12,
-    padding: "16px 20px",
-    margin: "12px 0",
-  },
-  ideasList: {
-    margin: "0 0 0 20px",
-    padding: 0,
-    fontSize: 16,
-    lineHeight: 2,
-    color: "#C3CCE8",
-  },
-  ctaBox: {
-    background: "linear-gradient(135deg, rgba(49, 46, 129, 0.55) 0%, rgba(8, 11, 28, 0.9) 100%)",
-    borderRadius: 16,
-    padding: "32px 28px",
-    margin: "48px 0 0",
-    color: "#fff",
-  },
-  ctaTitle: {
-    fontFamily: "'Space Grotesk', sans-serif",
-    fontSize: 24,
-    fontWeight: 700,
-    margin: "0 0 10px",
-    color: "#fff",
-  },
-  ctaDesc: {
-    fontSize: 15,
-    color: "rgba(255,255,255,0.7)",
-    margin: "0 0 20px",
-    lineHeight: 1.7,
-  },
-  ctaBtn: {
-    display: "inline-block",
-    background: "linear-gradient(135deg, #6366F1 0%, #22D3EE 100%)",
-    color: "#fff",
-    padding: "12px 28px",
-    boxShadow: "0 0 24px rgba(34, 211, 238, 0.3)",
-    borderRadius: 100,
-    fontSize: 15,
-    fontWeight: 700,
-    textDecoration: "none",
-  },
-  footerNote: {
-    borderTop: "1px solid rgba(125, 140, 255, 0.18)",
-    marginTop: 56,
-    paddingTop: 24,
-    fontSize: 14,
-    color: "#7E88B5",
-    lineHeight: 1.7,
-    fontStyle: "italic",
-  },
-  footer: {
-    textAlign: "center",
-    padding: "32px 28px",
-    color: "#7E88B5",
-    fontSize: 13,
-    borderTop: "1px solid rgba(125, 140, 255, 0.16)",
-  },
-};
+
 
 const CONTENT_TYPES = [
   {
@@ -281,184 +75,160 @@ const IDEAS = [
 
 export default function SocialaMedierForetagPage() {
   return (
-    <div style={S.page}>
-      <JsonLd data={blogPostJsonLd(metadata, "2026-04-20")} />
-      <NavBar />
-
-      <article style={S.article}>
-        <div style={S.breadcrumb}>
-          <a href="/" style={S.breadcrumbLink}>Hem</a>
-          <span>›</span>
-          <a href="/blogg" style={S.breadcrumbLink}>Blogg</a>
-          <span>›</span>
-          <span>Sociala medier för företagare</span>
-        </div>
-
-        <span style={S.categoryPill}>Guide</span>
-
-        <h1 style={S.h1}>
-          Så skriver du inlägg för sociala medier som företagare — guide med exempel
-        </h1>
-
-        <div style={S.meta}>
-          <span>Publicerad av Textverket</span>
-          <span style={S.metaDot}>·</span>
-          <span>Uppdaterad april 2026</span>
-          <span style={S.metaDot}>·</span>
-          <span>Lästid: 8 minuter</span>
-        </div>
-
-        <hr style={S.divider} />
-
+    <BlogPostLayout
+      metadata={metadata}
+      datePublished="2026-04-20"
+      category="Guide"
+      title={"Så skriver du inlägg för sociala medier som företagare — guide med exempel"}
+      breadcrumbLabel={"Sociala medier för företagare"}
+      updated={"april 2026"}
+      readTime={"8 minuter"}
+    >
+      <p style={S.p}>
+                Du vet att du borde vara aktiv på sociala medier. Alla säger det. Men varje
+                gång du öppnar Instagram eller LinkedIn stirrar du på en tom ruta och tänker
+                "vad ska jag ens skriva?"
+              </p>
+              <p style={S.p}>
+                Du är inte ensam. De flesta småföretagare kämpar med samma sak. Den här guiden
+                ger dig en enkel metod för att aldrig mer fastna framför en tom skärm.
+              </p>
+      
+              <h2 style={S.h2}>Varför det känns svårt</h2>
+              <p style={S.p}>
+                Problemet är sällan brist på saker att säga. Problemet är att du försöker vara
+                perfekt. Du jämför dig med företag som har marknadsavdelningar och content-team.
+                Sluta med det.
+              </p>
+              <p style={S.p}>
+                Dina kunder vill inte se polerat corporate-innehåll från dig. De vill se en
+                riktig människa som driver ett riktigt företag. Det är din superkraft som
+                småföretagare — äkthet.
+              </p>
+      
+              <h2 style={S.h2}>De fyra innehållstyperna</h2>
+              <p style={S.p}>
+                Allt innehåll på sociala medier faller in i fyra kategorier. Varva mellan dem
+                så får du variation utan att behöva uppfinna hjulet varje gång.
+              </p>
+      
+              {CONTENT_TYPES.map((ct) => (
+                <div key={ct.num} style={S.contentCard}>
+                  <p style={S.contentCardTitle}>{ct.num}. {ct.title}</p>
+                  <p style={S.contentCardWhy}><strong>Varför det funkar:</strong> {ct.why}</p>
+                  <blockquote style={S.contentCardExample}>Exempel: "{ct.example}"</blockquote>
+                </div>
+              ))}
+      
+              <h2 style={S.h2}>Formeln: Hook — Kropp — CTA</h2>
+              <p style={S.p}>Varje inlägg behöver tre delar.</p>
+      
+              <h3 style={S.h3}>Hook — första meningen</h3>
+              <p style={S.p}>
+                Den avgör om någon stannar och läser eller scrollar vidare. Ställ en fråga,
+                gör ett påstående, eller skapa nyfikenhet.
+              </p>
+              <blockquote style={S.quote}>
+                "Vi lanserade en ny tjänst idag" är ingen hook.
+                <br />
+                "Jag sa nej till vår största kund förra veckan" är det.
+              </blockquote>
+      
+              <h3 style={S.h3}>Kropp — själva innehållet</h3>
+              <p style={S.p}>
+                Håll det kort — 3–5 meningar för Instagram, upp till 10 för LinkedIn. Använd
+                radbrytningar generöst. Ingen vill läsa ett textblock.
+              </p>
+      
+              <h3 style={S.h3}>CTA — avslutningen</h3>
+              <p style={S.p}>
+                Be om något: en kommentar, en delning, ett klick. "Vad tycker du?" eller
+                "Tagga någon som behöver höra detta" eller "Länk i bio för att läsa mer."
+              </p>
+      
+              <h2 style={S.h2}>Hur ofta ska du posta?</h2>
+              <p style={S.p}>
+                Konsistens slår frekvens. Tre inlägg i veckan under sex månader är bättre än
+                dagliga inlägg i två veckor följt av tystnad.
+              </p>
+              <p style={S.p}>
+                En realistisk plan för en ensam företagare: två till tre inlägg per vecka.
+                Planera dem på söndag kväll eller måndag morgon så slipper du tänka på det
+                resten av veckan.
+              </p>
+              <div style={S.tip}>
+                <strong>Tips:</strong> Använd schemaläggning — verktyg som Buffer och Later
+                låter dig förbereda och schemalägga inlägg gratis.
+              </div>
+      
+        <h2 style={S.h2}>Var hittar svenska kunder dig?</h2>
         <p style={S.p}>
-          Du vet att du borde vara aktiv på sociala medier. Alla säger det. Men varje
-          gång du öppnar Instagram eller LinkedIn stirrar du på en tom ruta och tänker
-          "vad ska jag ens skriva?"
+          Välj en till två plattformar där din målgrupp faktiskt finns — inte där
+          alla &quot;ska&quot; vara. I Sverige ser det ofta ut så här:
         </p>
-        <p style={S.p}>
-          Du är inte ensam. De flesta småföretagare kämpar med samma sak. Den här guiden
-          ger dig en enkel metod för att aldrig mer fastna framför en tom skärm.
-        </p>
-
-        <h2 style={S.h2}>Varför det känns svårt</h2>
-        <p style={S.p}>
-          Problemet är sällan brist på saker att säga. Problemet är att du försöker vara
-          perfekt. Du jämför dig med företag som har marknadsavdelningar och content-team.
-          Sluta med det.
-        </p>
-        <p style={S.p}>
-          Dina kunder vill inte se polerat corporate-innehåll från dig. De vill se en
-          riktig människa som driver ett riktigt företag. Det är din superkraft som
-          småföretagare — äkthet.
-        </p>
-
-        <h2 style={S.h2}>De fyra innehållstyperna</h2>
-        <p style={S.p}>
-          Allt innehåll på sociala medier faller in i fyra kategorier. Varva mellan dem
-          så får du variation utan att behöva uppfinna hjulet varje gång.
-        </p>
-
-        {CONTENT_TYPES.map((ct) => (
-          <div key={ct.num} style={S.contentCard}>
-            <p style={S.contentCardTitle}>{ct.num}. {ct.title}</p>
-            <p style={S.contentCardWhy}><strong>Varför det funkar:</strong> {ct.why}</p>
-            <blockquote style={S.contentCardExample}>Exempel: "{ct.example}"</blockquote>
-          </div>
-        ))}
-
-        <h2 style={S.h2}>Formeln: Hook — Kropp — CTA</h2>
-        <p style={S.p}>Varje inlägg behöver tre delar.</p>
-
-        <h3 style={S.h3}>Hook — första meningen</h3>
-        <p style={S.p}>
-          Den avgör om någon stannar och läser eller scrollar vidare. Ställ en fråga,
-          gör ett påstående, eller skapa nyfikenhet.
-        </p>
-        <blockquote style={S.quote}>
-          "Vi lanserade en ny tjänst idag" är ingen hook.
-          <br />
-          "Jag sa nej till vår största kund förra veckan" är det.
-        </blockquote>
-
-        <h3 style={S.h3}>Kropp — själva innehållet</h3>
-        <p style={S.p}>
-          Håll det kort — 3–5 meningar för Instagram, upp till 10 för LinkedIn. Använd
-          radbrytningar generöst. Ingen vill läsa ett textblock.
-        </p>
-
-        <h3 style={S.h3}>CTA — avslutningen</h3>
-        <p style={S.p}>
-          Be om något: en kommentar, en delning, ett klick. "Vad tycker du?" eller
-          "Tagga någon som behöver höra detta" eller "Länk i bio för att läsa mer."
-        </p>
-
-        <h2 style={S.h2}>Hur ofta ska du posta?</h2>
-        <p style={S.p}>
-          Konsistens slår frekvens. Tre inlägg i veckan under sex månader är bättre än
-          dagliga inlägg i två veckor följt av tystnad.
-        </p>
-        <p style={S.p}>
-          En realistisk plan för en ensam företagare: två till tre inlägg per vecka.
-          Planera dem på söndag kväll eller måndag morgon så slipper du tänka på det
-          resten av veckan.
-        </p>
-        <div style={S.tip}>
-          <strong>Tips:</strong> Använd schemaläggning — verktyg som Buffer och Later
-          låter dig förbereda och schemalägga inlägg gratis.
-        </div>
-
-        <h2 style={S.h2}>Plattformsguide</h2>
-        <p style={S.p}>Välj en till två plattformar som passar din målgrupp. Du behöver inte vara överallt.</p>
 
         {[
           {
+            name: "Facebook-grupper",
+            desc: "Guld för lokala hantverkare, städfirmor och serviceföretag. Sök grupper som \"rekommendationer i [din stad]\" eller branschspecifika nätverk — där frågar folk om elektriker, målare och liknande varje vecka.",
+          },
+          {
             name: "Instagram",
-            desc: "Funkar bäst för visuella branscher: hantverk, mat, design, mode, inredning. Fokusera på bilder och korta videor (Reels). Stories för bakom kulisserna.",
+            desc: "Bäst för visuella branscher: inredning, mat, mode, hantverk. Svenska kunder förväntar sig äkta bilder — inte stockfoton. Reels med före/efter fungerar särskilt bra för renovering och design.",
           },
           {
             name: "LinkedIn",
-            desc: "Funkar bäst för B2B och tjänsteföretag: konsulter, IT, ekonomi, juridik. Längre textinlägg funkar bra. Tonen kan vara mer professionell men fortfarande personlig.",
+            desc: "B2B och konsulter i Sverige. Längre textinlägg på svenska med konkreta lärdomar slår generiska citat. Många affärer mellan småföretag startar här, inte via kall mejl.",
           },
           {
-            name: "Facebook",
-            desc: "Funkar bäst för lokala företag och äldre målgrupper. Grupper är guld — hitta grupper där din målgrupp hänger och var aktiv.",
-          },
-          {
-            name: "TikTok",
-            desc: "Funkar bäst om du kan göra korta, underhållande videos. Bra för att nå yngre målgrupper. Kräver mer kreativitet men kan ge explosiv räckvidd.",
+            name: "Google Företagsprofil",
+            desc: "Inte sociala medier i klassisk mening, men ofta viktigare än Instagram för lokala sökningar. Uppdatera med färdiga projekt och be nöjda kunder lämna omdömen.",
           },
         ].map((p) => (
-          <div key={p.name} style={S.platformCard}>
-            <p style={{ fontSize: 16, fontWeight: 700, color: "#EAEEFF", margin: "0 0 6px" }}>
-              {p.name}
-            </p>
-            <p style={{ fontSize: 15, color: "#C3CCE8", lineHeight: 1.7, margin: 0 }}>
-              {p.desc}
-            </p>
-          </div>
-        ))}
-
-        <h2 style={S.h2}>10 idéer du kan använda idag</h2>
-        <p style={S.p}>
-          Här är tio inlägg du kan anpassa till ditt företag och posta den här veckan.
-        </p>
-        <ol style={S.ideasList}>
-          {IDEAS.map((idea, i) => (
-            <li key={i}>{idea}</li>
-          ))}
-        </ol>
-
-        <h2 style={S.h2}>Spara tid med AI</h2>
-        <p style={S.p}>
-          Att komma på och formulera inlägg tar tid. Med Textverket kan du generera
-          engagerande inlägg för sociala medier på svenska på sekunder. Beskriv vad du
-          vill kommunicera så skapar AI:n ett färdigt inlägg anpassat för din plattform.
-        </p>
-
-        <div style={S.ctaBox}>
-          <p style={S.ctaTitle}>Skapa inlägg för sociala medier på sekunder</p>
-          <p style={S.ctaDesc}>
-            Beskriv vad du vill kommunicera — AI:n levererar ett engagerande inlägg
-            anpassat för din plattform. Gratis, inga konton.
-          </p>
-          <a href="/verktyg/sociala-medier" style={S.ctaBtn}>
-            Öppna Sociala medier-generatorn →
-          </a>
-        </div>
-
-        <p style={S.footerNote}>
-          Textverket hjälper svenska småföretag att skriva professionella texter med AI.{" "}
-          <a href="/verktyg/sociala-medier" style={{ color: "#949EC9" }}>
-            Testa Sociala medier-generatorn gratis.
-          </a>
-        </p>
-      </article>
-
-      <div style={{ maxWidth: 720, margin: "0 auto", padding: "0 28px 40px" }}>
-        <AdUnit slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BLOG} />
-      </div>
-
-      <Footer />
-    </div>
+                <div key={p.name} style={S.platformCard}>
+                  <p style={{ fontSize: 16, fontWeight: 700, color: "#EAEEFF", margin: "0 0 6px" }}>
+                    {p.name}
+                  </p>
+                  <p style={{ fontSize: 15, color: "#C3CCE8", lineHeight: 1.7, margin: 0 }}>
+                    {p.desc}
+                  </p>
+                </div>
+              ))}
+      
+              <h2 style={S.h2}>10 idéer du kan använda idag</h2>
+              <p style={S.p}>
+                Här är tio inlägg du kan anpassa till ditt företag och posta den här veckan.
+              </p>
+              <ol style={S.ideasList}>
+                {IDEAS.map((idea, i) => (
+                  <li key={i}>{idea}</li>
+                ))}
+              </ol>
+      
+              <h2 style={S.h2}>Spara tid med AI</h2>
+              <p style={S.p}>
+                Att komma på och formulera inlägg tar tid. Med Textverket kan du generera
+                engagerande inlägg för sociala medier på svenska på sekunder. Beskriv vad du
+                vill kommunicera så skapar AI:n ett färdigt inlägg anpassat för din plattform.
+              </p>
+      
+              <div style={S.ctaBox}>
+                <p style={S.ctaTitle}>Skapa inlägg för sociala medier på sekunder</p>
+                <p style={S.ctaDesc}>
+                  Beskriv vad du vill kommunicera — AI:n levererar ett engagerande inlägg
+                  anpassat för din plattform. Gratis, inga konton.
+                </p>
+                <a href="/verktyg/sociala-medier" style={S.ctaBtn}>
+                  Öppna Sociala medier-generatorn →
+                </a>
+              </div>
+      
+              <p style={S.footerNote}>
+                Textverket hjälper svenska småföretag att skriva professionella texter med AI.{" "}
+                <a href="/verktyg/sociala-medier" style={{ color: "#949EC9" }}>
+                  Testa Sociala medier-generatorn gratis.
+                </a>
+              </p>
+    </BlogPostLayout>
   );
 }
