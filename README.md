@@ -41,6 +41,7 @@ npm run dev      # utvecklingsserver
 npm run build    # produktionsbuild
 npm run start    # kör produktionsbuild
 npm run lint     # ESLint
+npm run reddit:scan   # Reddit-marknadsföring → reddit-session.md
 ```
 
 ## Deploy

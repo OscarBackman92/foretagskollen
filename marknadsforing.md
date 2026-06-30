@@ -61,7 +61,7 @@ Sök även på "AI tool directory submit" — det dyker ständigt upp nya. Kvali
 
 - **Facebook-grupper** — sök på "driva eget", "småföretagare", "egenföretagare Sverige". Stora grupper har tiotusentals medlemmar. Många frågar bokstavligen "hur skriver jag en betalningspåminnelse?" — där är ett ärligt svar + länk guld.
 - **Foretagande.se** — forum för småföretagare, samma princip.
-- **Reddit** (r/sweden, r/Foretagande om aktiv) — endast som svar på relevanta frågor, aldrig som egen post.
+- **Reddit** (r/sweden, r/Foretagande om aktiv) — endast som svar på relevanta frågor, aldrig som egen post. **Kör `npm run reddit:scan`** — se `marknadsforing-reddit.md` (Claude i Chrome klarar inte Reddit pålitligt).
 
 ## 4. Outreach till nyhetsbrev och bloggar för småföretagare (1 mejl, många mottagare)
 
