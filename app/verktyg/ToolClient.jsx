@@ -488,11 +488,9 @@ export default function ToolClient({ initialCategory = null, pageTitle, pageSubt
             >
               {loading ? "⚡ Genererar…" : "↻ Generera igen"}
             </button>
+            <AdUnit slot={ADSENSE_SLOT_TOOLS} />
           </div>
         )}
-
-        {/* Annons under resultatet */}
-        <AdUnit slot={ADSENSE_SLOT_TOOLS} />
 
         {/* History */}
         {history.length > 0 && (
